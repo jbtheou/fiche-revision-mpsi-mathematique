@@ -1,0 +1,61 @@
+\chapter{Les coniques}
+\section{Définition}
+\begin{de}
+ On appelle conique de foyer F, de directrice $\Delta$ et d'excentricité e l'ensemble :
+$$\left\lbrace M / e.distance(M,\Delta) = MF \right\rbrace $$
+\end{de}
+\subsection{Définitions bifocale d'une ellipse}
+\begin{de}
+Soit F et F' les deux foyers de l'ellipse. On défini cette ellipse par : 
+$$(\mbox{ M appartient à l'ellipse }) \Leftrightarrow ( MF + MF' = cte = 2.a)$$
+avec a le demi-grand axe.
+\end{de}
+\subsection{Définitions bifocale d'une hyperbole}
+\begin{de}
+Soit F et F' les deux foyers de l'hyperbole. On défini cette hyperbole par : 
+$$(\mbox{ M appartient à l'hyperbole }) \Leftrightarrow ( |MF - MF'| = cte = 2.a)$$
+avec a la valeur absolue de la distance du point d'intersection entre l'axe 0x et l'hyperbole avec l'origine.
+\end{de}
+\begin{de}
+On appelle cercle principale d'une ellipse le cercle de centre O et de rayon a.
+\end{de}
+\section{Les différentes coniques}
+\subsection{L'ellipse}
+Une ellipse est définie par l'équation suivante : 
+$$\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$$
+Avec a>b, a est appelé le demi grand axe, et b le demi petit axe. On peut aussi paramétrer un point M de l'ellipse par : 
+ \[\left\{\begin{array}{l}
+   x(t) = acos(t)\\
+   y(t) = bsin(t) \\
+  \end{array}\right.\] 
+Avec t l'angle entre l'axe Ox et OP, avec P le point correspondant à M sur le cercle principale de l'ellipse. M est obtenir à partir de P à l'aide d'une affinité.
+\subsection{L'hyperbole}
+Une hyperbole est définie par l'équation suivante : 
+$$\dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1$$
+Pour vérifier cette formule, on prend y=0, et on doit obtenir deux solutions. De plus, on obtient les asymptotes en annulant 1. On peut aussi paramétrer un point M de l'hyperbole par : 
+ \[\left\{\begin{array}{l}
+   x(t) = ach(t)\\
+   y(t) = bsh(t) \\
+  \end{array}\right.\] 
+\subsection{Parabole}
+L'équation réduite est : 
+$$y^2 = 2px$$
+\section{Équation polaire dans un repère de centre F}
+Soit M($\rho,\theta$), $\Delta$ droite d'équation $x = x_{\Delta}$. L'équation générale est :
+$$\rho = \dfrac{ex_{\Delta}}{1+ecos(\theta)}$$
+avec e l'excentricité de la conique. Notons c l'abscisse de F.
+\begin{itemize}
+ \item[$\rightarrow$] Si e < 1: C'est une ellipse. Nous avons donc les résultats suivants \\
+\begin{itemize}
+ \item[$\rightarrow$] $e = \dfrac{c}{a}$\\
+ \item[$\rightarrow$] $c^2 = a^2 - b^2$\\
+ \item[$\rightarrow$] $x_{\Delta} = \dfrac{a^2}{c}$\\
+\end{itemize}
+ \item[$\rightarrow$] Si e = 1 : C'est une parabole.\\
+ \item[$\rightarrow$] Si e > 1 : C'est une hyperbole.\\
+\begin{itemize}
+ \item[$\rightarrow$] $e = \dfrac{c}{a}$\\
+ \item[$\rightarrow$] $c^2 = a^2 + b^2$\\
+ \item[$\rightarrow$] $x_{\Delta} = \dfrac{a^2}{c}$\\
+\end{itemize}
+\end{itemize}

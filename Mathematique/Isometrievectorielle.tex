@@ -1,0 +1,175 @@
+\chapter{Isométrie Vectorielle}
+\section{Généralités}
+\begin{de}
+Soit E un espace euclidien, soit f $\in L(E)$.\\
+f est une isométrie vectorielle si : 
+$$\forall x \in E~ ||f(x)||=||x||$$
+\end{de}
+\begin{prop}
+Soit f $\in L(E)$. 
+$$(\mbox{f est une isométrie vectorielle}) \Leftrightarrow (\forall x \in E~ \forall y \in E,~ <f(x),f(y)>=<x,y>)$$
+\end{prop}
+On dit que f est un endomorphisme orthogonale
+\begin{prop}
+Une isométrie vectorielle est bijective
+\end{prop}
+\begin{prop}
+La réciproque d'une isométrie vectorielle est une isométrie vectorielle
+\end{prop}
+\begin{prop}
+ La composée de deux isométries vectorielles est une isométrie vectorielle
+\end{prop}
+\begin{prop}
+L'ensemble des isométrie vectorielles, munie de la loi de composition des applications est un groupe, appelé le groupe orthogonale de E, notée O(E)
+\end{prop}
+\begin{prop}
+Soit f endomorphisme de E, et B base orthonormée.\\
+$$(\mbox{f est une isométrie vectorielle}) \Leftrightarrow (\mbox{ f(B) est une base orthonomée})$$
+$$(\mbox{f est une isométrie vectorielle}) \Leftrightarrow (mat_B(f) \mbox{ est une base orthogonale})$$
+\end{prop}
+\section{Isométrie vectorielle plane}
+\subsection{Classification}
+\begin{center}
+% use packages: array
+\begin{tabular}{|l|l|l|l|}
+\hline
+ Nom &Matrice & Déterminant & Vecteur invariant \\ \hline
+Rotation d'angle $\theta$ & $\begin{bmatrix}
+ \cos(x) & -\sin (x) \\
+  \sin (x) & \cos(x) \\
+\end{bmatrix}$  & +1 & $\{0\}$ ou E pour Ide \\ \hline
+Symétrie $\bot$ / à une droite D & $\begin{bmatrix}
+ \cos(x) & \sin (x) \\
+  \sin (x) & -\cos(x) \\
+\end{bmatrix}$  & -1 & Droite vectorielle \\ \hline
+\end{tabular}
+\end{center}
+\subsection{Cas particulier des rotations}
+\begin{prop}
+L'ensemble des rotations vectorielle planes est un sous groupe de O(E), appelé groupe spéciale orthogonale. Il est notée SO(E)
+\end{prop}
+\subsection{Rotation orthogonales}
+\begin{prop}
+La composée de deux symétries orthogonales par rapport à deux droites est une rotation d'angle deux fois l'angle entre les deux droites.
+\end{prop}
+\section{Isométrie vectorielle d'un espace euclidien de dimension 3}
+\subsection{Symétrie orthogonale}
+Soit E un espace euclidien de base B=(i,j,k) orthonormée directe.\\
+Soit F un sous espace de E, et $s_f$ la symétrie orthogonale par rapport à F : 
+\begin{center}
+% use packages: array
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Définition de F & Base & Matrice & Déterminant & Type \\ \hline
+F = $\{0\}$ & Quelconque & $\begin{bmatrix}
+ -1 & 0 &  0\\
+  0 & -1 & 0\\
+ 0 & 0 & -1 \\
+\end{bmatrix}$ & -1 & $s_f$ = $h_{-1}$ \\ \hline
+dim(F) = 1 & ($e_1,e_2,e_3$) D =Vect($e_1$)& $\begin{bmatrix}
+ 1 & 0 &  0\\
+  0 & -1 & 0\\
+ 0 & 0 & -1 \\
+\end{bmatrix}$& 1 & × \\ \hline
+dim(F) = 2 & ($e_1,e_2,e_3$) P =Vect($e_1,e_2$) &  $\begin{bmatrix}
+ 1 & 0 &  0\\
+  0 & 1 & 0\\
+ 0 & 0 & -1 \\
+\end{bmatrix}$& -1 & Réflection \\ \hline
+dim(F) = 3 & Quelconque & $\begin{bmatrix}
+ 1 & 0 &  0\\
+  0 & 1 & 0\\
+ 0 & 0 & 1 \\
+\end{bmatrix}$ & 1 & $s_f = Ide$ \\ \hline
+\end{tabular}
+\end{center}
+\subsection{Propriété de la matrice d'un symétrie orthogonale dans une base orthonormée}
+Si B est une base orthonormée et s une symétrie orthogonale.\\
+Soit M=$mat_B(s)$.\\
+Sachant que s est une symétrie, M est inversible et $M^{-1} = M$. De plus, la symétrie est orthogonale, donc la matrice l'est aussi, donc $M^{-1} = ^tM$.\\
+On obtient donc M = $^tM$. Donc M est une symétrie.
+\subsection{Rotation}
+\begin{de}
+Soit D une droite vectorielle orienté et $\theta$ un réel.\\
+La rotation d'axe de D et d'angle $\theta$ est l'application linéaire r telque :
+\begin{itemize}
+ \item[$\rightarrow$]$\forall u \in D$ r(u)=u
+ \item[$\rightarrow$]Le plan $D^{\bot}$ est stable par r et la restriction de r à ce plan est une rotation plane d'angle $\theta$ orienté par D.
+\end{itemize}
+\end{de}
+\begin{prop}
+
+
+Soit $B_=(e_1,e_2,e_3)$ base orthonormée directe telle que D=Vect($e_1$) et $D^{\bot}=Vect(e_2,e_3)$, alors : 
+$$\begin{bmatrix}
+ 1 & 0 &  0\\
+  0 & cos(\theta) & -sin(\theta)\\
+ 0 & sin(\theta) & cos(\theta) \\
+\end{bmatrix}$$
+Donc : $$det(r) = 1$$
+ 
+\end{prop}
+\begin{prop}
+Cas particulier :
+\begin{itemize}
+ \item[$\rightarrow$] $\theta = 0$, alors r = Ide
+ \item[$\rightarrow$] $\theta = \pi$, alors r=$s_D$
+\end{itemize}
+\end{prop}
+\begin{prop}
+Composée de deux réflections :\\
+Soient P,P' deux plans distincts telque $P\cap P' = D$ :
+\begin{itemize}
+ \item[$\rightarrow$] Si $u \in D$ : $s_{P'}(s_P(u))=u$
+ \item[$\rightarrow$] Si $u \in D^{\bot}$ r est stable dans $D^{\bot}$
+  \item[$\rightarrow$] $s_{P'}o s_P(u)$ est une rotation d'axe D.
+\end{itemize}
+\end{prop}
+\subsection{Calcul de l'image d'un vecteur de x par une rotation}
+Soit r rotation d'axe D, orienté par $\overrightarrow{d}$, vecteur directeur de D, et d'angle $\theta$.\\
+Soit $\overrightarrow{x} \notin D$ : 
+$$r(\overrightarrow{x}) = \dfrac{<\overrightarrow{x},\overrightarrow{d}>}{||d||^2}.\overrightarrow{d} + cos(\theta)\dfrac{(\overrightarrow{d}\wedge\overrightarrow{x})\wedge\overrightarrow{d}}{||\overrightarrow{d}||^2}+sin(\theta)\dfrac{\overrightarrow{d}\wedge\overrightarrow{x}}{||\overrightarrow{d}||}$$
+Si $||\overrightarrow{d}|| = 1$ : 
+$$r(\overrightarrow{x}) = <\overrightarrow{x},\overrightarrow{d}>.\overrightarrow{d} + cos(\theta)(\overrightarrow{d}\wedge\overrightarrow{x})\wedge\overrightarrow{d}+sin(\theta)\overrightarrow{d}\wedge\overrightarrow{x}$$
+\subsection{Classification}
+Soit Inv(f) l'ensemble des vecteurs invariants.
+\begin{center}
+% use packages: array
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+dim(Inv(f)) & f & Base & Matrice & Det \\ \hline
+3 & Ide & Quelconque & $\begin{bmatrix}
+ 1 & 0 &  0\\
+  0 & 1 & 0\\
+ 0 & 0 & 1 \\
+\end{bmatrix}$ & 1 \\ \hline
+2 & Réflexion $s_p$ & Base adaptée & $\begin{bmatrix}
+ 1 & 0 &  0\\
+  0 & 1 & 0\\
+ 0 & 0 & -1 \\
+\end{bmatrix}$ & -1 \\ \hline
+1 & Rotation d'axe D, d'angle $\theta$ & Base adaptée & $\begin{bmatrix}
+ 1 & 0 &  0\\
+  0 & cos(\theta) & -sin(\theta)\\
+ 0 & sin(\theta) & cos(\theta) \\
+\end{bmatrix}$ & 1 \\ \hline
+0 & Réflexion o rotation  & Base adaptée & $\begin{bmatrix}
+ 1 & 0 &  0\\
+  0 & cos(\theta) & -sin(\theta)\\
+ 0 & sin(\theta) & cos(\theta) \\
+\end{bmatrix}$ & -1 \\ \hline
+\end{tabular}
+\end{center}
+\subsection{Élements caractéristiques d'une rotation}
+\begin{itemize}
+ \item[$\rightarrow$] L'axe : L'ensemble des vecteurs invariante
+ \item[$\rightarrow$] L'angle : 
+ \begin{itemize}
+ \item[$\rightarrow$] cos($\theta$) est obtenu par la Trace(r) = 1 + 2cos($\theta$) dans une base adaptée.
+ \item[$\rightarrow$] Le signe de sin($\theta$) est obtenu par le signe de Det(x,r(x),d), avec x espace non invariant de l'espace, r(x) la rotation et d un vecteur directeur de l'axe
+\end{itemize}
+\end{itemize}
+\subsection{Autres résultats}
+\begin{prop}
+La matrice d'une projection orthogonale dans une base orthonormée est symétrique
+\end{prop}

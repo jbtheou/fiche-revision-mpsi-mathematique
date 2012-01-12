@@ -1,0 +1,172 @@
+
+\chapter{Déterminants}
+\section{Forme n-linéaire}
+Soit E un K-espace vectoriel de dimension n.
+\begin{de}
+Soit :
+$$\varphi : E^n \rightarrow K$$
+$$(u_1,...,u_n) \mapsto \varphi(u_1,...,u_n)$$
+$\varphi$ est une forme n-linéaire si elle est linéaire par rapport à chacune de ses variables.
+\end{de}
+\subsubsection{Expression dans une base}
+\begin{de}
+Soit B = $(e_1,...,e_n)$ base de E.\\
+Soit $u_1,...,u_n$ n vecteurs de E.\\
+Notons pour $j \in \left\lbrace 1,...,n\right\rbrace$ $mat_B(u_j) = 
+\begin{bmatrix}
+  x_{1,j} \\
+  . \\
+  . \\
+  x_{n,j}  \\
+\end{bmatrix}$\\
+Si $\varphi$ est une forme n-linéaire, alors : $$\varphi(u_1,...,u_n) = \sum_{1 \leq i_1,...,i_n \leq n} x_{i_1,1}...x_{i_n,n}\varphi(e_{i_1},...,e_{i_n})$$ 
+\end{de}
+\subsection{Forme n-linéaire alterné}
+\begin{de}
+Soit $\varphi$ forme n-linéaire.\\ On dit que $\varphi$ est alternée si :\\
+$\forall u_1,...,u_n \in E^n$\\
+$\forall i,j \mbox{ éléments distinct de }  \left\lbrace 1,...,n \right\rbrace$
+$$\varphi(u_1,...,u_i,...,u_j,...,u_n) = -\varphi(u_1,...,u_j,...,u_i,...,u_n)$$
+\end{de}
+\begin{prop}
+Si $\varphi$ est une forme n-linéaire alterné.\\
+Si $\left\lbrace u_1,...,u_n \right\rbrace$ est une partie liée de E.\\
+Alors : 
+$$\varphi(u_1,...,u_n) = 0$$ 
+\end{prop}
+\subsubsection{Expression dans une base}
+Soit $\varphi$ forme n linéaire alterné et B base de E.
+$$\varphi(u_1,...,u_n) = \sum_{1 \leq i_1,...,i_n \leq n} x_{i_1,1}...x_{i_n,n}\varphi(e_{i_1},...,e_{i_n})$$ 
+Soit $S_n$ l'ensemble des bijections de $\left\lbrace 1,...,n \right\rbrace$ dans lui même. 
+$$\varphi(u_1,...,u_n) = \sum_{\sigma \in S_n} x_{\sigma_1,1}...x_{\sigma_n,n}\varphi(e_{\sigma_1},...,e_{\sigma_n})$$ 
+Si $\sigma \in S_n$, on note $\varphi(e_{\sigma_1},...,e_{\sigma_n}) = \varepsilon(\sigma)\varphi(e_{1},...,e_{n})$\\
+On dit que $\varepsilon(\sigma)$ est la signature de $\sigma$, avec $\varepsilon(\sigma) = (-1)^p$, avec p nombre de changement effectuer pour obtenir le bon ordre de la base.\\
+On obtient donc :
+$$\varphi(u_1,...,u_n) = \left[ \sum_{\sigma \in S_n} \varepsilon(\sigma)x_{\sigma_1,1}...x_{\sigma_n,n}\right]\varphi(e_1,...,e_n) $$
+\begin{de}
+ Le déterminant dans la base B est l'unique forme n-linéaire alternée $\varphi$ vérifiant :
+$$ \varphi(e_1,...,e_n) = 1$$
+On le note : $det_B$
+\end{de}
+\begin{prop}
+Toutes les applications de $E\times E\times .... \times E \rightarrow K$ défini par $\forall(u_1,...,u_n) \in E^n$ : 
+$$\varphi(u_1,...,u_n) = A\sum_{\sigma \in S_n}\varepsilon(\sigma)x_{\sigma(1),1}...x_{\sigma(n),n}$$
+avec A scalaire fixé, est une forme n-linéaire de alterné et $\varphi(B)=A$, avec B base de E.
+\end{prop}
+Autre formulation : 
+\begin{prop}
+L'ensemble des formes n-linéaire alternée est une droite vectorielle.
+$$Vect(det_b) = \left\lbrace \mbox{ A.}det_b\mbox{ / A scalaire quelconque } \right\rbrace $$ 
+\end{prop}
+\section{Déterminant dans une base B}
+\begin{de}
+Soit B base de E.\\
+$det_B$ est l'unique forme n-linéaire alternée vérifiant $det_B(B)=1$.
+$$det_B(u_1,...,u_n) = \sum_{\sigma \in S_n} \varepsilon(\sigma)x_{\sigma(1),1}...x_{\sigma(n),n}$$
+\end{de}
+\subsection{Déterminant dans deux bases différentes}
+Soit B,B' deux bases de E. $\forall u_1,...,u_n $ vecteurs de E :
+$$det_{B'}(u_1,...,u_n) = det_{B'}(B).det_B(u_1,...,u_n)$$
+\begin{prop}
+$$(det_B(u_1,...,u_n) = 0)\Leftrightarrow (\left\lbrace u_1,...,u_n \right\rbrace \mbox{ est liée}) $$
+$$(det_B(u_1,...,u_n) \neq 0)\Leftrightarrow (\left\lbrace u_1,...,u_n \right\rbrace \mbox{ est une base}) $$
+\end{prop}
+\begin{prop}
+ Si B et B' sont deux bases :
+$$det_{B'}(B) = \dfrac{1}{det_B(B')}$$
+\end{prop}
+\subsubsection{Formulaire}
+\begin{itemize}
+ \item[$\rightarrow$] $det_B(B)=1$
+ \item[$\rightarrow$] $det_B(\lambda u_1,...,\lambda u_n) = \lambda^n.det(u_1,...,u_n)$
+ \item[$\rightarrow$] $det(Ide) = 1$
+\end{itemize}
+\section{Déterminant d'un endomorphisme}
+\begin{de}
+Soit f $\in L(E)$\\
+Soient B et B' deux bases de E. 
+$$det_B(f(B)) = det_{B'}(f(B'))$$
+Ce scalaire, indépendant du choix de la base, est appelé déterminant de f. On le note : det(f) 
+\end{de}
+\begin{prop}
+Si f,g sont deux endomorphisme de E :
+$$det(fog) = det(g).det(f)$$
+\end{prop}
+\begin{prop}
+Si $f \in L(E)$ :
+$$(\mbox{ f est bijectif }) \Leftrightarrow ( det(f) \neq 0)$$
+\end{prop}
+\begin{prop}
+Si f est un automorphisme de E : 
+$$det(f^{-1})=\dfrac{1}{det(f)}=(det(f))^{-1}$$
+\end{prop}
+\section{Déterminant d'une matrice carrée}
+\begin{de}
+Soit $A \in M_n(K)$.\\
+Notons $c_1,...,c_n$ ses vecteurs colonnes, élément de $K^n$.\\
+Notons $l_1,...,l_n$ ses vecteurs lignes, élément de $K^n$.\\
+Soit $\varphi$ la base canonique de $K^n$.
+$$det(A) = det_{\varphi}(c_1,...,c_n) = det_{\varphi}(l_1,...,l_n)$$
+\end{de}
+\begin{prop}
+Soit $f \in L(E)$, avec B base de E.\\
+Notons M = $mat_B(f)$.\\
+On obtient :
+$$det(f) = det_B(f(B)) = det(M)$$
+\end{prop}
+\subsection{Lien entre vecteurs lignes et vecteurs colonnes}
+Si $A = [a_{i,j}]_{1 \leq i,j \leq n}$ :
+$$det(A) = \sum_{\sigma \in S_n} \varepsilon(\sigma)a_{\sigma(1),1}...a_{\sigma(n),n} = \sum_{\sigma \in S_n} \varepsilon(\sigma)a_{1,\sigma(1)}...a_{n,\sigma(n)}$$
+\begin{prop}
+D'après l'égalité ci-dessus, on établie que :
+$$det(^tA) = det(A)$$
+\end{prop}
+\subsection{Déterminant singulier}
+Soient (A,B) $\in M_n(K)^2$, $\lambda \in K$.
+$$det(AB) = det(A).det(B)$$
+$$det(\lambda A) = \lambda^ndet(A)$$
+$$det(A+B) = ????$$
+\subsection{Opérations élémentaires et déterminant}
+On peut effectuer des opérations élémentaires, tout comme pour le calcul de rang, pour calculer le déterminant d'une matrice. Ceci implique les règles suivantes :
+\begin{itemize}
+ \item[$\rightarrow$] $c_i \leftrightarrow c_j$ : Changement de signe du déterminant
+ \item[$\rightarrow$] $c_i \leftarrow \lambda c_j$ : $\lambda$ fois le déterminant
+ \item[$\rightarrow$] $c_i \leftarrow \underset{k=1,k\neq i}\sum \lambda_k.c_k$ : Aucun changement
+\end{itemize}
+\subsection{Déterminant remarquable}
+\subsubsection{Matrice diagonale}
+Soit A, matrice diagonale de diagonale : $(d_1,...,d_n)$
+On obtient :
+$$det(A)=d_1d_2...d_n$$
+\subsubsection{Matrice triangulaire}
+Soit A, matrice triangulaire de diagonale : $(t_{11},...,t_{nn}$
+On obtient :
+$$det(A)=t_{11}...t_{nn}$$
+\section{Développement de déterminant d'une matrice}
+\begin{de}
+Soit A = $[a_{i,j}]_{1 \leq i,j \leq n}$.\\
+Soit $j \in \left\lbrace 1,...,n\right\rbrace $.\\
+Le développement par rapport à la j-ème colonne donne :
+$$det(A) = a_{1,j}\Delta_{1,j}+...+a_{n,j}\Delta_{n,j}$$
+Le développement par rapport à la i-ème ligne donne :
+$$det(A) = a_{i,1}\Delta_{i,1}+...+a_{i,n}\Delta_{i,n}$$
+On appelle cofacteur de $a_{i,j}$ dans le développement $\Delta_{i,j}$ :
+$$\Delta_{i,j} = \sum_{\sigma \in S_n,\sigma(j)=i} \varepsilon(\sigma)a_{\sigma(1),1}...a_{\sigma(j-1),j-1}a_{\sigma(j+1),j+1}...a_{\sigma(n),n}$$
+\end{de}
+\subsection{Calcul des cofacteurs}
+\begin{prop}
+On détermine le cofacteurs à l'aide de l'égalité suivantes :
+$$\Delta_{i,j} = (-1)^{i+j}\times A$$
+Avec :
+\begin{itemize}
+ \item[$\rightarrow$] A : Déterminant de la matrice obtenu en enlevant la ligne i et la colonne j.
+\end{itemize}
+\end{prop}
+\subsection{Inverse d'une matrice inversible}
+Soit A = $[a_{i,j}]_{1 \leq i,j \leq n}$.\\
+Soit la comatrice de A : 
+$$Com(A) = [\Delta_{i,j}]_{1 \leq i,j \leq n}$$
+Si A est inversible, donc det(A) $\neq$ 0, alors :
+$$A^{-1} = \dfrac{1}{det(A)}^tCom(A)$$
+\subsection{Formule de Sarrus, pour n=3}
+La formule de Sarrus est de reporte la $1^{er}$ et la $2^{nd}$ ligne de la matrice sous la matrice, puis de trace les diagonales et les anti-diagonales. Les diagonales sont comptées positivement, les anti-diagonales négative

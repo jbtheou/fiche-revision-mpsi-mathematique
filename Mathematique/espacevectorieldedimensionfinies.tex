@@ -1,0 +1,229 @@
+\chapter{Espace vectoriel de dimensions finies}
+\section{Partie libre - Partie liée - Partie génératrice}
+\subsection{Partie finie liée}
+\begin{de}
+Soient $u_1,...,u_p$ p vecteurs d'un K-espace vectoriels de E.\\
+On dit que $\{u_1,...,u_n\}$ est liée ou que les vecteurs $u_1,...,u_n$ sont linéairement dépendants si $\exists(\lambda_1,...,\lambda_p)\in K^p$ non tous nuls telque : $$\lambda_1u_1+...+\lambda_pu_p = O_E$$
+\end{de}
+\begin{prop}
+Toutes parties qui contient le vecteur nul est liée
+\end{prop}
+\begin{prop}
+Si L est liée, et L c L', alors L' est liée.
+\end{prop}
+\subsubsection{Vecteurs colinéaires}
+Soit u,v deux vecteurs de E.
+$$(\mbox{ u et v sont colinéaire} \Leftrightarrow (\exists \lambda \in K~ tq~ u=\lambda v~ ou~ v=0))$$
+\subsection{Partie fini libre}
+\begin{de}
+ Soit L partie finie de E.
+$$(\mbox{L est libre}) \Leftrightarrow (\mbox{L n'est pas libre})$$
+On la caractérise par : Si $\exists(\lambda_1,...,\lambda_p)\in K^p$ tq $\lambda_1u_1+...+\lambda_pu_p = O_E$ alors $$\lambda_1=...=\lambda_p=0$$
+On dit que la partie est linéairemement indépendante.
+\end{de}
+\begin{prop}
+Si L est libre, et L' c L, alors L' est aussi libre.
+\end{prop}
+\subsection{Partie génératrice}
+Soit E un K espace vectoriel.
+Nous avons l'ensemble des propriétés suivantes :
+\begin{enumerate}[1-]
+ \item G est une partie génératrice de E si : $$Vect(G)~ c~ E$$
+ \item Si A et B sont deux parties de E, si A c B, alors : $$Vect(A)~ c~ Vect(B)$$
+ \item Si G est une partie génératrice de E, G' une partie telque G c G', alors G' est une partie génératrice de E
+\end{enumerate}
+\subsection{Base}
+\begin{de}
+Une base d'un espace E est une partie génératrice de E et libre.
+\end{de}
+\begin{prop}
+Si B = {$e_1,...,e_n$} est une base fini de E, alors, $\forall u \in E$, $\exists !$ n uplet de scalaire ($x_1,...,x_n$) telque : $$u = x_1e_1+...+x_ne_n$$
+Le n-uplet ($x_1,...,x_n$) est appelé le n-uplet de coordonées de u dans la base B. On le note aussi : 
+$$mat_B(u) = \begin{bmatrix}
+ x_1 \\
+  . \\
+  . \\
+ x_n \\
+\end{bmatrix}$$
+\end{prop}
+\subsubsection{Base de référence}
+\begin{itemize}
+ \item[$\rightarrow$] $\mathbb{R}_n[X]$ : $\{$1,X,$X^2$,...,$X^n$$\}$\\
+ \item[$\rightarrow$] $\mathbb{R}^n$ : $\{$(1,...,0),...,(0,...,1)$\}$
+\end{itemize}
+\section{Dimension d'un espace de dimension finie}
+\begin{de}
+Soit E un K-espace vectoriel.\\
+Si E possède une partie génératrice finie, on dit que E est un espace de dimension finies.
+\end{de}
+\begin{prop}
+Soit E un espace de dimension finies et G = $\{ u_1,...,u_p \}$ une partie génératrice de E.\\
+Si G est libre, alors G est une base de E.
+\end{prop}
+\begin{prop}
+De toute partie génératrice finie, on peut extraire une base.
+\end{prop}
+\begin{theo}
+Théorème de la base incomplète :\\
+Soit L = $\{ u_1,...,u_n \}$.\\
+Si L est une partie libre, on peut la completer en une base.
+\end{theo}
+\begin{prop}
+Lemme de Steiniz :\\
+Si E possède une partie génératrice de n vecteurs, alors toute partie de n+1 vecteurs est liée
+\end{prop}
+\begin{theo}
+ Si E est de dimension finie, toutes les bases de E ont le meme nombre d'élements et ce nombre commun est la dimension de l'espace.\\
+Si B est une base de E :
+$$dim(E) = card(B)$$
+\end{theo}
+\begin{prop}
+Soit E un espace de dimension n, soit A une partie de E 
+\begin{itemize}
+ \item[$\rightarrow$] Si A est une partie génératrice de E, alors card(A) $\geq$ n
+ \item[$\rightarrow$] Si card(A) < n, alors A n'est pas génératrice de E
+ \item[$\rightarrow$] Si A est libre, alors card(A) $\leq$ n
+ \item[$\rightarrow$] Si card(A) > n, alors A est liée.
+\end{itemize}
+\end{prop}
+\subsection{Caractérisation des bases}
+Soit E un espace vectoriel de dimension n et A une partie de E.\\
+Si A est une base, alors A est libre, A est génératrice de E et card(A) = dim(E).\\
+\begin{itemize}
+ \item[$\rightarrow$] A est une base $\Leftrightarrow$ A est libre et card(A) = dim(E)
+ \item[$\rightarrow$] A est une base $\Leftrightarrow$ A est génératrice de E et card(A) = dim(E)
+\end{itemize}
+\section{Sous-espace d'un espace de dimension finie}
+Soit E un K-espace vectoriel de dimension finie :
+\begin{prop}
+Soit F sous espace de E. \\
+F est de dimension finie et dim(F) $\leq$ dim(E).
+\end{prop}
+\begin{prop}
+Soient F et G deux sous-espace de E :
+$$(F = G) \Leftrightarrow \left\{\begin{array}{l}
+   F~ c~ G\\
+   dim(F) = dim(G)
+  \end{array}\right.$$
+\end{prop}
+
+\begin{prop}
+Formule de Grassman : \\
+Soit F et G deux sous-espace de E :
+$$dim(F+G) = dim(F) + dim(G) - dim(F\cap G)$$
+\end{prop}
+\begin{prop}
+ Soit E espace de dimension finie.\\
+Soient F et G deux sous espaces de E. F et G sont supplémentaire si :
+$$\left\{\begin{array}{l}
+   F+G = E \\
+   dim(E) = dim(F) + dim(G)
+  \end{array}\right.$$
+\end{prop}
+\begin{prop}
+Tous sous-espace possède au moins un supplémentaire
+\end{prop}
+\begin{prop}
+\begin{itemize}
+ \item[$\rightarrow$]dim($\emptyset$) = 0
+ \item[$\rightarrow$]Si D est un sous espace de dimension 1, c'est une droite vectorielle
+ \item[$\rightarrow$]Si P est un sous espace de dimension 2, c'est un plan vectoriel
+ \item[$\rightarrow$]Si H est un sous espace de dimension n-1, c'est un hyperplan
+ \item[$\rightarrow$]Tout supplémentaires d'un hyperplan est une droite vectoriel
+\end{itemize}
+\end{prop}
+\subsection{Rang d'une partie}
+\begin{de}
+Soit A une partie d'un espace E.\\
+Le rang de A est la dimension du sous espace engendré par A :
+$$rang(A) = dim(Vect{A})$$
+\end{de}
+\begin{prop}
+Soit A c E : 
+\begin{itemize}
+ \item[$\rightarrow$] (rang(A) = dim(E)) $\Leftrightarrow$ (A est une partie génératrice de E)
+ \item[$\rightarrow$] (A est libre) $\Leftrightarrow$ ($rang(A) = card(A)$)
+\end{itemize}
+\end{prop}
+\subsection{Sous espace supplémentaire et base}
+Soient F,G deux sous espaces de E, de base $B_F,B_G$ :
+$$( \mbox{ F et G sont supplémentaire }) \Leftrightarrow \left\{\begin{array}{l}
+  B_F \cup B_G = B_E \\
+   B_F \cap B_G = \emptyset
+  \end{array}\right.$$
+\section{Application linéaire entre deux espaces de dimension finies}
+Soient E et F deux K-espaces vectoriel de dimension finies
+\subsection{Caractérisation par l'image d'une base de E}
+Soit $B_E$ = {$e_1,...,e_p$} une base de E.\\
+Soit u un vecteur de E telque :$$mat_B(u) = \begin{bmatrix}
+ x_1 \\
+  . \\
+  . \\
+ x_p \\
+\end{bmatrix}$$
+Si f $\in$ L(E,F), alors :
+$$f(u) = x_1f(e_1)+...+x_pf(e_p)$$
+\subsection{Image d'une partie libre, liée ou génératrice de E}
+Soit f $\in$ L(E,F).\\
+\begin{itemize}
+ \item[$\rightarrow$]Si $L_1$ = {$u_1,...,u_p$} est une partie liée, alors {$f(u_1),...,f(u_p)$}\\
+ \item[$\rightarrow$]Si $L_1$ = {$u_1,...,u_p$} est une partie libre, alors ??????\\
+ \item[$\rightarrow$]L'image d'une partie génératrice de E est une partie génératrice de Im(f)
+ \item[$\rightarrow$]Si B est une base de E, alors f(B) est génératrice de Im(f)
+\end{itemize}
+\subsection{Rang d'une application linéaire}
+\begin{de}
+Soit f $\in$ L(E,F).\\
+Le rang de f est la dimension de l'image de f :
+$$rang(f) = dim(Im(f))$$
+\end{de}
+\begin{prop}
+(f est surjective) $\Leftrightarrow$ (rang(f) = dim(F))
+\end{prop}
+\subsection{Théorème du rang}
+Soit f $\in$ L(E,F) :
+$$dim(Ker(f)) + rang(f) = dim(E)$$
+\begin{prop}
+(f est injective) $\Leftrightarrow$ (rang(f) = dim(E))
+\end{prop}
+\subsection{Forme linéaire}
+\begin{de}
+Une forme linéaire d'un espace est une application linéaire de E dans son corps K.
+\end{de}
+\begin{prop}
+Si $\varphi$ est une forme linéaire : $rang(\varphi) \leq 1$
+\end{prop}
+
+\begin{prop}
+Le noyau d'une forme linéaire non nuls est un hyperplan
+\end{prop}
+\section{Isomorphisme}
+\begin{de}
+On considère E,F deux espaces de dimension finie.\\
+On dit que E et F sont isomorphe si il existe un isomorphisme de E dans F.\\
+Dans cette situation, on obtient :
+\begin{itemize}
+ \item[$\rightarrow$] Ker(f) = {$O_E$}
+ \item[$\rightarrow$] Im(f) = F
+ \item[$\rightarrow$] rang(f) = dim(F) = dim(E)
+ \item[$\rightarrow$] Deux espaces isomorphe ont meme dimension
+ \item[$\rightarrow$] Soit $B_E$ une base de E, f un isomorphisme, alors f($B_E$) est une base.
+\end{itemize}
+\subsection{Caractérisation des isomorphismes}
+Soit $\varphi$ une application linéaire de E dans F :
+\begin{prop}
+ $$( \varphi~ est~ bijective) \Leftrightarrow \left\{\begin{array}{l}
+  Ker(\varphi) = \{O_E\} \\
+   dim(E) = dim(F)
+  \end{array}\right.$$
+ $$( \varphi~ est~ bijective) \Leftrightarrow \left\{\begin{array}{l}
+  rang(\varphi) = dim(F) \\
+   dim(E) = dim(F)
+  \end{array}\right.$$
+ $$( \varphi~ est~ bijective) \Leftrightarrow (\varphi(B_E) \mbox{ est une base de F})$$
+\end{prop}
+\end{de}
+\subsection{Espace isomorphe}
+\begin{theo}
+Si F est un espace de dimension finie, si E et F sont isomorphe, alors E est aussi de dimension finie, et dim(E) = dim(F)
+\end{theo}

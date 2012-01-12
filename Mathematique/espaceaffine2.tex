@@ -1,0 +1,116 @@
+
+\chapter{Espace Affine}
+\section{Définitions}
+\begin{de}
+Soit E un $\Re$ espace vectoriel.\\
+Soit $\xi$ un ensemble.\\
+On dit que $\xi$ est un espace affine de direction l'espace vectoriel E si il existe $\varphi$ défini par : 
+$$\varphi : \xi \times \xi \rightarrow E$$
+$$(a,b) \mapsto \overrightarrow{ab}$$
+telle que : 
+\begin{itemize}
+ \item[$\rightarrow$] $\forall(A,B,C)\in \xi^3~ \varphi(A,B)+\varphi(B,C) = \varphi(A,C)$
+ \item[$\rightarrow$] $\forall A \in \xi,$ $\forall u \in E,~ \exists ! B \in \xi$ tq $\overrightarrow{AB}=\overrightarrow{u}$
+\end{itemize}
+\end{de}
+\begin{voc}
+Si $\xi$ est un espace affine, ses éléments sont appelé points.
+\end{voc}
+\begin{voc}
+Si B est une base de E, O$\in \xi$, alors (O,B) est un repère de $\xi$
+\end{voc}
+\begin{voc}
+Si M$\in \xi$, les coordonées de M dans (O,B) sont celles de $\overrightarrow{OM}$ dans B.
+\end{voc}
+\begin{prop}
+$\Im$ est un sous espace affine de $\xi$ si :
+\begin{itemize}
+ \item[$\rightarrow$] $\Im$ = $\emptyset$
+ \item[$\rightarrow$] ou $\exists$ A $\in \xi$ et F sous espace vectoriel de E telque : $$\Im = A + F$$
+\end{itemize}
+\end{prop}
+\section{Applications affines}
+\begin{de}
+Soit $\xi$ un espace affine, E un espace vectoriel.\\
+On appelle application affine de $\xi$ toute application f de $\xi$ dans $\xi$ telle qu'il existe $\varphi \in L(E)$ et O,O' deux points telque :
+$$\forall M \in \xi~ \overrightarrow{O'f(M)} = \varphi(\overrightarrow{OM})$$
+$$\forall M \in \xi~ f(M) = O'+\varphi(\overrightarrow{OM})$$
+On dit que $\varphi$ est l'application linéaire associée à f.
+\end{de}
+\begin{prop}
+Si f est une application affine associée à $\varphi$ : 
+$$\forall (A,B) \in \xi^2~ \overrightarrow{f(A)f(B)} = \varphi(\overrightarrow{AB})$$
+\end{prop}
+\begin{prop}
+ La composée de deux applications affines est affine et l'application linéaire associée est la composée des applications linéaires associées.
+\end{prop}
+\subsection{Homothétie affine}
+\begin{de}
+Soit A $\in \xi$ et $k \in \Re$.\\
+On appelle homothétie de centre A et de rapport k l'application :
+$$h : \xi \rightarrow \xi$$
+$$M \mapsto M'$$
+avec $\overrightarrow{AM'} = k\overrightarrow{AM}$.\\
+h est une application affine.
+\end{de}
+\subsection{Conservation du barycentre}
+\begin{prop}
+Si f est l'application affine associée à $\varphi$, et G le barycentre de $\{(M_i,\lambda_i)/ i=1,...,p\}$, alors :\\
+f(G) est le barycentre de $\{(f(M_i),\lambda_i)/i=1,..,p\}$
+\end{prop}
+\subsection{Expression analytique dans un repère}
+\begin{de}
+Soit f application affine de E, et R=(O,B) un repère de $\xi$.\\
+Il existe des réels $a_{i,j},b_i$ telque si M à pour coordonnées ($x_1,...,x_n$) et M' à pour coordonées ($x'_1,...,x'_n$) :
+\[\left\{\begin{array}{l}
+   x'_1 = a_{1,1}x_1+...+a_{1,n}x_n+b_1  \\
+   ....\\
+   ....\\
+   x'_n = a_{n,1}x_1+...+a_{n,n}x_n+b_n\\
+  \end{array}\right.\]
+\end{de}
+\section{Isométries affines}
+\subsection{Généralités}
+\begin{de}
+Soit f une application affine d'un espace affine $\xi$.\\
+f est une isométrie si : 
+$$\forall M,N \in \xi^2~ ||\overrightarrow{f(M)f(N)}|| = ||\overrightarrow{MN}||$$
+\end{de}
+\begin{prop}
+Si $\varphi$ est l'application linéaire associée à f :
+$$(\mbox{ f est une isométrie }) \Leftrightarrow (\varphi \mbox{ est un endomorphisme orthogonale})$$
+\end{prop}
+\begin{voc}
+Si : 
+\begin{itemize}
+ \item[$\rightarrow$] det($\varphi$) = 1, alors f est un déplacement 
+ \item[$\rightarrow$] det($\varphi$) = -1, alors f est un anti-déplacement
+\end{itemize}
+\end{voc}
+\subsection{Déplacement du plan}
+Soit f un déplacement plan.
+\begin{center}
+% use packages: array
+\begin{tabular}{|l|l|l|}
+\hline
+Application linéaire & Isométrie \\ \hline
+Identité & Translation \\ \hline
+Rotation d'angle $\theta$ [2$\pi$] & Rotation affine d'angle $\theta$ [2$\pi$] de centre $\Omega$ \\ \hline
+\end{tabular}
+\end{center}
+\subsection{Déplacement de l'espace affine de dimension 3}
+\begin{center}
+% use packages: array
+\begin{tabular}{|l|l|l|}
+\hline
+Application linéaire & Point Fixe & Isométrie \\ \hline
+Identité & Aucun & Translation \\ \hline
+Rotation d'angle $\theta$ & Un point & Rotation affine d'axe affine $\Delta$, orienté par D, d'angle $\theta$ \\ \hline
+Rotation d'angle $\theta$ & Aucun & Vissage d'axe affine $\Delta$, de vecteur $u$, d'angle $\theta$ \\ \hline
+\end{tabular}
+\end{center}
+Un vissage est la composée d'une translation de vecteur $\bot$ au plan et d'une rotation plane.
+\begin{prop}
+Si f est un vissage, r une rotation plane, et $\overrightarrow{u_1}$ un vecteur $\bot$ à ce plan, alors :
+$$f = \overrightarrow{u_1} o r = r o \overrightarrow{u_1}$$
+\end{prop}

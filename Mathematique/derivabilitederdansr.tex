@@ -1,0 +1,92 @@
+\chapter{Dérivation des fonctions de $\mathbb{R}$ dans $\mathbb{R}$}
+\section{Définitions}
+\subsection{Définitions}
+\begin{de}
+Soit f définie sur un voisinage d'un réel a.
+f est dérivable en a si :
+$$\lim_{x \mapsto a} \dfrac{f(x)-f(a)}{x-a}$$
+existe dans $\mathbb{R}$\\
+Si f est dérivable, cette limite est le nombre dérivée de f en a.
+\end{de}
+\begin{prop}
+Le nombre dérivé est la pente d'une droite passant par a. Cette droite est appelé tangente à la courbe représentative de f au point d'abscisse a.\\
+L'équation de cette tangente est :
+$$y = f(a) +f'(a)(x-a)$$
+\end{prop}
+\subsection{Lien entre tangente et dérivabilité}
+Soit $x \in D_f$.
+\begin{prop}
+ Si on peut écrire f(x) sous la forme :
+$$f(x) = f(a)+A(x-a)+\varepsilon(x)(x-a)$$
+avec :
+$$\lim_{x \rightarrow a} \varepsilon(x) = 0$$
+alors f est dérivable en a et f'(a) = A.
+\end{prop}
+\subsection{Continuité et dérivabilité}
+\begin{prop}
+Si f est dérivable en a, alors f est continue en a
+\end{prop}
+\begin{prop}
+f est dérivable en a si et seulement si :
+$$\left\{\begin{array}{l}
+    \mbox{ f est dérivable à droite en a}\\
+    \mbox{ f est dérivable à gauche en a}\\
+    f'_d(a) = f'_g(a)
+  \end{array}\right.$$
+\end{prop}
+
+\subsection{Théorème de Rolle}
+\begin{theo}
+ Si :
+$$\left\{\begin{array}{l}
+     \mbox{ f est continue sur [a,b]}\\
+     \mbox{ f est dérivable sur ]a,b[}\\
+     f(a) = f(b)
+  \end{array}\right.$$
+alors : 
+$$\exists c \in ]a,b[~ tq~ f'(c)=0$$
+\end{theo}
+\subsection{Théorème des accroissement finies}
+\begin{theo}
+Si :
+$$\left\{\begin{array}{l}
+     \mbox{ f est continue sur [a,b]}\\
+     \mbox{ f est dérivable sur ]a,b[}\\
+  \end{array}\right.$$
+alors :
+$$\exists c \in ]a,b[~ tq~ \dfrac{f(b)-f(a)}{b-a} = f'(c)$$
+\end{theo}
+\subsection{Inégalité des accroissement finies}
+\begin{theo}
+Si :
+$$\left\{\begin{array}{l}
+     \mbox{ f est continue sur [a,b]}\\
+     \mbox{ f est dérivable sur ]a,b[}\\
+     \mbox{ f' est borné sur ]a,b[}
+  \end{array}\right.$$
+Soit M un majorant de |f'|, alors :
+$$|f(b) - f(a)| \leq M|b-a|$$
+\end{theo}
+\subsubsection{Conséquence}
+\begin{itemize}
+ \item[$\rightarrow$] Si f est croissante sur I, alors f'(a) $\geq 0$
+ \item[$\rightarrow$] Si f et g sont dérivable sur [a,b], avec : $\forall x \in [a,b]~ f'(x) \leq g'(x)$, alors :
+$$f(b)-f(a) \leq g(b)-g(a)$$
+\end{itemize}
+\subsection{Classe d'une fonction}
+Soit f fonction, I un intervalle
+\begin{de}
+f est de classe $C^n$ sur I si $f^{(n)}$ est définie et continue sur I
+\end{de}
+\subsubsection{Opération}
+\begin{prop}
+Soit I un intervalle, soit $n \in N$.\\
+La somme, le produit, la composé de fonction $C^n$ sur I, sont des fonctions $C^n$ sur I
+\end{prop}
+\subsection{Formulaire}
+$\forall n \in N$, $\forall x \in \mathbb{R}$ :
+$$cos^{(n)}(x) = cos(x+\dfrac{n\pi}{2})$$
+$$sin^{(n)}(x) = sin(x+\dfrac{n\pi}{2})$$
+\subsection{Formule de Leinbniz}
+Soient f et g deux fonctions n fois dérivable sur I :
+$$(fg)^{n)} = \sum_{k=0}^n \left( \dfrac{n}{k}\right) f^{(k)}.g^{(n-k)}$$

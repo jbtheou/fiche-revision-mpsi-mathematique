@@ -1,0 +1,64 @@
+\chapter{Equations linéaires}
+\section{Espace affine}
+\begin{de}
+Soit E un K-espace vectoriel.\\
+Soit F un sous-espace vectoriel de E et $x_0 \in E$
+$$\{ x_0 \} + F = \{x_0 +y / y \in F \}$$
+est appelé espace affine de direction F.
+\end{de}
+\begin{prop}
+Les espaces vectorielles sont des espaces affines particuliers.
+\end{prop}
+\begin{prop}
+Si F est de dimension finies, on dit que $\{x_0\} + F$ est un espace affine de dimension finies.\\
+Si F est une droite vectorielle, alors $\{x_0\} + F$ est une droite affine.
+\end{prop}
+\section{Equations linéaires}
+\begin{de}
+Soient E et F deux K-espace vectoriel.\\
+Soit $f \in L(E,F)$. Soit $b \in F$.\\
+L'équation d'inconnue $x$, vecteur de E :
+$$f(x) = b$$
+est appelé équation linéaire.
+\end{de}
+\subsection{Structure de l'ensemble des solutions}
+\begin{itemize}
+ \item[$\rightarrow$] Si $b \in Im(f)$, l'espace des solutions est un espace affine de dimenseion Ker(f)
+ \item[$\rightarrow$] Si $b \notin Im(f)$, l'espaces des solutions est l'ensemble vide.
+\end{itemize}
+\begin{prop}
+Si l'équation f(x) = b à une unique solution, alors :
+\begin{itemize}
+ \item[$\rightarrow$]$b \in Im(f)$
+ \item[$\rightarrow$]Ker(f) = $\{ O_E \}$
+\end{itemize}
+Donc : 
+\begin{itemize}
+ \item[$\rightarrow$]$b \in Im(f)$
+ \item[$\rightarrow$]f est injective
+\end{itemize}
+\end{prop}
+\section{Système linéaire}
+\begin{de}
+Soit (S) un système d'inconnu ($x_1,...,x_p$).\\
+Posons :
+$$K^p \rightarrow K^n$$
+$$(x_1,...,x_n) \rightarrow (a_{1,1}x_1+...+a_{1,p}x_p,...,a_{n,1}x_1+...+a_{n,p}x_p)$$
+Notons : 
+\begin{itemize}
+ \item[$\rightarrow$] x = $(x_1,...,x_n)$
+ \item[$\rightarrow$] b = $(b_1,...,b_n)$
+\end{itemize}
+On dit que :
+\begin{itemize}
+ \item[$\rightarrow$] f est l'application associée à (S)
+ \item[$\rightarrow$] Le rang du système est le rang de A ou rang de f
+ \item[$\rightarrow$] Si b $\in$ Im(f), alors S est un espace affine de dimension p-rang(A) = p-rang(S)
+\end{itemize}
+\end{de}
+\subsection{Système de Cramer}
+\begin{de}
+Un système de Cramer est un système linéaire de n équations, à n inconnues, de rang n.
+\end{de}
+On obtient la formule :
+$$x_j = \dfrac{1}{det(A)}det_{\varphi}(c_1,...,c_{j-1},b,c_{j+1},...,c_n)$$

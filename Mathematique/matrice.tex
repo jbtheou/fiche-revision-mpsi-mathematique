@@ -1,0 +1,74 @@
+\chapter{Matrices}
+\section{Inversibilité et inverse}
+Soit $A \in M_n(K)$ \\
+On peut déterminer si A est inversible et trouver son inverse à l'aide de cinq méthodes :
+\subsection{Interprétation}
+\subsubsection{1ère méthode}
+On pose que A est la matrice d'une application linéaire f dans la base canonique de $\mathbb{R}^n$. On montre que f est un isomorphisme et on détermine $f^{-1}$. Dans ce cas, $A^{-1}=mat_B(f^{-1})$
+\subsubsection{2nd méthode}
+Soit $(e_1,e_2,...,e_n)$ vecteurs de $\mathbb{R}^n$ telque A=$mat_{C_n}(e_1,...,e_n)$, avec $C_n$ la base $\left\{c_1,c_2,...c_n\right\}$. On pose le système correspondant par lecture en colonne de la matrice, à savoir :
+  \[\left\{\begin{array}{c}
+   e_1 = a_1c_1+....+a_nc_n\\
+   e_2 = b_1c_1+....+b_nc_n\\
+   ........
+  \end{array}\right.
+\]
+Puis on retourne le système, on exprime $\left\{c_1,c_2,...c_n\right\}$ en fonction de $(e_1,...,e_n)$. On en déduit donc que la base de $C^n$ est génératrice, donc base car le bon nombre d'élément. A est donc inversible. On injecte le tout par colonne dans une matrice, et on obtient la matrice inverse
+\subsection{Opérations élémentaires}
+On effectue des opérations élémentaire sur A jusqu'a obtenir la matrice unité $I_n$. On en déduit que rang(A)=n, donc A est inversible, et on reportent les opérations effectué sur A sur $I_n$. La matrice qui découle de $I_n$ est $A^{-1}$
+\subsection{Astuces et propriété}
+Si n est assez faible, 2 ou 3, on multiplie A par elle même jusqu'a obtenir une matrice de la forme : 
+$$A^{n}=\lambda A + \mu I_n $$
+On obtient $A^{-1}$ grâce à ceci : $$A.\dfrac{1}{\mu}(A^{n-1}- \lambda I_n) = I_n$$
+Si il s'agit de monter uniquement le caractère inversible de A, on utilise la propriété suivante :
+\begin{prop}
+Si $rang(A)=n$, alors A est inversible
+\end{prop}
+\section{Opérations sur les matrices}
+\subsection{Changement de base}
+\subsubsection{1ère méthode}
+On utilise la formule, dans le cas d'un endomorphisme, pour passer d'une base $B_E$ à une base $B'_E$ :
+$$M' = P^{-1}MP$$
+avec :
+  \[\left\{\begin{array}{l}
+   M'=mat_{B'_E}(f)\\
+   M=mat_{B_E}(f)\\
+   P=mat_{B_E}(B'_E)
+  \end{array}\right.
+\]
+\subsubsection{2nd méthode}
+On sait que M', la matrice dans la nouvelle base, est constitué de l'image par f de l'ancien base,$B_E$ en fonction de la nouvelle, $B'_E$. On calcule donc l'image des vecteurs de $B_E$ par f, puis on les expriment en fonction des vecteurs de la base $B'_E$
+\subsection{Calcul des coordonnée d'un vecteur dans une autre base}
+On utilise la formule suivante: 
+$$X'=P^{-1}X$$
+avec :
+  \[\left\{\begin{array}{l}
+   X = mat_{B_E}(x)\\
+   X' = mat_{B'E}(x)\\
+   P^{-1} = mat_{B'_E}(B_E)
+  \end{array}\right.
+\]
+\subsection{Coordonnée de l'image d'un vecteur dans un base}
+On utilise la formule suivante:
+$$Y=MX$$
+avec 
+  \[\left\{\begin{array}{l}
+   Y = mat_{B_E}(f(x))\\
+   X = mat_{B_E}(x)\\
+   M = mat_{B_E}(f)
+  \end{array}\right.
+\]
+\section{Base de l'image et du noyau d'une application}
+\subsection{Base de l'image}
+On détermine tout d'abord le rang de la matrice, puis on utilise la propriété qui dit que si 
+$$f : E \rightarrow E$$
+avec $B_E=(e_1,e_2,...,e_n)$ base de E, alors :
+$$Im f = Vect\left\{f(e_1),...,f(e_n)\right\}$$
+\subsection{Base du noyau}
+Si dim(Ker(f)) est 1 ou 2, alors on observe la matrice de l'application, est on cherche une combinaison de colonne qui fourni la colonne nul. Sachant que f est linéaire et que les colonne représente les images des vecteurs de base, on rassemble ces colonne et on obtient un vecteur du noyau.\\
+Exemple : 
+$$\begin{bmatrix}
+  1 & 2 \\
+  0 & 0 \\
+\end{bmatrix}$$
+On remarque que $2f(e_1)-f(e_2)=0$, donc que $2e_1-e_2 \in Ker(f)$ 

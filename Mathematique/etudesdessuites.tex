@@ -1,0 +1,132 @@
+\chapter{Etude des suites}
+\section{Suite complexe}
+Soit $(z_n)$ une suite de complexe
+\begin{prop}
+$$((z_n)\mbox{ converge vers }\lambda ) \Leftrightarrow (|z_n - \lambda| \mbox{ converge vers 0 })$$
+\end{prop}
+\begin{prop}
+$$((z_n)\mbox{ converge vers }\lambda ) \Leftrightarrow (Re(z_n) \mbox{ converge vers Re(}\lambda)~ et~ Im(z_n) \mbox{ converge vers Im(}\lambda))$$
+\end{prop}
+\begin{prop}
+Si $(z_n)$ converge vers $\lambda$, alors $(|z_n|)$ converge vers |$\lambda$|.\\
+Mais aucune information sur le comportement de l'argument.
+\end{prop}
+\begin{prop}
+Si le module de $z_n$ converge vers R et que l'argument de $z_n$ converge vers $\alpha$, alors $(z_n)$ converge vers R$e^{i\alpha}$
+\end{prop}
+\begin{prop}
+Soit $(z_n)$ suite complexe défini par :
+$$\forall n \in \mathbb{N}~ z_n = a^n$$
+Avec $a \in C$.
+Si :
+\begin{itemize}
+ \item[$\rightarrow$] a=0, $(z_n)$ est une suite constante\\
+ \item[$\rightarrow$] a $\in$ ]0,1[, $(z_n)$ converge vers 0\\
+ \item[$\rightarrow$] |a| > 1, $(z_n)$ diverge vers $+\infty$\\
+ \item[$\rightarrow$] |a| = 1.\\ \begin{itemize}
+ \item[$\rightarrow$] Si a $\neq$ 1, alors la suite diverge\\
+ \item[$\rightarrow$] Si a = 1, $(z_n)$ est une suite constante\\
+\end{itemize}
+\end{itemize}
+\end{prop}
+\section{Suites définies par récurrence}
+\begin{de}
+Soit f une fonction de $\mathbb{R}$ dans $\mathbb{R}$, définie sur $D_f$, et $(u_n)$ une suite définie telque :
+$$u_0 \in \mathbb{R}$$
+$$\forall n,~ u_{n+1} = f(u_n)$$
+\end{de}
+\subsection{Existance de la suite}
+\begin{prop}
+Soit $(u_n)$ une suite de réel, défini par récurrence à l'aide de la fonction f.
+$$(\forall n,~ u_n \mbox{ existe}) \Leftarrow (u_0 \in D_f~ et~ D_f \mbox{ est stable par f})$$
+$$(\forall n,~ u_n \mbox{ existe}) \Leftarrow (u_0 \in D_f~ et~ f(D_f) C D_f) $$
+\end{prop}
+\subsection{Sens de variation}
+\begin{prop}
+Soit $(u_n)$ une suite de réel, défini par récurrence à l'aide de la fonction f.
+$$( (u_n) \mbox{ est croissante }) \Leftrightarrow (\forall n \in \mathbb{N},~ u_{n+1}\geq u_n)$$
+$$( (u_n) \mbox{ est croissante }) \Leftrightarrow (\forall n \in \mathbb{N},~ f(u_n)\geq u_n)$$
+En pratique, si $\forall x \in I,~ f(x) \geq x$ et si $\forall n \in \mathbb{N},~ u_n\in I$, alors ($u_n$) est croissante. 
+\end{prop}
+\subsection{Limite éventuelle}
+Si $(u_n)$ converge vers l et que f est continue en l, alors l = f(l)
+\section{Règle de d'Alembert}
+Soit ($u_n$) une suite de réels positifs.\\
+Supposons que :
+$$\lim_{n \rightarrow \infty} \dfrac{u_{n+1}}{u_n} = a$$
+\begin{itemize}
+ \item[$\rightarrow$] Si a $\in \left[0,1\right[$, ($u_n$) converge vers 0
+ \item[$\rightarrow$] Si a>1, $(u_n)$ diverge vers $+\infty$
+\end{itemize}
+\section{Comparaison des suites}
+\subsection{Définitions}
+\begin{de}
+Soit $(u_n)$ et $(v_n)$ deux suites à valeur réelle.\\
+On dit que $(v_n)$ domine $(u_n)$ si :
+$$\exists A \in \mathbb{R}^{+}~ tq~ \forall n \in \mathbb{N}~ |u_n| \leq A.|v_n|$$
+On note $u_n$=O($v_n$)
+\end{de}
+\begin{de}
+On dit que $(u_n)$ est négligable devant $(v_n)$ ou que $(v_n)$ est préponderant devant $(u_n)$ si : 
+$$\forall \varepsilon > 0~ \exists n_0 \in \mathbb{N}~ tq~ \forall n \geq n_0~ |u_n|\leq \varepsilon|v_n|$$
+On note $u_n \ll v_n$ ou $u_n = o(v_n)$
+\end{de}
+\begin{de}
+On dit que $(u_n)$ est équivalent à $(v_n)$ si ($u_n - v_n$) est négligable devant $(v_n)$
+\end{de}
+\subsection{Comparaison des suites de référence}
+\begin{prop}
+Soit $(c_n)$ une suite telleque :
+$$\lim_{n \rightarrow +\infty}|c_n| = +\infty$$
+Si $(a_n)$ converge vers 0, si $(b_n)$ converge vers l, l$\neq 0$, alors :
+$$a_n \ll b_n \ll c_n$$
+\end{prop}
+\subsubsection{Comparaison des suites qui divergent vers $+\infty$}
+Soit A > 1, $\alpha > 0$ :
+$$ln(n) \ll n^{\alpha} \ll A^n \ll n! \ll n^n$$
+\subsubsection{Comparaion des suites qui converge vers 0}
+Soit B < 1, $\beta < 0$, alors :
+$$0 \ll B^n \ll n^{\beta} \ll \dfrac{1}{ln(n)}$$
+\subsubsection{Comparaion des suites convergente de limite non nul}
+Soient l,l' deux réels non nuls.\\
+Soient $(u_n)$ et ($v_n$) deux suites qui convergent respectivement vers l et l'.\\
+Alors :
+$$u_n \sim \dfrac{l}{l'}v_n$$
+\section{Règles d'utilisation des équivalents et négligabilité}
+\begin{prop}
+Soient $(u_n)$, $(v_n)$ et $(w_n)$ trois suites.
+$$u_n \ll v_n~ et~ v_n \ll w_n \Rightarrow u_n \ll w_n$$
+$$u_n \sim v_n~ et~ v_n \sim w_n \Rightarrow u_n \sim w_n$$
+$$u_n \sim v_n~ et~ v_n \ll w_n \Rightarrow u_n \ll w_n$$
+$$u_n \ll v_n~ et~ v_n \sim w_n \Rightarrow u_n \ll w_n$$
+\end{prop}
+\begin{prop}
+Soient $(u_n)$, $(v_n)$ deux suites et $(a_n),(b_n)$ deux autres suites.\\
+Si :
+$$(u_n)\sim(v_n)~ et ~ (a_n)\sim(b_n)$$
+alors :
+$$(u_n)(a_n) \sim (v_n)(b_n)$$
+Ceci n'est pas vrai dans le cas de l'addition.
+\end{prop}
+\begin{prop}
+Soient $(u_n)$, $(v_n)$ et $(a_n)$ trois suites et $\lambda,\mu$ deux réels de somme non nuls.\\
+Si :
+$$(u_n)\sim\lambda(a_n)~ et ~ (v_n)\sim\lambda(a_n)$$
+Alors :
+$$u_n + v_n \sim (\lambda+\mu)a_n$$
+Si la somme des deux réels est nul, nous n'avons aucun résultats.
+\end{prop}
+\begin{prop}
+Si $u_n \sim v_n$, alors $u_n^{\alpha} \sim v_n^{\alpha}$
+\end{prop}
+\subsubsection{Propriété des équivalents}
+\begin{prop}
+Soient $u_n$ et $v_n$ deux suites telque $u_n \sim v_n$.
+\begin{itemize}
+ \item[$\rightarrow$] Si $u_n$ diverge, alors $v_n$ diverge
+\item[$\rightarrow$] Si $u_n$ converge, alors $v_n$ converge vers la même limite
+ \item[$\rightarrow$] Si la limite de $u_n$ en l'infini est l'infini, alors la limite de $v_n$ en l'infini est aussi l'infini
+\end{itemize}
+
+\end{prop}
+

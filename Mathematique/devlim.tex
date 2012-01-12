@@ -1,0 +1,29 @@
+
+\chapter{Développement limité}
+\section{Obtenir le développement}
+\subsection{Au voisinage de 0}
+\subsubsection{Développement connu}
+On utilise les développement de référence, en vérifiant toujour que le "u" utilisé tend toujours vers 0 dans x tend vers 0. Si ce n'est pas le cas, faire un changement de variable.
+\subsubsection{Changement de variable}
+Quand on effectue un changement de variable, on pose toujours une variable qui tend vers 0. Par la suite, quand on a exprimé le développement limité usuel en fonction de t, on détermine $t,t^2,...,t^n$ jusqu'à obtenir juste un $o(x^p)$ si on cherche un développement limité d'ordre p.\\
+On peut être aussi amené à factoriser pour obtenir la forme voulu
+Ex : \\
+Soit f, la fonction : 
+$$f : x \rightarrow ln(1+\sqrt{1+x})$$
+On observe bien que $\sqrt{1+x}$ tend vers 1 quand x tend vers 0, et non vers 0. Posons donc :
+$$t = \sqrt{1+x} - 1$$
+Donc, quand $x\rightarrow 0$, t$\rightarrow 0$. D'où, au voisinage de 0:
+$$f(x) = ln (1 + t + 1)=ln(2+t)$$
+En effet, quand $t\rightarrow 0$, f(x) tend bien vers 2.
+Or le développement usuel est $ln(1+u)$, avec u qui tend vers 0. Dans ce genre de situation, on factorise toujour par 2. En effet si :
+$$f(x) = ln(a+u)$$
+$$f(x) = ln(a(1+\dfrac{u}{a}))$$
+$$f(x) = ln(a) + ln(1+\dfrac{u}{a})$$
+Et on effectue le développement limité de ln(1+t) à ce niveau.
+\section{Asymptote}
+Pour determiner l'asymptote à une courbe, on détermine en premier lieu :
+$$\lim_{x \rightarrow d} \dfrac{f(x)}{x} = a$$
+Avec a $\neq$ 0
+Puis : 
+$$\lim_{x \rightarrow d} f(x)-ax = b$$
+Alors l'asymptote est ax+b en d

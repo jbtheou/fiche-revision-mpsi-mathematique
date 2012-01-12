@@ -1,0 +1,88 @@
+\chapter{Développements limités}
+\section{Notation de Landau}
+\begin{de}
+ Si, lorsque x $\mapsto 0$, $f(x)\ll g(x)$, on note : 
+$$f(x)=o(g(x))$$
+Soit n,p entiers :
+\begin{itemize}
+ \item[$\rightarrow$] $x^n \times o(x^p) = o(x^{n+p})$
+ \item[$\rightarrow$] $o(x^n)\times o(x^p) = o(x^{n+p})$
+ \item[$\rightarrow$] $o(x^n)+o(x^p) = o(x^{inf(n,p)})$
+ \item[$\rightarrow$] Si A est un réel fixé :
+$$A \times o(x^n) = o(x^n)$$
+\end{itemize}
+\end{de}
+\section{Définitions}
+\begin{de}
+Soit f une fonction définie au voisinage de O. \\
+On dit que f possède un développement limité d'ordre n si il $\exists(a_0,...a_n) \in \mathbb{R}^n$ telque :
+$$f(x)-(a_0+a_1x+...+a_nx^n) \ll x^n$$
+donc, au voisinage de 0, $f(x)=a_0+a_1x+...+a_nx^n+o(x^n)$. \\
+Il y a unicité du développement limité.\\
+On peut faire une combinaisons linéaire de développement limité.
+\end{de}
+\begin{de}
+ On appelle partie principale du développement limité la fonction polynomiale suivant : 
+$$x\mapsto a_0+a_1x+...+a_nx^n$$
+\end{de}
+\section{Équivalence et développement limité}
+\begin{de}
+Si f possède un développement limité d'ordre n au voisinage de 0, si $\exists k$ telque $a_k\neq 0$, notons p l'indice du $1^{er}$
+terme non nuls, alors, au voisinage de 0 :
+$$f(x)\sim a_px^p$$
+\end{de}
+\section{Régularité au voisinage de 0 et développement limité}
+\begin{de}
+Au voisinage de 0 :
+\begin{itemize}
+ \item[$\rightarrow$] f est de classe $C^0 \Leftrightarrow \exists$ un développement limité d'ordre O
+ \item[$\rightarrow$] f est dérivable $\Leftrightarrow \exists$ un développement limité d'ordre 1
+  \[\left.\begin{array}{l}
+ \mbox{f est de classe } C^1 \Rightarrow \exists \mbox{ un développement limité d'ordre 1}\\
+ \mbox{f est de classe } C^2 \Rightarrow \exists \mbox{ un développement limité d'ordre 2}
+  \end{array}\right\}
+\mbox{Formule de Taylor-Young}\]
+\end{itemize}
+\end{de}
+\section{Développement limités usuels}
+\begin{itemize}
+ \item[$\rightarrow$]$(1+x)^{\alpha} = 1 + \alpha x+\dfrac{\alpha (\alpha - 1)}{2!}x^2+o(x^2)$
+ \item[$\rightarrow$]$cos(x) = 1 - \dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\dfrac{x^6}{6!}+o(x^6)$
+ \item[$\rightarrow$]$sin(x) = 1 - \dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\dfrac{x^7}{7!}+o(x^7)$
+ \item[$\rightarrow$]$e^x = 1 +x + \dfrac{x^2}{2!}+\dfrac{x^3}{3!}+\dfrac{x^4}{4!}+o(x^4)$
+ \item[$\rightarrow$]$\dfrac{1}{1-x} = 1+x+x^2+...+x^n+o(x^n)$
+ \item[$\rightarrow$]$ch(x) = 1 + \dfrac{x^2}{2!}+\dfrac{x^4}{4!}+...+\dfrac{x^{2n}}{2n!}+o(x^{2n+1})$
+ \item[$\rightarrow$]$sh(x) = 1 + \dfrac{x^3}{3!}+\dfrac{x^5}{5!}+...+\dfrac{x^{2n+1}}{(2n+1)!}+o(x^{2n+1})$
+ \item[$\rightarrow$] $ln(1+x) = x - \dfrac{x^2}{2} + \dfrac{x^3}{3} +o(x^3)$
+\end{itemize}
+\section{Dérivation et Intégration}
+\begin{de}
+Pour obtenir le développement limité de f'(x), on dérive terme à terme le développement limité de f(x). \\
+Pour obtenir le développement limité de F(x), une primitive de f(x), on intègre terme à terme :\\
+Si $f(x)=a_0+...+a_nx^n+o(x^n)$, alors :
+$$F(x)=F(0)+a_0x+...+\dfrac{a_n}{n+1}x^{n+1}+o(x^{n+1})$$
+\end{de}
+\section{Développement limité au voisinage d'un réel a}
+\begin{de}
+Soit f fonction défini au voisinage de a. On dit que f possède, au voisinage de a, un développement limité d'ordre n si $\exists P \in \mathbb{R}_n[X]$ telque :
+$$f(x) = \lambda_0+\lambda_1(x-a)+....+\lambda_n(x-a)^n+o((x-a)^n)$$
+De plus : \\
+(f est dérivable en a)$\Leftrightarrow$ (f est défini en a, \\et f possède au voisinage de a un développement limité d'ordre 1)
+\end{de}
+\subsection{Tangente}
+\begin{prop}
+ Si, au voisinage de a, f(x) = $\lambda_0+\lambda_1(x-a)+o((x-a))$, alors :
+$$y = \lambda_0+\lambda_1(x-a)$$
+est tangent à la courbe en a. Le terme suivant non nul détermine la position relative de la tangente par rapport à la courbe.
+\end{prop}
+\section{Développement limité généralisé}
+Soit $\alpha \in \mathbb{R}$
+\begin{de}
+Si au voisinage de 0, on peut écrire :
+$$f(x)=\lambda_0x^{\alpha}+...+\lambda_nx^{\alpha+n}+o(x^{\alpha+n})$$
+Alors ceci constitue un développement limité généralisé de f en 0. 
+\end{de}
+\begin{de}
+Si $x\mapsto +\infty$, avec f défini au voisinage de $+\infty$. Si on peut écrire : 
+$$f(x)=\lambda_0x^{\alpha}+....+\lambda_nx^{\alpha-n}+o(x^{\alpha-n})$$
+\end{de}

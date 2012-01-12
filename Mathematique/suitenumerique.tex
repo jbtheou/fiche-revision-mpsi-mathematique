@@ -1,0 +1,26 @@
+\chapter{Suite num\'erique - G\'eneralit\'e}
+\section{Propriétés}
+\subsection{Opérations}
+Soit (a),(b),(c) trois suites. On peut effectuer trois types d'opérations sur les suites :
+\begin{itemize}
+ \item[$\rightarrow$] Une somme : 
+$$((a)+(b) = (c)) \Leftrightarrow (\forall n \in N~ a+b =c)$$
+ \item[$\rightarrow$] Un produit : 
+$$((a).(b) = (c)) \Leftrightarrow (\forall n \in N~ a.b =c)$$
+ \item[$\rightarrow$] Un produit par un scalaire : 
+$$((a) = \lambda(c)) \Leftrightarrow (\forall n \in N~ a = \lambda c)$$
+\end{itemize}
+\section{Suites particulière}
+\subsection{Suite arithmétiques}
+Soit ($u_n$) une suite arithmétiques :
+$$\sum_{k=0}^n u_k = (n+1).\dfrac{u_0+u_n}{2}$$
+\subsection{Suite géométrique}
+Soit ($u_n$) une suite géométrique, de raison q:
+$$\sum_{k=0}^n u_k = u_0.\dfrac{1-q^{n+1}}{1-q}$$
+\section{Suites vérifiant une relation de récurrence linéaire à coefficiants constants}
+Soit ($u_n$) une suite vérifiant la récurrence :
+$$u_{n+2} = a.u_{n+1} + b.u_{n}$$
+Alors, on obtient l'équation caractéristique, en simplifiant par $r^n$ :
+$$r^2 = ar+b$$
+Donc :
+$$\exists(A,B)\in \Re^2~ tq~ (u_n) = A(r_1)^n+B(r_2)^n$$

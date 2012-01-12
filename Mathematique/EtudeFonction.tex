@@ -1,0 +1,87 @@
+\chapter{Étude locale d'une fonction}
+\section{Étude locale}
+\subsection{Dominance - Équivalence - Négligeabilité}
+Soit $a \in \mathbb{R} \cup\left\{+\infty,-\infty\right\}$. Soient f et g deux fonctions définie au voisinage de a sauf peut être en a.
+\begin{de}
+ On dit que f est dominée par g au voisinage de a si $\exists V_a$, voisinage de a telque $\mid \dfrac{f}{g} \mid$ soit majorée de $V_a$ 
+$$(f(x) = 0(g(x)))\Leftrightarrow(\exists V_a,\mbox{ voisinage de a}, \exists M \in \mathbb{R} \mbox{ telque } \forall x \in V_a~ \mid f(x) \mid \leq M \mid g(x) \mid)$$
+\end{de}
+\begin{de}
+On dit que f est négligeable devant g au voisinage de a, si, pour a $\in \mathbb{R}$ :
+$$\forall \varepsilon > 0~ \exists \alpha > 0~ telque~ \forall x \in~ ]a+\alpha;a-\alpha[~ |f(x)|\leq \varepsilon |g(x)|$$
+On le note $f(x) \ll g(x)$ et $f(x)=o(g(x))$. On a : 
+$$(f(x) \ll g(x) ) \Leftrightarrow (\lim_{x \rightarrow a} \dfrac{f(x)}{g(x)} = 0)$$
+La définition est identique si a est infini
+\end{de}
+\begin{de}
+ On dit que f est équivalent à g, si :
+$$f(x)-g(x) \ll g(x)$$
+On note $f(x) \sim g(x)$. Et on a : 
+$$(f(x)\sim g(x)) \Leftrightarrow (\lim_{x \rightarrow a} \dfrac{f(x)}{g(x)}=1)$$
+\end{de}
+\subsection{Comparaison successives}
+Soit f,g,h trois fonctions défini au voisinage de a, sauf peut être en a.\\
+Si :
+\begin{itemize}
+ \item[$\rightarrow$] Si $f(x)\ll g(x)$, $g(x)\ll h(x)$ alors :
+$$f(x)\ll h(x)$$
+ \item[$\rightarrow$] Si $f(x)\ll g(x)$, $g(x) \sim h(x) $ alors :
+$$f(x) \ll h(x) $$
+ \item[$\rightarrow$] Si $f(x) \sim g(x)$, $g(x) \ll h(x)$ alors :
+$$f(x) \ll h(x)$$
+ \item[$\rightarrow$] Si $f(x) \sim g(x)$, $g(x) \sim h(x)$ alors 
+$$f(x) \sim g(x)$$
+\end{itemize}
+\subsection{Échelle de comparaison}
+Au voisinage de 0 :
+$$0 \ll .. \ll x^2 \ll x \ll 1 \ll ln(x) \ll \dfrac{1}{x}$$
+Au voisinage de $\infty$
+$$0 \ll \dfrac{1}{x^2} \ll \dfrac{1}{x} \ll 1 \ll 1 \ll ln(x) \ll \sqrt{x} \ll x^2 \ll e^x$$
+\subsection{Règles de Manipulation}
+\subsubsection{Somme de deux fonctions}
+Si, au voisinage de a :
+\[\left.\begin{array}{l}
+   f(x) \sim \alpha u(x)\\
+   g(x) \sim \beta u(x) \\
+   \alpha + \beta \neq 0
+  \end{array}\right\}
+\mbox{Alors } f(x)+g(x) \sim (\alpha+\beta) u(x)\]
+\subsubsection{Produit, rapport, valeur absolu}
+\[\left.\begin{array}{l}
+   f(x) \sim u(x)\\
+   g(x) \sim v(x)\\
+  \end{array}\right\}
+\mbox{Alors } f(x)\times g(x) \sim u(x)\times v(x)\]
+De plus : 
+$$\dfrac{f(x)}{g(x)}\sim \dfrac{u(x)}{v(x)}$$
+Soit $\alpha$ un réel :
+$$(f(x))^{\alpha} \sim (u(x))^{\alpha}$$
+$$\mid f(x) \mid \sim \mid u(x)\mid$$
+\subsubsection{Changement de variable}
+Le changement de variable dans un équivalent est autorisé, mais pas la composé ne l'est pas.
+\begin{prop}
+ Si $f(x) \sim g(x)$, alors $\lim_{a}f$ et $\lim_{b}f$ ont même nature et si elles existent sont égales
+\end{prop}
+\subsection{Formule de Taylor avec reste de Young}
+\subsubsection{Préliminaire}
+\begin{theo}
+Si $\varphi$ est une fonction dérivable sur $V_0$, un voisinage de 0, et si
+\[\left.\begin{array}{l}
+   \varphi(0)=0\\
+   \exists n \in N \mbox{ telque si } x \rightarrow 0, \varphi'(x)=O(x^n)
+  \end{array}\right\}
+\mbox{Alors }\varphi(x)=O(x^{n+1})\]
+Si $\varphi$ est dérivable sur $V_0$ et si :
+\[\left.\begin{array}{l}
+   \varphi(0)=0\\
+    \mbox{si } x \rightarrow 0, \varphi'(x)=o(x^n)
+  \end{array}\right\}
+\mbox{Alors si }x\rightarrow0~ \varphi(x)=o(x^{n+1})\]
+\end{theo}
+\subsubsection{Formule de Taylor}
+\begin{de}
+ Si f est de classe $C^n$ sur $V_0$, alors $\forall x \in V_0$:
+$$f(x) = f(0)+f'(0)x+...+\dfrac{x^n}{n!}f^{(n)}(0)+o(x^n)$$
+Si f est de classe $C^n$ sur un voisinage de a, $V_a$, $a\in \mathbb{R}$, alors $\forall x \in V_a$:
+$$f(x) = f(0)+...+\dfrac{(x-a)^n}{n!}f^{(n)}(a)+o((x-a)^n)$$
+\end{de}

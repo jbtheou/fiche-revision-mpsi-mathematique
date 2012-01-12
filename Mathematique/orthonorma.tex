@@ -1,0 +1,22 @@
+\chapter{Procédé d'orthonormalisation de Gram-Schmidt}
+Soit (u,v,w) une base de $\mathbb{R}^3$ ( On peut étendre cette méthode pour une base de $\mathbb{R}^n$)
+On recherche une base orthonormée de $\mathbb{R}^3$ : ($e_1,e_2,e_3$).\\
+Cette base doit vérifier : 
+\begin{itemize}
+ \item[$\rightarrow$]Vect(u) = Vect($e_1$)
+ \item[$\rightarrow$]Vect($\{u,v\}$ = Vect($\{e_1,e_2\}$)
+ \item[$\rightarrow$]Vect($\{e_1,e_2,e_3\}$) = $\mathbb{R}^3$
+\end{itemize}
+Pour $e_1$, on pose directement : 
+$$e_1 = \dfrac{u}{||u||}$$
+Pour $e_2$, on détermine tout d'abord un vecteur $A_2$, colinéaire à $e_2$. A l'aide d'une représation plan, on déduit que : 
+$$A_2 = v + \lambda u$$
+On détermine $\lambda$ sachant qu'il faut que : $$<A_2,e_1> = 0$$
+On obtient donc $\lambda$. On obtient donc : 
+$$e_2 = \dfrac{A_2}{||A_2||}$$
+Pour $e_3$, on effectue une representation dans l'espace, et on déduit que :
+$$A_3 = w + \lambda u + \mu v$$
+On détermine $\lambda$ et $\mu$ sachant que $A_3$ doit vérifier : 
+$$<A_3,e_1> = <A_3,e_2> = 0$$
+Et on obtient $e_3$ : 
+$$e_3 = \dfrac{A_3}{||A_3||}$$

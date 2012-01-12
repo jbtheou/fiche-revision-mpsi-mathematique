@@ -1,0 +1,208 @@
+\chapter{Espace vectoriel}
+\section{Définitions}
+\begin{de}
+Soit E un espace et K un corps. \\
+Donc dit que (E,+,.) est un K-espace vectoriel si il vérifie les propriétés suivantes :
+\begin{enumerate}[1-]
+ \item + est une loi de composition interne : $$\forall(x,y) \in E^2~ x+y \in E$$
+ \item + est une loi associative : $$\forall(x,y,z) \in E^3~ (x+y)+z = x+(y+z)$$
+ \item + possède un élement neutre $O_E$ : $$\forall x \in E~ x+O_E = O_E+x =x $$
+ \item Tous éléments x de E est symétrisable pour + dans E. Ce symétrique est $-x$ : $$\forall x \in E~ x+(-x) = (-x)+x = O_E$$
+ \item + est commutatif dans E : $$\forall(x,y) \in E^2~ x+y=y+x$$
+ \item "." est une loi de composition externe : $$\forall x \in E, \forall \lambda \in K,~ \lambda.x \in E$$
+ \item "." possède un élement neutre $1_K$ : $$\forall x \in E~ 1_k.x = x$$
+ \item "." vérifie : $$\forall x \in E, \forall(\lambda,\mu)\in K^2~ \lambda.(\mu.x) = (\lambda\times\mu).x$$
+ \item "." vérifie : $$\forall x \in E, \forall(\lambda,\mu)\in K^2~ (\lambda+\mu).x = (\lambda.x)+(\mu.x)$$
+  \item "." vérifie : $$\forall (x,y) \in E^2, \forall\lambda\in K~ \lambda.(x+y) = \lambda.x+\lambda.y$$
+\end{enumerate}
+Si un espace ne vérifie que les $4^{ere}$ propriétés, on dit que c'est un groupe. Si il vérifie les $5^{ere}$, c'est un groupe commutatif.
+\end{de}
+\begin{prop}
+Soit E un K-espace vectoriel :\\
+\begin{itemize}
+ \item[$\rightarrow$] $\forall x \in E,~ 0_K.x = 0_E$\\
+ \item[$\rightarrow$] $\forall x \in E~ -x = (-1_K).x$\\
+ \item[$\rightarrow$] Soit x un vecteur de E, $\lambda \in K$ : $$(\lambda.x = O_E) \Leftrightarrow ( \lambda = O_K~ ou~ x=O_E)$$
+\end{itemize}
+\end{prop}
+
+\section{Sous-espaces vectoriels}
+\subsection{Définitions}
+\begin{de}
+Soit E un K-espace vectoriel. Soit F un espace.\\
+On dit que F est un sous-espace de E si :
+$$\left\{\begin{array}{l}
+   F~ c~ E\\
+   (F,+,.) \mbox{ est un K-espace vectoriel}
+  \end{array}\right.$$
+\end{de}
+\begin{prop}
+Soit E un K-espace vectoriel. Soient F et G deux sous espace de E :
+\begin{itemize}
+ \item[$\rightarrow$] $\{ O_E\}$ est le plus petit sous espace de E.
+ \item[$\rightarrow$] $F\cap G$ est un sous espace de E
+ \item[$\rightarrow$] $F\cup G$ est un sous espace de E 
+\end{itemize}
+\end{prop}
+\subsection{Critère de reconaissance}
+\begin{prop}
+( F est un sous espace de E ) $\Leftrightarrow$ $\left\{\begin{array}{l}
+   F~ c~ E\\
+   F \neq \emptyset\\
+   \forall(x,y) \in F^2, \forall (\lambda,\mu) \in K^2,~ \lambda x+\mu y \in F
+  \end{array}\right.$
+\end{prop}
+\subsection{Sous espace supplémentaire}
+Soit E un K-espace vectoriel. Soient F,G deux sous espace de E.
+\begin{de}
+ F et G sont dit en somme  direct si : $$F\cap G = \{ O_E \}$$
+\end{de}
+\begin{de}
+ F et G sont supplementaire si ils sont en somme direct et que :  $$F + G = E$$
+On le note : $$F \oplus G = E$$
+\end{de}
+\begin{prop}
+Si F et G sont supplementaires, alors $$\forall x \in E$$, il existe un unique couple (x,y) avec $y\in F$,$z \in G$ telque : $$x = y+z$$
+\end{prop}
+\subsection{Partie génératrice d'un sous-espace}
+\subsubsection{Sous espace engendré par un partie}
+Soit A une partie de E.\\
+Soit G le plus petit espace contenant A.
+\begin{de}
+G est le sous espace engendré par A. On le note : $$G = Vect(A)$$
+On dit que A est une partie génératrice de G.
+\end{de}
+\subsubsection{Sous espace engendré par une partie fini}
+Soit $u_1,...,u_n$ n vecteur de E. 
+$$Vect(\{ u_1,...,u_n \}) = \{ \lambda_1u_1+...+\lambda_nu_n / \lambda_1,...,\lambda_n \in K^n \}$$
+\subsection{Produit de deux espaces}
+\begin{de}
+Soient E et F deux K-espace vectoriel.\\
+On munit le produit E$\times$F des deux lois suivant :
+$$\forall(x,y) \in E\times F, \forall(x',y') \in E\times F, \forall \lambda \in K $$
+$$\left\{\begin{array}{l}
+   (x,y)+(x',y') = (x+x',y+y')\\
+   \lambda.(x+y) = (\lambda x,\lambda y)
+  \end{array}\right.$$
+\end{de}
+\begin{prop}
+ (E$\times$F,+,.) est un K-espace vectoriel, de vecteur nul ($O_E,O_F$)
+\end{prop}
+\section{Application linéaire}
+\begin{de}
+Soient E et F deux K-espace vectoriels, f une application de E dans F.\\
+f est une application linéaire si :
+$$\forall(x,y) \in E^2~ \forall (\lambda,\mu) \in K^2~ f(\lambda x+\mu y) = \lambda f(x) + \mu f(y)$$
+\end{de}
+\subsection{Vocabulaire}
+\begin{itemize}
+ \item[$\rightarrow$] Application linéaire $\rightarrow$ Morphisme d'espace vectoriel
+ \item[$\rightarrow$] Application linéaire de E dans E $\rightarrow$ Endomorphisme
+ \item[$\rightarrow$] Application linéaire bijective $\rightarrow$ Isomorphisme
+ \item[$\rightarrow$] Application linéaire bijective de E dans E $\rightarrow$ Automorphisme
+\end{itemize}
+On note $L(E,F)$ l'ensemble des applications linéaire de E dans F
+\begin{prop}
+Soit f isomorphisme de E dans F.\\
+Alors $f^{-1}$ existe et est linéaire de F dans E
+\end{prop}
+
+\subsection{Noyau et Image d'une application linéaire}
+Soit $f \in L(E,F)$
+\subsubsection{Image}
+\begin{de}
+On appele image de f l'ensemble des images de tous les vecteurs de E par f :
+$$Im(f) = \{f(x) / x\in E \}$$
+Im(f) est un sous espace vectoriel de F
+\end{de}
+\subsubsection{Noyau}
+\begin{de}
+On appele noyau de f l'ensemble des antécédants $O_F$ par f :
+$$Ker(f) = \{ x \in E / f(x) = 0 \}$$
+Ker(f) est un sous espace vectoriel de E
+\end{de}
+\begin{prop}
+f est une application injective si et seulement Ker(f) est réduit au vecteur nul :
+$$(\mbox{f est injective}) \Leftrightarrow (Ker(f) = \{O_E\})$$
+\end{prop}
+\subsection{Opérations sur les applications linéaires}
+\begin{itemize}
+ \item[$\rightarrow$] La combinaison linéaire de deux applications linéaire est une application linéaire
+ \item[$\rightarrow$] La composée de deux applications linéaire est linéaire
+\end{itemize}
+\subsection{Structure}
+\begin{itemize}
+ \item[$\rightarrow$] (L(E),+,o,.) est un K-Algèbre : On peut donc utiliser les identites remarquables
+ \item[$\rightarrow$] GL(E) : Groupe des automorphisme de E. Dans ce groupe : $$(fog)^{-1} = g^{-1}of^{-1}$$
+\end{itemize}
+\subsection{Projecteur}
+\begin{de}
+Soit E un K-espace vectoriel, soient F et G deux sous espaces supplémentaire de E.\\
+Soit $x \in E$
+$$\exists !(y,z), y\in F, z\in G, x=y+z$$
+On appelle projeté de x sur F parallement à G, notée p(x), le vecteur y.
+\end{de}
+\begin{prop}
+p est une application linéaire
+\end{prop}
+\begin{prop}
+Soit p la projection de F parallement à G :\\
+ \begin{itemize}
+ \item[$\rightarrow$] Im(p) = F\\
+ \item[$\rightarrow$] Ker(p) = G\\
+ \item[$\rightarrow$] pop = p\\
+ \item[$\rightarrow$] $\forall x \in E$ (p(x) =x ) $\Leftrightarrow$ (x $\in$ F)\\
+\end{itemize}
+\end{prop}
+\begin{prop}
+Soit q la projection de G parallement à F. p et q sont deux projecteur associé.
+ \begin{itemize}
+ \item[$\rightarrow$] Im(q) = G\\
+ \item[$\rightarrow$] Ker(q) = F\\
+ \item[$\rightarrow$] poq = $O_E$\\
+ \item[$\rightarrow$] p+q = Ide\\
+\end{itemize}
+\end{prop}
+\subsubsection{Propriété caractéristique}
+\begin{prop}
+Si : 
+$$\left\{\begin{array}{l}
+   \mbox{ f est linéaire}\\
+   fof = f
+  \end{array}\right.$$
+Alors f est une projection sur F parallement à G avec :
+$$\left\{\begin{array}{l}
+   F = \{ x\in E / f(x) = x\}\\
+  G = Ker(f)
+  \end{array}\right.$$
+\end{prop}
+\subsection{Symétrie}
+\begin{de}
+Soit E un K-espace vectoriel, soient F et G deux sous espaces supplémentaire de E.\\
+Soit $x \in E$
+$$\exists !(y,z), y\in F, z\in G, x=y+z$$
+On appelle symétrie de x par rapport à F parallement à G :
+$$s(x) = y-z$$
+avec :
+$$\left\{\begin{array}{l}
+   (s(x) = x ) \Leftrightarrow ( x \in F)\\
+   (s(x) = -x) \Leftrightarrow ( x \in G)
+  \end{array}\right.$$
+\end{de}
+\begin{prop}
+Soit s une symétrie :
+\begin{itemize}
+ \item[$\rightarrow$] s est une application linéaire
+ \item[$\rightarrow$] sos = Ide, donc s est une bijection
+\end{itemize}
+\end{prop}
+\subsubsection{Propriété caractéristique}
+\begin{prop}
+ Si : 
+$$\left\{\begin{array}{l}
+   \mbox{ f est linéaire}\\
+   fof = Ide
+  \end{array}\right.$$
+Alors f est une symétrie
+\end{prop}
+

@@ -1,0 +1,176 @@
+
+\chapter{Espaces vectoriels euclidiens}
+\section{Produit scalaire}
+\begin{de}
+Soit E un $\Re-$espace vectoriel et :
+$$\varphi : E\times E \rightarrow \Re$$
+$\varphi$ est un produit scalaire sur E si :
+\begin{itemize}
+ \item[$\rightarrow$] $\varphi$ est bilinéaire
+ \item[$\rightarrow$] $\varphi$ est symétrique
+ \item[$\rightarrow$] $\varphi$ est positive
+ \item[$\rightarrow$] $\varphi$ est définie
+\end{itemize}
+\end{de}
+\subsection{Notation et Vocabulaire}
+\begin{itemize}
+\item[$\rightarrow$] Si $\varphi$ est un produit scalaire sur E, on note : $$\forall(u,v) \in E^2~ \varphi(u,v) = <u,v>$$
+ \item[$\rightarrow$] On défini la norme de u par : $$\forall u \in E~ ||u|| = \sqrt{<u,u>}$$
+ \item[$\rightarrow$] Sachant que $\varphi$ est définie, on obtient : $$\forall u \in E,~ (||u||=0) \Leftrightarrow (u=0)$$
+ \item[$\rightarrow$] On dit que u et v sont orthogonaux si : $$<u,v>=0$$
+ \item[$\rightarrow$] Un espace vectoriel est dit euclidien si : \begin{enumerate}[1-]
+ \item E est de dimension finies 
+ \item On a défini un produit scalaire sur E
+\end{enumerate}
+\end{itemize}
+\section{Propriétés}
+\begin{prop}
+Soit E un $\Re$-espace euclidien.\\
+Soient u,v deux vecteurs de E : 
+$$||u+v||^2 = ||u||^2 + 2<u,v> + ||v||^2$$
+\end{prop}
+\begin{theo}
+Théorème de Pythagore : $$(\mbox{u et v sont orthogonaux}) \Leftrightarrow (||u+v|| = ||u||^2+||v||^2)$$
+\end{theo}
+\begin{prop}
+ Soit $u \in E$, soit $\lambda \in \Re$
+$$||\lambda u|| = |\lambda|.||u||$$
+\end{prop}
+
+\begin{prop}
+Inégalité de Cauchy : \\
+Soient u,v deux vecteurs :
+$$|<u,v>| \leq ||u||\times||v||$$
+Si il y a égalité, alors u et v sont colinéaire
+\end{prop}
+
+\begin{prop}
+Inégalité de Minkouskay :
+$$||x+y||^2 \leq (||x||+||y||)^2$$
+\end{prop}
+\begin{prop}
+Si $\{u_1,...,u_n\}$ sont des vecteurs non nuls et 2 à 2 orthogonaux, alors la partie est libre.
+\end{prop}
+\section{Base orthonormée}
+\begin{de}
+Soit ($e_1,...,e_n$) n vecteur de E, avec E espace de dimension n, deux à deux ortogonaux et unitaire ( $\forall k~ ||e_k|| = 1$).
+Alors,($e_1,...,e_n$) est une base dites orthonormée.
+\end{de}
+\begin{prop}
+Soit B une base orthonormée de E. Soient u,v deux vecteurs de E de coordonnée respectif ($x_1,...,x_n$) et ($y_1,...,y_n$), alors :
+$$<u,v> = x_1y_1+...+x_ny_n$$
+\end{prop}
+\begin{prop}
+On défini dans ce cas la norme de u par : 
+$$||u|| = \sqrt{x_1^2+...+x_n^2}$$
+\end{prop}
+\begin{prop}
+Pour déterminer les coordonnées dans une base orthonormée, on détermine : 
+$$\forall k \in \{1,...,p\}~ <u,e_k> = x_k$$
+\end{prop}
+\subsection{Matrice orthogonales}
+\begin{de}
+Une matrice de passage entre deux bases orthonormées est dites orthogonale.
+\end{de}
+\begin{prop}
+ Soit B une base orthonormée. Soit B' une autre base. Soit P = $mat_B(B')$.
+$$(\mbox{B' est orthogonale}) \Leftrightarrow (P^{-1} = ^tP)$$
+\end{prop}
+\begin{prop}
+Soit P une matrice orthogonale :
+$$det(P) = \pm 1$$
+\end{prop}
+\begin{prop}
+Si P est orthogonale, alors $^tP$ est orthogonale et ($l_1,...,l_n$) forme aussi une base orthonormée de $\Re^n$
+\end{prop}
+\subsection{Orientation de l'espace vectoriel}
+\begin{de}
+Soit E un espace vectoriel.\\
+On oriente une base en définisant une base dites directe.
+\end{de}
+\begin{prop}
+Soit $B_0$ une base directe.\\
+Si B est une base de E : 
+\[\left\{\begin{array}{l}
+   det_{B_0}(B) > 0 \mbox{ B est directe}\\
+   det_{B_0}(B) < 0 \mbox{ B est indirecte}\\
+  \end{array}\right.\]
+\end{prop}
+\begin{prop}
+Soit B,B' deux bases de E :
+$$(det_B(B') > 0) \Leftrightarrow (\mbox{ B et B' ont la même orientation})$$
+Dans le cas des bases orthonormée, on as : 
+\end{prop}
+\subsubsection{Bases orthonormée}
+\begin{prop}
+Soit $B_1$ une base orthonormée directe
+\[\left\{\begin{array}{l}
+   det_{B_1}(B) = 1 \mbox{ alors B est orthonormée directe}\\
+   det_{B_1}(B) = -1 \mbox{ alors B est orthonormée indirecte}\\
+  \end{array}\right.\]
+\end{prop}
+\begin{prop}
+Soit $(u_1,...,u_n) \in \Re^n$.\\
+Si B et B' sont deux bases orthonormée directe : 
+$$det_B(u_1,...,u_n) = det_{B'}(u_1,...,u_n)$$
+Ce déterminant commun à toutes les bases orthonormée directe est notée Det($u_1,...,u_n$)
+\end{prop}
+\subsection{Orthogonalité et sous-espace}
+Soit E un espace euclidien
+\subsubsection{Sous espace orthogonaux}
+\begin{de}
+Soient F et G deux sous-espaces.
+$$(\mbox{F est orthogonal à G})\Leftrightarrow (\forall x \in F,\forall y \in G,~ <x,y>=0)$$
+\end{de}
+\begin{prop}
+Deux sous espaces orthogonaux sont en somme directe.
+\end{prop}
+\begin{prop}
+On en déduit que : 
+$$dim(F)+dim(G) \leq dim(E)$$
+\end{prop}
+\subsubsection{Orthogonal d'un sous-espace}
+\begin{de}
+Soit F un sous espace de E.\\
+On appele orthogonale de F l'ensemble des vecteurs de E qui sont orthogonaux à tous les vecteurs de F.\\
+On note :
+$$F^{\bot} = \{x\in E / \forall y \in F~ <x,y>=0\}$$
+\end{de}
+\begin{prop}
+$F^{\bot}$ est un espace vectoriel.
+\end{prop}
+\begin{prop}
+F et $F^{\bot}$ sont deux sous espaces supplémentaire
+\end{prop}
+\begin{prop}
+On en déduit que :
+$$dim(F^{\bot})=dim(E) - dim(F)$$
+\end{prop}
+\begin{prop}
+L'orthogonale de l'orthogonale de F :
+$$(F^{\bot})^{\bot} = F$$
+\end{prop}
+\begin{prop}
+Soit $\varphi \in L(E,\Re)$.\\
+Soit u un vecteur de E de coordonée $(x_1,...,x_n)$. Il existe donc ($a_1,...,a_n$) telque :
+$$\varphi(u) = a_1x_1+...+a_nx_n$$
+On obtient donc : 
+$$\varphi(u) = <a,u>$$
+Par conséquence :
+$$Ker(\varphi) = (Vect(a))^{\bot}$$
+\end{prop}
+\subsection{Projection orthogonale}
+\begin{de}
+La projection orthogonale sur un sous espace vectoriel F est la projection sur F parallèlement à $F^{\bot}$
+\end{de}
+\begin{de}
+Soit B($e_1,...e_p$) une base orthonormée de F.\\
+Soit x un vecteur de E de coordonnées ($x_1,...,x_p$).\\
+On obtient donc le projetté orthogonale de x sur F, notée p(x) : 
+$$p(x)=<x,e_1>e_1+...+<x,e_p>e_p$$
+\end{de}
+\begin{prop}
+Si p est la projection orthogonale sur F. Si $u \in E$, alors :
+$$Inf\{||u-x|| / x \in F \} = ||u - p(u)||$$
+\end{prop}
+

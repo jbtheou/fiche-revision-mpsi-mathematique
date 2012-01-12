@@ -1,0 +1,88 @@
+\chapter{Nombres complexe et géométrie dans le plan}
+\section{Alignement, Orthogonalité, Cocyclicité}
+Soit $(\overrightarrow{AB};\overrightarrow{AC})$ l'angle formé par ces deux vecteurs.
+$$(\overrightarrow{AB};\overrightarrow{AC}) = arg\left(\dfrac{c-a}{b-a}\right) ~ [2\pi]$$
+Soit :$$z = \left(\dfrac{c-a}{b-a}\right) $$
+\subsection{Alignements}
+$$\mbox{A,B,C alignées} \Leftrightarrow \left(\dfrac{c-a}{b-a} \in \Re \right) \Leftrightarrow arg\left(\dfrac{c-a}{b-a}\right) = 0  $$
+$$\mbox{A,B,C alignées} \Leftrightarrow (z = \overline{z}) \Leftrightarrow (Det(\overrightarrow{AB};\overrightarrow{AC})) = 0$$
+avec $Det(\overrightarrow{u},\overrightarrow{v)} = xy' - x'y$ 
+\subsection{Orthogonalité}
+$$\overrightarrow{AB};\overrightarrow{AC} \mbox{ orthogonaux} \Leftrightarrow \left(\dfrac{c-a}{b-a} \in i\Re \right) \Leftrightarrow arg\left(\dfrac{c-a}{b-a}\right) = \dfrac{\pi}{2}~ [\pi]  $$
+$$\overrightarrow{AB};\overrightarrow{AC} \mbox{ orthogonaux} \Leftrightarrow (z = -\overline{z}) \Leftrightarrow (\overrightarrow{AB}.\overrightarrow{AC}) = 0$$
+\subsection{Cocyclicité}
+Soit A,B,C trois points d'un cercle C de centre O.
+$$(\overrightarrow{OB};\overrightarrow{OC}) = 2(\overrightarrow{AB};\overrightarrow{AC})~ [2\pi]$$
+\subsubsection{Condition de cocyclicité}
+\begin{prop}
+ Si $(\overrightarrow{AB};\overrightarrow{AC}) = (\overrightarrow{DB};\overrightarrow{DC})~ [\pi]$ alors A,B,C,D sont soit cocyclique, soit alignés.
+\end{prop}
+\section{Similitude}
+Soit z l'affixe de M, z' l'affixe de M'.
+\subsection{Translation}
+\begin{de}
+ Soit $\overrightarrow{u}$ vecteur du plan. On appele translation de vecteur $\overrightarrow{u}$ l'application :
+$$t_{\overrightarrow{u}} : P \rightarrow P$$
+$$M \mapsto M'$$
+avec $\overrightarrow{MM'} = \overrightarrow{u}$
+\end{de}
+\subsubsection{Expression analytique complexe}
+soit $\alpha$ l'affixe de $\overrightarrow{u}$\
+Alors :
+$$z' = \alpha + z$$
+\subsubsection{Bijectivité}
+$t_{\overrightarrow{u}}$ est une application bijective. Soit :
+$$t_{\overrightarrow{u}}^{-1} : P \rightarrow P$$
+$$M \mapsto M'$$
+avec z' = z - $\alpha$
+\subsection{Homothetie}
+\begin{de}
+ Soit $\Omega$ un point d'affixe $\omega$. Soit $k \in \Re$.\
+On appele homothétie de centre $\Omega$ et de rapport k l'application :
+$$h :  P \rightarrow P $$
+$$M \mapsto M'$$
+avec $\overrightarrow{\Omega M'}=k\overrightarrow{\Omega M}$ 
+\end{de}
+\subsubsection{Expression analytique complexe}
+$$z'-\omega = k(z-\omega)$$
+On détermine le centre d'une homothétie en déterminant son point fixe, donc en résolvant :
+$$z = z'$$
+\subsubsection{Bijectivité}
+h est une application bijective. Soit :
+$$h^{-1} : P \rightarrow P$$
+$$M \mapsto M'$$
+avec z' - $\omega$ = $\dfrac{1}{k}(z - \omega)$
+\subsection{Rotation}
+\begin{de}
+Soit $\Omega$ un point d'affixe $\omega$ et $\theta$ un réel.\
+On appele rotation de centre $\Omega$ et d'angle $\theta$ l'application
+$$r : P \rightarrow P$$
+$$M \mapsto M'$$
+avec $\Omega M'$=$\Omega M$ et $(\overrightarrow{\Omega M};\overrightarrow{\Omega M'})$ = $\theta$ [$2\pi$]
+\end{de}
+\subsubsection{Expression analytique complexe}
+$$z' - \omega = e^{i\theta}(z-w)$$
+On détermine le centre d'une rotation en déterminant son point fixe, donc en résolvant :
+$$z = z'$$
+\subsubsection{Bijectivité}
+h est une application bijective. Soit :
+$$r^{-1} : P \rightarrow P$$
+$$M \mapsto M'$$
+avec z' - $\omega = e^{-i\theta}(z - \omega)$
+\subsection{Similitude}
+\begin{de}
+Soit $\Omega$ un point d'affixe $\omega$ et ($\theta$,k) $\in \Re^2$.\
+On appele similitude direct de centre $\Omega$, d'angle $\theta$, et de rapport k l'application :
+$$S : P \rightarrow P$$
+$$ M \mapsto M'$$
+avec $\Omega M'$=$k\Omega M$ et $(\overrightarrow{\Omega M};\overrightarrow{\Omega M'})$ = $\theta$ [$2\pi$]
+\end{de}
+\subsubsection{Expression analytique complexe}
+$$z' - \omega  = ke^{i\theta}(z-w)$$
+On détermine le centre d'une similitude en déterminant son point fixe, donc en résolvant :
+$$z = z'$$
+\subsubsection{Bijectivité}
+S est une application bijective. Soit :
+$$S^{-1} : P \rightarrow P$$
+$$M \mapsto M'$$
+avec z' - $\omega$ = $\dfrac{1}{k}e^{-i\theta}(z - \omega)$

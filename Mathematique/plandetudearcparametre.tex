@@ -1,0 +1,198 @@
+\chapter{Arcs Paramétrés et Arcs Polaire}
+\section{Étude locale d'un arc}
+\begin{de}
+Soit $\tau$ un arc paramétré défini par (F,I), avec I un intervalle et F une fonction : 
+$$F : I \rightarrow \mathbb{R}^2$$
+$$t \mapsto M(t)$$
+avec : M(t) = $\begin{pmatrix}
+  x(t)\\
+  y(t)\\
+\end{pmatrix}$
+\end{de}
+\begin{prop}
+Supposons que x et y soient de classe $C^n$ sur I, alors on dit que ($\tau$) est de classe $C^n$
+\end{prop}
+\subsection{Point Régulier} 
+Si $\dfrac{d\overrightarrow{M}}{dt}(t_0) \neq \overrightarrow{0}$, alors  $\dfrac{d\overrightarrow{M}}{dt}(t_0)$ est un vecteur directeur de la tangente au support de l'arc en M($t_0$). On dit alors que M($t_0$) est un point régulier de l'arc.
+\subsection{Point Singulier} Si $\dfrac{d\overrightarrow{M}}{dt}(t_0) = \overrightarrow{0}$, alors M($t_0$) est un point singulier.\\
+Par application de la formule de Taylor, on obtient les deux entiers caractéristiques suivants.
+\subsubsection{Premier entier caractéristique de $(\tau)$ en M($t_0$)}
+\begin{de}
+Notons p, si il existe : 
+$$p = Min\{k / \dfrac{d^k\overrightarrow{M}}{dt^k}(t_0) \neq \overrightarrow{O}\}$$
+alors $\dfrac{d^p\overrightarrow{M}}{dt^p}(t_0)$ est tangent à l'arc en M($t_0$)
+\end{de}
+\subsubsection{Deuxième entier caractéristique de ($\tau$) en M($t_0$)}
+Notons q, si il existe :
+$$q = Min\{k / \dfrac{d^k\overrightarrow{M}}{dt^k}(t_0)~ et~ \dfrac{d^p\overrightarrow{M}}{dt^p}(t_0) \mbox{ soient non colinéaire} \}$$
+\subsubsection{Coordonnée de M(t) dans un repère particulier}
+Soit R le repère défini par : $(M(t_0),\dfrac{d^p\overrightarrow{M}}{dt^p}(t_0),\dfrac{d^q\overrightarrow{M}}{dt^q}(t_0))$\\
+Dans ce repère, on obtient les coordonnées suivantes pour M(t): 
+\[\left\{\begin{array}{l}
+  X(t) \sim \dfrac{(t-t_0)^p}{p!}\\
+  Y(t) \sim \dfrac{(t-t_0)^q}{q!}\\
+  \end{array}\right.\]
+On obtient donc :
+\begin{itemize}
+ \item[$\rightarrow$]p paire, q impaire : Point de rebroussement du première ordre
+ \item[$\rightarrow$]p paire, q paire : Point de rebroussement du deuxième ordre
+ \item[$\rightarrow$]p impaire, q paire : Point ordinaire
+ \item[$\rightarrow$]p impaire, q impaire : Point d'inflexion
+\end{itemize}
+\section{Etude métrique des arc paramétré}
+\subsection{Longeur d'un arc}
+Soit $(\tau)$ un arc de classe $C^1$ sur I = [a,b], avec a < b.\\ Soit l($\widehat{M(a)M(b)}$) la longeur de l'arc $(\tau)$ reliant M(a) à M(b). On obtient : 
+$$l(\widehat{M(a)M(b)}) = \int_a^b ||\dfrac{d\overrightarrow{M}}{dt}(t)||dt$$
+\subsection{Abscisse curviligne}
+Soit $\tau$ un arc de classe $C^1$ sur un intervalle I.\\
+On défini une abscisse curviligne avec :
+\begin{enumerate}[1-]
+ \item Un point de l'arc, appelé origine.
+ \item Une orientation sur l'axe : 
+\begin{itemize}
+ \item[$\rightarrow$] Le sens des t croissants
+ \item[$\rightarrow$] Ou le sens des t décroissants
+\end{itemize}
+\end{enumerate}
+Soit M(t$_0$) l'origine de l'abcisse, soit s(t) l'abscisse du point M(t).
+$$s(t) = \varepsilon \int_{t_0}^t ||\dfrac{d\overrightarrow{M}}{dt}(u)||du$$
+avec $\varepsilon = \pm 1$ selon l'orientation de l'axe.\\
+On obtient aussi : 
+$$\dfrac{ds}{dt} = ||\dfrac{d\overrightarrow{M}}{dt}||.\varepsilon$$
+s est un paramétrage du support de l'arc. De plus, on obtient : 
+$$||\dfrac{d\overrightarrow{M}}{ds}|| = 1$$
+\subsubsection{Repère de Frenet en M(t)}
+On note $\overrightarrow{T} = \dfrac{d\overrightarrow{M}}{ds}$ le premier vecteur de Frenet en M($t)$. On le calcul en utilisant le faite que : 
+$$\dfrac{d\overrightarrow{M}}{ds} = \dfrac{\varepsilon}{||\frac{d\overrightarrow{M}}{dt}||}.\dfrac{d\overrightarrow{M}}{dt}$$
+On note $\overrightarrow{N}$ l'unique vecteur vérifiant que (M(t),$\overrightarrow{T},\overrightarrow{N}$) soit un repère orthonormée directe, appelé repère de Frenet en M(t).\\
+Soit $\varphi =(\overrightarrow{i},\overrightarrow{T}) [2\pi]$, avec $\overrightarrow{i}$ vecteur horizontal passant par M(t).\\
+Alors : 
+$$\overrightarrow{T} = \begin{pmatrix}
+  cos(\varphi)\\
+  sin(\varphi)\\
+\end{pmatrix}$$
+$$\overrightarrow{N} = \begin{pmatrix}
+  -sin(\varphi)\\
+  cos(\varphi)\\
+\end{pmatrix}$$
+\subsection{Courbure d'un arc en un point}
+\begin{de}
+On défini le rayon de courbure en M(t), notée R, par : 
+$$R = \dfrac{ds}{d\varphi}$$
+\end{de}
+\begin{de}
+La courbure en M(t), notée $\gamma$, est défini par : 
+$$\gamma = \dfrac{1}{R} = \dfrac{d\varphi}{ds} = \dfrac{\frac{d\varphi}{dt}}{\frac{ds}{dt}}$$
+\end{de}
+\subsection{Formules de Frenet}
+Soit $\overrightarrow{T}\begin{pmatrix}
+  cos(\varphi)\\
+  sin(\varphi)\\
+\end{pmatrix}$ et $\overrightarrow{N}\begin{pmatrix}
+  -sin(\varphi)\\
+  cos(\varphi)\\
+\end{pmatrix}$ les deux vecteurs de la base de Frenet.\\
+Sachant que : 
+$$\dfrac{d\overrightarrow{T}}{d\varphi} = \overrightarrow{N}$$
+On obtient : 
+$$\dfrac{d\overrightarrow{T}}{ds} = \gamma \overrightarrow{N}$$
+De meme, on obtient que : 
+$$\dfrac{d\overrightarrow{N}}{ds} = -\gamma \overrightarrow{T}$$
+\subsubsection{Lien entre courbure, vitesse et accélération}
+Notons $\overrightarrow{V} = \dfrac{d\overrightarrow{M}}{dt}$ et v = ||$\overrightarrow{V}$||.\\
+On obtient : 
+$$\overrightarrow{V} = \varepsilon.v.\overrightarrow{T}$$.
+Notons $\overrightarrow{a} = \dfrac{d\overrightarrow{V}}{dt}$. Alors : 
+$$\overrightarrow{a} = \varepsilon.\dfrac{dv}{dt}.\overrightarrow{T}+v^2.\gamma.\overrightarrow{N}$$
+De cette expression, on en déduit que : 
+$$\gamma = \varepsilon.\dfrac{Det(\overrightarrow{V},\overrightarrow{a})}{v^3}$$
+\section{Plan d'étude d'un arc paramétré}
+\begin{enumerate}[1-]
+ \item Domaine de définition\\
+ \item Réduction du domaine d'étude :\\ 
+\begin{itemize} 
+\item[{$\rightarrow$}] Periodicité\\
+\item[{$\rightarrow$}] Symétrie\\
+\item[{$\rightarrow$}] Partié\\
+\end{itemize}
+\item Dérivablité : Faire un double tableau de variation (un pour x, un pour y)\\
+\item Tangentes\\
+\begin{itemize} 
+\item[{$\rightarrow$}] \underline{En un point régulier} : Le vecteur de coordonée $(x'(t_0),y'(t_0))$ est tangent en $t_0$.\\
+\item[{$\rightarrow$}] \underline{En un point singulier} :\\
+$$\underset{t \mapsto t_0}\lim \dfrac{y'(t)}{x'(t)}$$
+Ou on peut utiliser la méthode des entiers caractéristiques
+\item[{$\rightarrow$}] \underline{En un point limite}\\
+$$\underset{t \mapsto t_0}\lim \dfrac{y(t)-\underset{t_0}\lim y}{x(t)-\underset{t_0}\lim x}$$
+\end{itemize}
+\item Branches infinies : Si $\underset{t_0}\lim x= +\infty$ et $\underset{t_0}\lim y= +\infty$\\
+\begin{itemize}
+ \item[$\rightarrow$] $\underset{t_0}\lim\dfrac{y}{x}$\\
+\begin{itemize}
+ \item[$\rightarrow$] $\infty$ : \underline{Branche de direction Oy}\\
+ \item[$\rightarrow$] $a \in \mathbb{R}$ :\\
+\begin{itemize}
+ \item[$\rightarrow$] $\underset{t_0}\lim y-ax$ :\\
+\begin{itemize}
+ \item[$\rightarrow$] $b \in \mathbb{R}$ : \underline{y = ax+b asymptote}\\
+ \item[$\rightarrow$] $\infty~ ou~ \emptyset$ : \underline{Branche de direction ax}\\
+\end{itemize}
+ \item[$\rightarrow$] 0 : \underline{Branche de direction Ox}\\
+ \item[$\rightarrow$] $\emptyset$ : \underline{Aucune méthode}\\
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\item Concavité :\\
+\begin{itemize}
+ \item[$\rightarrow$] Etude du signe de $Det(\overrightarrow{v};\overrightarrow{\Gamma})$\\
+\item[$\rightarrow$] L'angle $(\overrightarrow{v};\overrightarrow{\Gamma})$ donne la position de la tangente\\
+\item[$\rightarrow$] Les points d'inflexion sont les points de changements de concavité\\
+\end{itemize}
+\item Point double : On résoud le système suivant, d'inconnu (t,t'), avec $t \neq t'$ :
+\[\left\{\begin{array}{l}
+   x(t) = x(t')\\
+   y(t) = y(t') \\
+  \end{array}\right.\]
+\end{enumerate}
+\section{Arcs polaire}
+\subsection{Liens polaire-cartésien}
+Soit ($\rho$,$\theta$) les coordonnée de M, telque :
+$$\overrightarrow{OM} = \rho\overrightarrow{u}(\theta)$$
+On obtient les coordonées cartérisien de M avec : 
+\[\left\{\begin{array}{l}
+   x = \rho cos(\theta)\\
+   y = \rho sin(\theta)\\
+  \end{array}\right.\]
+On a donc : 
+$$\rho = \pm \sqrt{x^2 + y^2}$$
+\subsection{Equivalence et symétrie}
+Soit $M(\rho,\theta) = M(-\rho,\theta + \pi)$ (cette égalité est vérifie pour tout point du plan) :
+\begin{itemize}
+ \item[$\rightarrow$] $M_1$ symétrique de M par rapport à (Ox) si :
+$$M_1(\rho, -\theta + k2\pi / k \in Z)$$
+\item[$\rightarrow$] $M_2$ symétrique de M par rapport à (Oy) si :
+$$M_2(\rho, \pi -\theta)$$
+\item[$\rightarrow$] $M_3$ symétrique de M par rapport à l'origine si :
+$$M_3(\rho, \pi + \theta)$$
+\end{itemize}
+\subsection{Étude des tangentes}
+\begin{itemize}
+ \item[$\rightarrow$] Si $\rho(\theta)$ est dérivable en $\theta$ : $\dfrac{dM(\theta)}{\theta}$ est tangent en M($\theta$)
+$$\dfrac{dM(\theta)}{\theta} = \rho'\overrightarrow{u} + \rho\overrightarrow{v}$$
+avec : 
+$$\overrightarrow{u}(\theta)\begin{pmatrix}
+  \cos(x)  \\
+  \sin x  \\
+\end{pmatrix}$$
+$$\overrightarrow{v}(\theta)\begin{pmatrix}
+  \ -sin(x)  \\
+  \cos x  \\
+\end{pmatrix}$$
+\item[$\rightarrow$] Si $\rho(\theta)$ = 0 : $\overrightarrow{u}(\theta)$ est tangent en 0
+\end{itemize}
+\subsection{Etude d'une branche infini}
+Si : $$\lim_{\theta \mapsto \theta_0} \rho(\theta) = \infty$$
+Alors la courbe possède une branche infini de direction $\overrightarrow{u}(\theta_0)$.\
+On réalise alors une étude dans le repère (0,$\overrightarrow{u}(\theta_0)$,$\overrightarrow{v}(\theta_0))$ : 
+$$\lim_{\theta \mapsto \theta_0} Y(\theta)$$
+avec $Y(\theta) = \rho sin(\theta - \theta_0)$

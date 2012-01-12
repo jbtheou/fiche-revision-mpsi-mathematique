@@ -1,0 +1,36 @@
+\chapter{Équations différentielle linéaire}
+\section{Généralité}
+\begin{de}
+On considère (E) l'équation d'inconnue la fonction y n fois dérivable sur une partie A de $\mathbb{R}$ :
+$$\forall x \in A,~ a_n(x).y^{(n)}(x)+...+a_0.y(x) = b(x)$$
+avec : $a_n,..,a_0,b$ des fonctions définies sur A.\\
+On dit que (E) est une équation differentielle linéaire d'ordre n.
+\end{de}
+\begin{nota}
+On note cette équation : 
+$$(E) :~ \forall x \in A :~  a_n(x).y^{(n)}+...+a_0.y = b(x)$$
+\end{nota}
+\begin{prop}
+L'ensemble des solutions de (E) est soit:
+\begin{itemize}
+ \item[$\rightarrow$] Vide
+ \item[$\rightarrow$] Un espace affine de direction l'espace vectoriel des solutions de l'équation sans second membre.\\
+\end{itemize}
+Si les coefficients sont constant.\\
+L'ensemble des solutions est un espace de dimension n. 
+\end{prop}
+\chapter{Équations différentielles linéaire d'ordre 1}
+\begin{de}
+Soit A $\in \mathbb{R}$.\\
+Soit a,b,c trois fonctions définies sur A, et (E):
+$$(E) :~ a(x).y' + b(x).y = c(x)$$
+$$(E_0) :~ a(x).y' + b(x).y = 0$$
+Si :
+\begin{itemize}
+ \item[$\rightarrow$] Si a et b sont continues sur A
+ \item[$\rightarrow$] A est un intervalle, notons le I
+ \item[$\rightarrow$] $\forall x \in I~ a(x) \neq 0$
+\end{itemize}
+Alors : 
+$$(E_0) \Leftrightarrow (\exists K \in \mathbb{R}~ tq~ \forall x \in I~ y(x)=K.e^{\int \frac{-b(x)}{a(x)}dx})$$
+\end{de}

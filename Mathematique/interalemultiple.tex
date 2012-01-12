@@ -1,0 +1,44 @@
+\documentclass[a4paper,12 pt,oneside]{report}     % Type de document
+\usepackage[utf8x]{inputenc}			  % Utilisation du UTF8
+\usepackage{textcomp}				  % Accents dans les titres
+\usepackage [ french ] {babel}                    % Titres en français
+\usepackage [T1] {fontenc} 			  % Correspondance clavier -> document
+\usepackage[Lenny]{fncychap}                      % Beau Chapitre
+\usepackage{dsfont}                    	  	  % Pour afficher N,Z,D,Q,R,C
+\usepackage{fancyhdr}                             % Entete et pied de pages
+\usepackage [outerbars] {changebar}               % Positionnement barre en marge externe
+\usepackage{amsmath}				  % Utilisation de la librairie de Maths
+%\usepackage{amsfont}				  % Utilisation des polices de Maths
+\usepackage{cite}                                 % Citations de la bibliographie
+\usepackage{openbib}                              % Gestion avancée de Bibtex
+\usepackage{enumerate}				  % Permet d'utiliser la fonction énumerate
+\usepackage{dsfont}				  % Utilisation des polices Dsfont
+\usepackage{ae}					  % Rend le PDF plus lisible
+
+\newtheorem{de}{Définition}
+\newtheorem{theo}{Théorème}
+\newtheorem{prop}{Propriété}
+
+%$\begin{bmatrix}
+%  \cos(x)-X & -\sin x \\
+%  \sin x & \cos(x)-X \\
+%\end{bmatrix}$
+
+%opening
+\title{Intégrale double}
+\author{MPSI}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{Définitions}
+\begin{de}
+Soit f une fonction continue sur un domaine D de $\Re^2$.\\
+On appele intégrale de f sur D le volume de la partie de l'espace limité par D et par la surface représentative de f. On note :
+$$\iint_D f = \iint_D f(x,y)dxdy$$
+\end{de}
+\section{Méthode des parallépidèdes}
+Par analogie avec la méthode des rectangles dans le plan, on obtient : 
+$$\iint_D f(x,y)dxdy = \int_a^b \left( \int_{\alpha(x)}^{\beta(x)} f(x,y)dy\right) dx$$
+
+
+\end{document}

@@ -1,0 +1,52 @@
+
+\chapter{Espace euclidien de dimension 3}
+\section{Définitions}
+\section{Angle de deux vecteurs non nuls}
+Soient $\overrightarrow{u},\overrightarrow{v}$ deux vecteurs non nuls, non colinéaire.\\
+Soit $\overrightarrow{n}$ vecteur orthogonale à $\overrightarrow{u}$ et $\overrightarrow{v}$.
+On obtient : 
+$$\left\{\begin{array}{l}
+   cos(\theta) = \dfrac{<\overrightarrow{u};\overrightarrow{v}>}{||\overrightarrow{u}||.||\overrightarrow{v}||}\\
+   et~ : \\
+   sin(\theta) = \dfrac{Det(\overrightarrow{u};\overrightarrow{v};\overrightarrow{n})}{||\overrightarrow{u}||.||\overrightarrow{v}||.||\overrightarrow{n}||}
+  \end{array}\right.$$
+\subsection{Produit vectoriel}
+\begin{de}
+ Soit ($\overrightarrow{i},\overrightarrow{j},\overrightarrow{k}$) une base orthonormée directe de E.\\
+Le produit vectoriel est l'unique application de E$\times$E dans E :\\
+\begin{itemize}
+ \item Alternée : $\overrightarrow{u}\wedge\overrightarrow{v} = -\overrightarrow{v}\wedge\overrightarrow{u}$
+ \item Bilinéaire
+ \item Vérifiant : 
+$\left\{\begin{array}{l}
+\overrightarrow{i}\wedge\overrightarrow{j} = \overrightarrow{k}\\
+\overrightarrow{j}\wedge\overrightarrow{k} = \overrightarrow{i}\\
+\overrightarrow{k}\wedge\overrightarrow{i} = \overrightarrow{j}\\  
+\end{array}\right.$
+\end{itemize}
+La définition du produit vectoriel est indépendante du choix de la base orthonormée.
+\end{de}
+\begin{prop}
+Soit $\overrightarrow{u},\overrightarrow{v}$ deux vecteurs :
+$$(\overrightarrow{u}\wedge\overrightarrow{v}=\overrightarrow{0}) \Leftrightarrow ( \overrightarrow{u}~ et~ \overrightarrow{v} \mbox{ sont colinéaire})$$
+\end{prop}
+\begin{prop}
+Soient $\overrightarrow{u},\overrightarrow{v}$ deux vecteurs non colinéaire : 
+$$\overrightarrow{u}\wedge\overrightarrow{v}\bot\overrightarrow{u}$$
+\end{prop}
+\begin{prop}
+On obtient la propriété suivante, pour la norme du produit vectoriel : 
+$$||\overrightarrow{u}\wedge\overrightarrow{v}|| = ||\overrightarrow{u}||.||\overrightarrow{v}||.|sin(\theta)|$$
+\end{prop}
+\subsection{Double produit vectoriel}
+\begin{prop}
+Soient $\overrightarrow{a},\overrightarrow{b},\overrightarrow{c}$ trois vecteurs :
+$$\overrightarrow{a}\wedge(\overrightarrow{b}\wedge\overrightarrow{c}) = \overrightarrow{b}.(\overrightarrow{a}.\overrightarrow{c}) - \overrightarrow{c}.(\overrightarrow{a}.\overrightarrow{b})$$ 
+\end{prop}
+
+\subsection{Produit mixte}
+\begin{de}
+ Soient $\overrightarrow{u},\overrightarrow{v},\overrightarrow{w}$ trois vecteurs de E :
+$$\overrightarrow{u}\wedge\overrightarrow{v}.\overrightarrow{w} = Det(\overrightarrow{u},\overrightarrow{v},\overrightarrow{w})$$
+\end{de}
+

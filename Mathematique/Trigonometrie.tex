@@ -1,0 +1,63 @@
+
+\chapter{Trigonométrie}
+\section{Formules}
+\subsection{Décomposition}
+\begin{itemize}
+ \item[{$\rightarrow$}] cos(a+b) = cos(a).cos(b) - sin(a).sin(b)\\
+ \item[{$\rightarrow$}] cos(a-b) = cos(a).cos(b) + sin(a).sin(b)\\
+ \item[{$\rightarrow$}] sin(a+b) = sin(a).cos(b) + sin(b).cos(a)\\
+ \item[{$\rightarrow$}] sin(a-b) = sin(a).cos(b) - sin(b).cos(a)\\
+ \item[{$\rightarrow$}] tan(a+b) = $\dfrac{tan(a) + tan(b)}{1 - tan(a).tan(b)}$\\
+ \item[{$\rightarrow$}] tan(a-b) = $\dfrac{tan(a) - tan(b)}{1 + tan(a).tan(b)}$
+\end{itemize}
+\subsection{Angle double}
+\begin{itemize}
+\item[{$\rightarrow$}] sin(2a) = 2.sin(a).cos(a)\\
+\item[{$\rightarrow$}] cos(2a) = $2.cos^2(a)-1$ = $1 - 2.sin^2(a)$\\
+\item[{$\rightarrow$}] tan(2a) = $\dfrac{2.tan(a)}{1-tan^2(a)}$
+\end{itemize}
+\subsection{Linéarisation}
+\begin{itemize}
+ \item[{$\rightarrow$}] 2.cos(a).cos(b) = cos(a+b) + cos(a-b)\\
+\item[{$\rightarrow$}] 2.sin(a).sin(b) = cos(a-b) - cos(a+b)\\
+\item[{$\rightarrow$}] 2.sin(a).cos(b) = sin(a+b) + sin(a-b)\\
+\item[{$\rightarrow$}] $cos^2(a) = \dfrac{1+cos(2a)}{2}$\\
+\item[{$\rightarrow$}] $sin^2(a) = \dfrac{1-cos(2a)}{2}$
+\end{itemize}
+\subsection{Somme}
+Soit $(p,q) \in \mathbb{R}^2$
+\begin{itemize}
+\item[{$\rightarrow$}]cos(p) + cos (q) = $2.(cos(\dfrac{p+q}{2}).cos(\dfrac{p-q}{2}))$ \\
+\item[{$\rightarrow$}]cos(p) - cos (q) = -$2.(sin(\dfrac{p+q}{2}).sin(\dfrac{p-q}{2}))$\\
+\item[{$\rightarrow$}]sin(p) + sin (q) = $2.(sin(\dfrac{p+q}{2}).cos(\dfrac{p-q}{2}))$\\
+\item[{$\rightarrow$}]sin(p) - sin (q) = $2.(cos(\dfrac{p+q}{2}).sin(\dfrac{p-q}{2}))$
+\end{itemize}
+\section{Fonction inverse}
+\subsection{Fonction Hyperbolique}
+\begin{center}
+% use packages: array
+\begin{tabular}{llll}
+Fonction & $D_f$ & $D_{f'}$ & f'(x) \\
+Argch & $]1:+\infty$ & ]1;$+\infty$[ & $\dfrac{1}{\sqrt{x^2-1}}$ \\  
+Argsh & $\mathbb{R}$ & $\mathbb{R}$ & $\dfrac{1}{\sqrt{x^2+1}}$ \\ 
+Argth & $]-1;1[$ & $]-1;1[$ & $\dfrac{1}{1-x^2}$ \\ 
+\end{tabular}
+\end{center}
+\subsection{Fonction Trigonométrique}
+\begin{center}
+% use packages: array
+\begin{tabular}{|l|l|l|l|}
+\hline
+Fonction & $D_f$ & $D_{f'}$ & f'(x) \\ \hline
+Arccos & [-1:1] & ]-1;1[ & $\dfrac{-1}{\sqrt{1-x^2}}$ \\  \hline
+Arcsin & [-1:1] & ]-1;1[ & $\dfrac{1}{\sqrt{1-x^2}}$ \\ \hline
+Arctan & $\mathbb{R}$ & $\mathbb{R}$ & $\dfrac{1}{1+x^2}$ \\ \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+ \item[{$\rightarrow$}] $\forall x \in \mathbb{R}$ arcsin(x) + arccos(x) = $\dfrac{\pi}{2}$\\
+ \item[{$\rightarrow$}] $\forall x \in \mathbb{R}^*$ arctan(x) + arctan($\dfrac{1}{x}$) = $\pm\dfrac{\pi}{2}$ (dépend du signe de x)\\
+ \item[{$\rightarrow$}] $\forall x \in \mathbb{R}~ cos^2(x)+sin^2(x) = 1$\\
+ \item[{$\rightarrow$}] $\forall x \in \mathbb{R}~ ch^2(x) - sh^2(x) = 1$
+\end{itemize}
+

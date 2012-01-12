@@ -1,0 +1,287 @@
+\documentclass[a4paper,12 pt,oneside]{report}     % Type de document
+\usepackage[utf8x]{inputenc}			  % Utilisation du UTF8
+\usepackage{textcomp}				  % Accents dans les titres
+\usepackage [ french ] {babel}                    % Titres en français
+\usepackage [T1] {fontenc} 			  % Correspondance clavier -> document
+\usepackage[Lenny]{fncychap}                      % Beau Chapitre
+\usepackage{dsfont}                    	  	  % Pour afficher N,Z,D,Q,R,C
+\usepackage{fancyhdr}                             % Entete et pied de pages
+\usepackage [outerbars] {changebar}               % Positionnement barre en marge externe
+\usepackage{amsmath}				  % Utilisation de la librairie de Maths
+%\usepackage{amsfont}				  % Utilisation des polices de Maths
+\usepackage{cite}                                 % Citations de la bibliographie
+\usepackage{openbib}                              % Gestion avancée de Bibtex
+\usepackage{enumerate}				  % Permet d'utiliser la fonction énumerate
+\usepackage{dsfont}				  % Utilisation des polices Dsfont
+\usepackage{ae}					  % Rend le PDF plus lisible
+
+\newtheorem{de}{Définition}
+\newtheorem{theo}{Théorème}
+\newtheorem{prop}{Propriété}
+
+%$\begin{bmatrix}
+%  \cos(x)-X & -\sin x \\
+%  \sin x & \cos(x)-X \\
+%\end{bmatrix}$
+
+%opening
+\title{Méthodologie}
+\author{MPSI}
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Matrices}
+\section{Inversibilité et inverse}
+Soit $A \in M_n(K)$ \\
+On peut déterminer si A est inversible et trouver son inverse à l'aide de cinq méthodes :
+\subsection{Interprétation}
+\subsubsection{1ère méthode}
+On pose que A est la matrice d'une application linéaire f dans la base canonique de $\Re^n$. On montre que f est un isomorphisme et on détermine $f^{-1}$. Dans ce cas, $A^{-1}=mat_B(f^{-1})$
+\subsubsection{2nd méthode}
+Soit $(e_1,e_2,...,e_n)$ vecteurs de $\Re^n$ telque A=$mat_{C_n}(e_1,...,e_n)$, avec $C_n$ la base $\left\{c_1,c_2,...c_n\right\}$. On pose le système correspondant par lecture en colonne de la matrice, à savoir :
+  \[\left\{\begin{array}{c}
+   e_1 = a_1c_1+....+a_nc_n\\
+   e_2 = b_1c_1+....+b_nc_n\\
+   ........
+  \end{array}\right.
+\]
+Puis on retourne le système, on exprime $\left\{c_1,c_2,...c_n\right\}$ en fonction de $(e_1,...,e_n)$. On en déduit donc que la base de $C^n$ est génératrice, donc base car le bon nombre d'élément. A est donc inversible. On injecte le tout par colonne dans une matrice, et on obtient la matrice inverse
+\subsection{Opérations élémentaires}
+On effectue des opérations élémentaire sur A jusqu'a obtenir la matrice unité $I_n$. On en déduit que rang(A)=n, donc A est inversible, et on reportent les opérations effectué sur A sur $I_n$. La matrice qui découle de $I_n$ est $A^{-1}$
+\subsection{Astuces et propriété}
+Si n est assez faible, 2 ou 3, on multiplie A par elle même jusqu'a obtenir une matrice de la forme : 
+$$A^{n}=\lambda A + \mu I_n $$
+On obtient $A^{-1}$ grâce à ceci : $$A.\dfrac{1}{\mu}(A^{n-1}- \lambda I_n) = I_n$$
+Si il s'agit de monter uniquement le caractère inversible de A, on utilise la propriété suivante :
+\begin{prop}
+Si $rang(A)=n$, alors A est inversible
+\end{prop}
+\section{Opérations sur les matrices}
+\subsection{Changement de base}
+\subsubsection{1ère méthode}
+On utilise la formule, dans le cas d'un endomorphisme, pour passer d'une base $B_E$ à une base $B'_E$ :
+$$M' = P^{-1}MP$$
+avec :
+  \[\left\{\begin{array}{l}
+   M'=mat_{B'_E}(f)\\
+   M=mat_{B_E}(f)\\
+   P=mat_{B_E}(B'_E)
+  \end{array}\right.
+\]
+\subsubsection{2nd méthode}
+On sait que M', la matrice dans la nouvelle base, est constitué de l'image par f de l'ancien base,$B_E$ en fonction de la nouvelle, $B'_E$. On calcule donc l'image des vecteurs de $B_E$ par f, puis on les expriment en fonction des vecteurs de la base $B'_E$
+\subsection{Calcul des coordonnée d'un vecteur dans une autre base}
+On utilise la formule suivante: 
+$$X'=P^{-1}X$$
+avec :
+  \[\left\{\begin{array}{l}
+   X = mat_{B_E}(x)\\
+   X' = mat_{B'E}(x)\\
+   P^{-1} = mat_{B'_E}(B_E)
+  \end{array}\right.
+\]
+\subsection{Coordonnée de l'image d'un vecteur dans un base}
+On utilise la formule suivante:
+$$Y=MX$$
+avec 
+  \[\left\{\begin{array}{l}
+   Y = mat_{B_E}(f(x))\\
+   X = mat_{B_E}(x)\\
+   M = mat_{B_E}(f)
+  \end{array}\right.
+\]
+\section{Base de l'image et du noyau d'une application}
+\subsection{Base de l'image}
+On détermine tout d'abord le rang de la matrice, puis on utilise la propriété qui dit que si 
+$$f : E \rightarrow E$$
+avec $B_E=(e_1,e_2,...,e_n)$ base de E, alors :
+$$Im f = Vect\left\{f(e_1),...,f(e_n)\right\}$$
+\subsection{Base du noyau}
+Si dim(Ker(f)) est 1 ou 2, alors on observe la matrice de l'application, est on cherche une combinaison de colonne qui fourni la colonne nul. Sachant que f est linéaire et que les colonne représente les images des vecteurs de base, on rassemble ces colonne et on obtient un vecteur du noyau.\\
+Exemple : 
+$$\begin{bmatrix}
+  1 & 2 \\
+  0 & 0 \\
+\end{bmatrix}$$
+On remarque que $2f(e_1)-f(e_2)=0$, donc que $2e_1-e_2 \in Ker(f)$ 
+\chapter{Développement limité}
+\section{Obtenir le développement}
+\subsection{Au voisinage de 0}
+\subsubsection{Développement connu}
+On utilise les développement de référence, en vérifiant toujour que le "u" utilisé tend toujours vers 0 dans x tend vers 0. Si ce n'est pas le cas, faire un changement de variable.
+\subsubsection{Changement de variable}
+Quand on effectue un changement de variable, on pose toujours une variable qui tend vers 0. Par la suite, quand on a exprimé le développement limité usuel en fonction de t, on détermine $t,t^2,...,t^n$ jusqu'à obtenir juste un $o(x^p)$ si on cherche un développement limité d'ordre p.\\
+On peut être aussi amené à factoriser pour obtenir la forme voulu
+Ex : \\
+Soit f, la fonction : 
+$$f : x \rightarrow ln(1+\sqrt{1+x})$$
+On observe bien que $\sqrt{1+x}$ tend vers 1 quand x tend vers 0, et non vers 0. Posons donc :
+$$t = \sqrt{1+x} - 1$$
+Donc, quand $x\rightarrow 0$, t$\rightarrow 0$. D'où, au voisinage de 0:
+$$f(x) = ln (1 + t + 1)=ln(2+t)$$
+En effet, quand $t\rightarrow 0$, f(x) tend bien vers 2.
+Or le développement usuel est $ln(1+u)$, avec u qui tend vers 0. Dans ce genre de situation, on factorise toujour par 2. En effet si :
+$$f(x) = ln(a+u)$$
+$$f(x) = ln(a(1+\dfrac{u}{a}))$$
+$$f(x) = ln(a) + ln(1+\dfrac{u}{a})$$
+Et on effectue le développement limité de ln(1+t) à ce niveau.
+\section{Asymptote}
+Pour determiner l'asymptote à une courbe, on détermine en premier lieu :
+$$\lim_{x \rightarrow d} \dfrac{f(x)}{x} = a$$
+Avec a $\neq$ 0
+Puis : 
+$$\lim_{x \rightarrow d} f(x)-ax = b$$
+Alors l'asymptote est ax+b en d
+\chapter{Fraction Rationnelle}
+\section{Partie entière}
+Pour déterminer la partie entière, on fait la division euclidienne du numérateur par le dénominateur, sans l'ordre de multiplicité si il existe.
+\section{Décomposition en élements simple}
+On décompose en élements simple et on détermine ces coefficent en travaillant sur l'égalité :
+$$\dfrac{Num.}{(X-a)^{\alpha}(X-b)^{\beta}} = \dfrac{\lambda_1}{(X-a)} \dfrac{\lambda_2}{(X-a)^2}...\dfrac{\lambda_{\alpha}}{(X-a)^{\alpha}} \dfrac{\mu_1}{(X-b)} \dfrac{\mu_2}{(X-b)^2}...\dfrac{\mu_{\beta}}{(X-b)^{\beta}}$$
+Si deg(Dénomin.) > 1 (ex : $(X^2+1)^{\alpha}$), dans la décomposition, alors :\
+$\forall i \in \left\lbrace 1,2,...,\alpha \right\rbrace $
+$$\lambda_i = \lambda_{i_1}X+\lambda_{i_2}$$
+\subsection{Dans C}
+\subsubsection{Pôle simple}
+Si $F = \dfrac{P}{Q} = \dfrac{P}{(X-a)Q_1}$, avec a qui n'est pas racine de $Q_1$, on obtient donc : 
+$$F = F_0 + \dfrac{\lambda}{X-a}$$
+Avec a qui n'est pas un pôle de $F_0$. Il existe deux techniques pour déterminer $\lambda$: 
+\begin{enumerate}[I) ]
+ \item On multiple F par le dénominateur, X-a, et on détermine la valeur en a. $$(X-a)F= \dfrac{P}{Q_1}=F_0(X-a) + \lambda$$
+$$\lambda = \dfrac{\tilde{P}(a)}{\tilde{Q_1}(a)}$$
+ \item On utilise la dérivé. On applique la formule de Taylor en a pour Q. 
+$$Q = 0 + \tilde{Q'}(a)(X-a) + (X-a)^2R$$
+avec $R \in C[X]$.\
+D'où :
+$$(X-a)F = (X-a)\dfrac{P}{\tilde{Q'}(a)(X-a) + (X-a)^2R} = \dfrac{P}{\tilde{Q'}(a) + (X-a)R}$$
+Et on prend la valeur en a de cette expression. On obtient : 
+$$\lambda = \dfrac{\tilde{P}(a)}{\tilde{Q'}(a)}$$
+\end{enumerate}
+\subsubsection{Pôle double}
+\begin{itemize}
+ \item[$\rightarrow$]Sans ordre de multiplicité :\ Si une fraction F possède un pôle double, a et b, alors on détermine les coefficiants c et d en prenant la valeur en a de (X-a)F et la valeur en b de (X-b)F.
+ \item[$\rightarrow$] Avec ordre de multiplicité :\ Si une fraction F possède un pôle double, a et b, avec les ordres de multiplicité respectif $\alpha$ et $\beta$, alors on détermine deux des coefficiants en prenant la valeur en a de $(X-a)^{\alpha}$ et la valeur en b de $(X-b)^{\beta}$.\
+Pour déterminer les autres coefficiants, on détermine des valeurs particulière. En géneral, pour $\alpha$=2, on prend la valeur en 0 et la limite en $+\infty$
+\end{itemize}
+\subsubsection{Parité}
+Si on a : $F(-X) = -F(X)$ ou $F(-X)=F(X)$ on développe les expressions et on obtient entre les différentes coefficiants des relations, ce qui limite les calculs.
+\subsection{Dans R}
+\subsubsection{Décomposition indirecte}
+Si on a la décomposition dans C, avec des pôles imaginaire, on met sous le même dénominateur les fractions avec les pôles conjugés. On obtient la décomposition dans R.
+\subsubsection{Décomposition direct}
+\begin{itemize}
+ \item[$\rightarrow$] Soit on passe par un ensemble de valeur particulier, pour déterminer les différents coefficiants
+ \item[$\rightarrow$] Soit, si possible, on utilise un pole complexe, et on détermine les coefficiant.\ Ex: On utilise la valeur en i de ($X^2$+1)F.
+\end{itemize}
+\chapter{Vrac - Analyse}
+\section{Équation de droite}
+Si on a un point A et un vecteur directeur $\overrightarrow{u}$, alors on pose un point M et on détermine :
+$$det(\overrightarrow{AM},\overrightarrow{u}) = 0$$
+Si on a un point A et un vecteur directeur $\overrightarrow{n}$, alors on pose un point M et on détermine :
+$$\overrightarrow{n}.\overrightarrow{AM}=0$$ 
+\section{Etude d'une limite}
+Comment étudier la limite en a de f ?\\
+Soit f une fonction définie sur I, sauf peut etre en a.\\
+Soit b$\in \bar{\Re}$.\\
+Pour déterminer si la limite en a de f est b : 
+\begin{itemize}
+ \item[$\rightarrow$] Regarder si f est une "composée" au voisinage de a de fonction continue.
+ \item[$\rightarrow$] Utiliser le théorème d'encadrement
+ \item[$\rightarrow$] Décomposer en limite à gauche et limite à droite
+\end{itemize}
+
+\chapter{Intégrale}
+\section{Étude de la fonction}
+\subsection{Définition}
+Soit $$g: x\mapsto \int_{u(x)}^{v(x)} f$$
+Pour étudier le domaine de définition d'une fonction :
+\begin{itemize}
+ \item[{$\rightarrow$}] On travaille à x fixé : Soit $x \in \Re$
+ \item[{$\rightarrow$}] Puis : (f(x) existe) $\leftarrow$
+$\left\{\begin{array}{l}
+   \mbox{u(x) existe}\\
+   \mbox{v(x) existe} \\
+   \mbox{f est continue par morceaux sur [u(x);v(x)]}
+  \end{array}\right. $
+\end{itemize}
+\section{Primitive}
+Soit f défini sur un ensemble E : 
+\begin{itemize}
+ \item[$\rightarrow$] Si E n'est pas un intervalle, alors ????
+ \item[$\rightarrow$] Si E est un intervalle : \begin{itemize}
+ \item[$\rightarrow$]Si f n'est pas continue en un réel de E, alors ???
+ \item[$\rightarrow$]Si f est continue sur E, alors f admet un ensemble de primitive
+
+\end{itemize}
+
+
+\end{itemize}
+
+\subsection{Dérivabilité}
+On défini une fonction primitive de f, qui est une fonction continue par morceaux, sur son domaine de définition. On la note F.\ On obtient :
+$$g(x) = F(v(x)) - F(u(x))$$
+Ce qui permet de dire que f est dérivable, comme F est par définition dérivable.
+\chapter{Procédé d'orthonormalisation de Gram-Schmidt}
+Soit (u,v,w) une base de $\Re^3$ ( On peut étendre cette méthode pour une base de $\Re^n$)
+On recherche une base orthonormée de $\Re^3$ : ($e_1,e_2,e_3$).\\
+Cette base doit vérifier : 
+\begin{itemize}
+ \item[$\rightarrow$]Vect(u) = Vect($e_1$)
+ \item[$\rightarrow$]Vect($\{u,v\}$ = Vect($\{e_1,e_2\}$)
+ \item[$\rightarrow$]Vect($\{e_1,e_2,e_3\}$) = $\Re^3$
+\end{itemize}
+Pour $e_1$, on pose directement : 
+$$e_1 = \dfrac{u}{||u||}$$
+Pour $e_2$, on détermine tout d'abord un vecteur $A_2$, colinéaire à $e_2$. A l'aide d'une représation plan, on déduit que : 
+$$A_2 = v + \lambda u$$
+On détermine $\lambda$ sachant qu'il faut que : $$<A_2,e_1> = 0$$
+On obtient donc $\lambda$. On obtient donc : 
+$$e_2 = \dfrac{A_2}{||A_2||}$$
+Pour $e_3$, on effectue une representation dans l'espace, et on déduit que :
+$$A_3 = w + \lambda u + \mu v$$
+On détermine $\lambda$ et $\mu$ sachant que $A_3$ doit vérifier : 
+$$<A_3,e_1> = <A_3,e_2> = 0$$
+Et on obtient $e_3$ : 
+$$e_3 = \dfrac{A_3}{||A_3||}$$
+\chapter{Arithmétique}
+\section{Théorème de Bezout}
+Pour résoudre une équation de la forme : 
+$$a.u+b.v = c$$ 
+d'inconnus (u,v), avec c le P.G.C.D de u et v, on détermine tout d'abord le P.G.C.D de u et v par le théorème d'Euclide. On procède de la façon suivante : 
+\begin{enumerate}[1-]
+ \item u = $q_1$.v + $r_1$
+ \item v = $q_2$.$r_1$ + $r_2$
+ \item $r_1$ = $q_3$.$r_2$ + $r_3$ ......
+ \item Puis on arrive à : 
+ \item $r_{n-1}$ = $q_{n-1}$.$r_n$ + $r_{n+1}$
+ \item $r_n$ = $q_n.r_{n+1} + 0$
+\end{enumerate}
+Alors le P.G.C.D de u et v est le dernier reste non nul, $r_{n+1}$\\
+Puis, par application du théorème de Bezout qui dit que : Il existe deux entier a et b tel que, si le P.C.G.D de u et v est d, alors : 
+$$a.u+b.v = d$$
+On exprime le premier reste en fonction de u et v, puis on retrouve les autres expressions qu'on injecte dans le première. On obtient au final a et b.
+\chapter{Fonctions de $\Re^2$ dans $\Re$}
+\section{Caractérisation de l'existence d'une limite}
+Pour montrer qu'il existe une limite, on peut procéder de trois façon differentes : 
+\begin{itemize}
+ \item[$\rightarrow$] Par utilisation de la définition : $$\forall \varepsilon > 0~ \exists \alpha > 0~ tq~ \forall (x,y)\in B((x_0,y_0),\alpha)~ :~ |f(x,y) -l| < \varepsilon$$
+ \item[$\rightarrow$] Par utilisation des propriétés sur les sommes, produits et compositions
+ \item[$\rightarrow$] À l'aide du théorème d'encadrement
+\end{itemize}
+\section{Caractérisation de la non-existence de limite}
+Pour caractériser le fait qu'une limite n'existe pas, on utilise l'idée des "chemins".\\
+On recherche tout d'abord deux couples différents, ($x_1,y_1$) et ($x_2,y_2$), qui converge vers (a,b) par exemple :  
+\begin{itemize}
+ \item[$\rightarrow$] $\lim_{t_0} x_1 = a$ 
+ \item[$\rightarrow$] $\lim_{t_0} y_1 = b$ 
+ \item[$\rightarrow$] $\lim_{\alpha} x_2 = a$ 
+ \item[$\rightarrow$] $\lim_{\alpha} y_2 = b$ 
+\end{itemize}
+Puis si on obtient, avec l différents de l' :
+\begin{itemize}
+ \item[$\rightarrow$] $\lim_{t \rightarrow t_0} f(x_1(t),y_1(t)) = l$
+ \item[$\rightarrow$] $\lim_{u \rightarrow \alpha} f(x_2(y),y_2(u)) = l'$
+\end{itemize}
+Alors on en déduit que la limite en (a,b) de f n'existe pas
+
+\end{document}

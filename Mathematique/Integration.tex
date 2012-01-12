@@ -1,0 +1,228 @@
+\chapter{Intégration}
+\begin{de}
+L'intégrale d'une fonction est par définition un nombre.\\
+Une primitive est une autre fonction.
+\end{de}
+\section{Fonctions continues par morceaux}
+\subsection{Subdivision}
+Soit [a,b] segment de $\mathbb{R}$, avec a<b.
+\begin{de}
+On appelle subdivision de [a,b], une liste vérifiant :
+$$a=x_0<x_1<....<x_n=b$$
+On note $\sigma=(x_i)_{a\leq i\leq n}$.\\
+Le pas d'une subdivision, qui est la longueur d'intervalle la plus importante, est défini comme :
+$$\underset{1 \leq i \leq n}\max |x_i - x_{i-1}|$$
+\end{de}
+Si les intervalles sont tous de la mêmes longueurs, la subdivision est dite régulière. De plus, si $\sigma$ est celle d'une subdivision régulière de [a,b], alors :
+$$\forall k,~ x_k = a+k\dfrac{b-a}{n}$$ 
+\subsection{Fonction en escalier sur [a,b]}
+Soit f fonction définie sur [a,b].
+\begin{de}
+ On dit que f est en escalier si il existe une subdivision de [a,b] : $(x_i)_{0 \leq i \leq n}$ telle que :
+$$\forall i \in \left\lbrace1,...n\right\rbrace, \mbox{ f est constante sur } ]x_{i-1};x_i[$$
+\end{de}
+\begin{prop}
+On défini les propriétés suivantes :
+ \begin{itemize}
+ \item[$\rightarrow$] Une fonction en escalier est bornée
+ \item[$\rightarrow$] L'ensemble des fonctions en escalier sur [a,b] est un $\mathbb{R}$-espace vectoriel
+\end{itemize}
+\end{prop}
+\subsection{Fonction continue par morceaux}
+Soit f défini sur [a,b]
+\begin{de}
+ f est continue par morceaux sur [a,b] si :
+\[\left\{\begin{array}{l}
+   \forall i \in \left\lbrace1,2,...,n\right\rbrace \mbox{ f est continue sur }]x_{i-1};x_i[\\
+   \forall i \in \left\lbrace1,2,...,n\right\rbrace~ \underset{x_{i}^-}\lim\mbox{ existe }\\
+    \forall i \in \left\lbrace0,2,...,n-1\right\rbrace~ \underset{x_{i}^+}\lim\mbox{ existe }\\
+  \end{array}\right.
+\]
+\end{de}
+\begin{prop}
+ On défini les propriétés suivantes :
+\begin{itemize}
+ \item[$\rightarrow$] Une fonction continue par morceaux est bornée
+ \item[$\rightarrow$] L'ensemble des fonctions continue par morceaux sur [a,b] est un espace vectoriel
+ \item[$\rightarrow$] Une fonction en escalier est continue par morceaux
+ \item[$\rightarrow$] Une fonction continue sur [a,b] est continue par morceaux
+\end{itemize}
+\end{prop}
+
+\subsection{Approximation d'une fonction continue par morceaux par des fonctions en escalier}
+Soit f continue par morceaux sur [a,b] ( ce qui comprend les fonctions continues sur [a,b])
+\begin{de}
+$$\exists \varepsilon > 0 \mbox{ Il existe deux fonctions en escalier sur [a,b], }\varphi \mbox{ et } \psi \mbox{ telque } $$
+\[\left\{\begin{array}{c}
+  \forall x \in [a,b]~ \varphi(x)\leq f(x) \leq \psi(x)\\
+  0 \leq \psi(x) - \varphi(x) \leq \varepsilon 
+  \end{array}\right.
+\]
+\end{de}
+\section{Intégrale de Riemann}
+\subsection{Intégrale d'une fonction en escalier}
+\begin{de}
+Soit $\varphi$ fonction en escalier sur [a,b].\\
+Notons $(x_i)_{0 \leq i \leq n}$ une subdivision adaptée à $\varphi$, et posons : 
+$$\forall i \in \left\lbrace 1,..,n\right\rbrace,~ \forall x \in ]x_{i-1};x_i[~ \varphi(x) = \lambda_i$$
+L'intégrale sur [a,b] de $\varphi$ est : 
+$$\int_{[a,b]}\varphi = \sum_{i=1}^n(x_i - x_{i-1})\lambda_i$$
+\end{de}
+On note aussi cette intégrale de la façon suivante :\\
+Si a < b, alors :
+$$\int_{[a,b]}\varphi = \int_a^b\varphi$$
+Si b < a : 
+$$\int_{[a,b]}\varphi = \int_b^a\varphi$$
+Convention : 
+$$\int_a^b\varphi =-\int_b^a\varphi$$
+$$\int_a^a\varphi = 0$$
+\begin{prop}
+Si $\varphi$ et $\psi$ sont deux fonctions en escalier sur [a,b].\\
+Si $\lambda$ et $\mu$ sont deux réels :
+$$\int_{[a,b]}\lambda\varphi + \mu\varphi = \lambda\int_{[a,b]}\varphi + \mu\int_{[a,b]}\psi$$
+\end{prop}
+\begin{prop}
+Soient $\varphi$ et $\psi$ deux fonctions en escalier sur [a,b].\\
+Si $\forall x \in [a,b]$, $\varphi(x) \leq \psi(x)$, alors :
+$$\int_{[a,b]}\varphi \leq \int_{[a,b]}\psi$$
+\end{prop}
+De plus, si $\varphi \geq 0$ sur [a,b] alors : 
+$$\int_{[a,b]}\varphi \geq 0$$
+\section{Intégrale d'une fonction continue par morceaux}
+Soit f fonction continue par morceaux sur [a,b]. Notons :
+\[\left\{\begin{array}{l}
+   E_+ = \left\lbrace \varphi \mbox{ en escalier sur [a,b] } / \varphi \geq g \right\rbrace \\
+   E_- = \left\lbrace \varphi \mbox{ en escalier sur [a,b] } / \varphi \leq g \right\rbrace \\
+   A_+ = \left\lbrace \int_{[a,b]} \varphi / \varphi \in E_+ \right\rbrace\\
+   A_- = \left\lbrace \int_{[a,b]} \varphi / \varphi \in E_- \right\rbrace\\
+  \end{array}\right.
+\]
+\begin{prop}
+ Inf($A_+$) et Sup($A_-$) existent et sont égaux
+\end{prop}
+\begin{de}
+ La valeur commune de ces deux réels est l'intégrale de Riemannsur [a,b] de f. On la note :
+$$\int_{[a,b]}f$$
+\end{de}
+\subsection{Somme de Riemann}
+\begin{prop}
+Soit f fonction continue par morceaux sur [a,b].\\
+Notons $\forall n \in N$:
+Alors $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ converge vers $\int_{[a,b]}f$
+\[\left\{\begin{array}{l}
+   u_n = \frac{b-a}{n} \sum_{k=1}^n f(a+k\frac{b-a}{n} ) \\
+   v_n = \frac{b-a}{n} \sum_{k=0}^{n-1} f(a+k\frac{b-a}{n} ) \\
+  \end{array}\right.
+\]
+\end{prop}
+\subsection{Linéarité}
+\begin{prop}
+Soient $\lambda$,$\mu$ réels, f, g fonctions continues par morceaux.
+$$\int_{[a,b]}\lambda\varphi + \mu\varphi = \lambda\int_{[a,b]}\varphi + \mu\int_{[a,b]}\psi$$
+\end{prop}
+\subsection{Transmition de l'ordre}
+\begin{prop}
+ Si f et g sont continue par morceaux et $f \leq g$, alors :
+$$\int_{[a,b]}f \leq \int_{[a,b]}g$$
+\end{prop}
+\subsection{Intégrale et valeur absolu}
+\begin{prop}
+Soit f fonction continue par morceaux sur [a,b], donc : 
+$$\int_{[a,b]}|f| \geq \mid\int_{[a,b]}f\mid$$
+\end{prop}
+\subsection{Relation de Chasles}
+\begin{prop}
+Soit f continues par morceaux sur [a,b] et $b \in [a,c]$.
+$$\int_{[a,c]}f = \int_{[a,b]}f + \int_{[b,c]}f$$
+\end{prop}
+\subsection{Inégalité de la moyenne}
+\begin{prop}
+Soit f,g continues par morceaux sur [a,b], g est bornée, avec a < b. Donc M = $\underset{[a,b]}\sup|g|$ existe.
+$$|\int_{[a,b]}fg| \leq \underset{[a,b]}\sup|g|\times\int_{[a,b]}|f|$$
+\end{prop}
+\begin{de}
+ $\dfrac{1}{b-a}\int_{[a,b]}g$ est la valeur moyenne de g sur [a,b].
+$$\int_{[a,b]}g = \mu(b-a)$$
+\end{de}
+\section{Intégrale et primitive d'une fonction continue}
+On obtient les propriétés suivant : 
+\[\left\{\begin{array}{l}
+   \mbox{Soit } x \in I.\mbox{ f est continue sur I, donc } \int_a^x f \mbox{ existe} \\
+   \mbox{Si } x_0 \mbox{ est à l'intérieur de I, si f est continue sur I, alors } \int_a^x f \mbox { est aussi continue sur I} \\
+   \mbox{ Si f est continue sur I, alors } g : x \mapsto \int_a^x f \mbox{ est dérivable sur I et sa dérivé est f.}
+  \end{array}\right.
+\]
+De la dernière propriété, on déduit que g est de classe $C^1$ sur I. En résumé, si f est de classe $C^n$ alors g est de classe $C^{n+1}$
+\begin{prop}
+Si $\varphi$ est une fonction positive et continue sur [a,b] d'inégalité nulle, alors :
+$$\varphi = 0$$
+\end{prop}
+
+\subsection{Utilisation des primitives d'une fonction continue}
+\begin{de}
+ Soit f définie sur un intervalle I. Une primitive de f sur I, c'est une fonction dérivable sur I dont la dérivée est f.
+\end{de}
+\subsection{Ensemble des primitives d'une fonction continue}
+Soit f continue sur un intervalle I, si F est une primitive de f sur I, alors :
+$$(\mbox{G est une autre primitive de f sur I}) \Leftrightarrow (\exists K \in \mathbb{R} \mbox{ tq } \forall x \in I~ G(x)=F(x)+K)$$
+Il en découle que : 
+$$( \mbox{F est une primitive de f sur I }) \Leftrightarrow (\exists K \in \mathbb{R} \mbox{ tq } \forall x \in I~ F(x)=\int_a^x f(t)dt + K)$$
+Et que $\forall (a,b)^2 \in I^2$
+$$\int_a^b f(t)dt = F(b) - F(a)$$
+\subsection{Notation}
+\begin{de}
+ Si f est continue sur I : $\int f(x)dx$ désigne la valeur de x d'une primitive de f.
+\end{de}
+\subsection{Technique de calcul d'une intégrale}
+\subsubsection{Intégrale par partie}
+\begin{de}
+ Si f,g sont de classe $C^1$ sur I, $(a,b)\in I^2$, alors :
+$$\int_a^b fg' = [fg]_a^b - \int_a^b f'g$$
+\end{de}
+\subsubsection{Changement de variables}
+\begin{de}
+ Soit u une bijection de classe $C^1$ de $[\alpha,\beta]$ sur un intervalle [a,b]\\
+Soit f continue sur [a,b].
+$$\int_a^b f(u)du = \int_{\alpha}^{\beta} f(u(t))u'(t)dt$$
+\end{de}
+\subsection{Intégrale d'une fonction paire, impaire, periodique}
+\subsubsection{Fonction paire}
+\begin{prop}
+Soit a $\in \mathbb{R}$\\
+Si f est continue et paire sur [-a,a], alors :
+$$\int_{-a}^a f = 2\int_0^a f$$
+\end{prop}
+\subsubsection{Fonction impaire}
+\begin{prop}
+Si f est continue et impaire sur [-a,a], alors :
+$$\int_{-a}^a f = 0$$
+\end{prop}
+\subsubsection{Fonction periodique}
+\begin{prop}
+Si f est continue et T periodique sur $\mathbb{R}$\\
+Soit a $\in \mathbb{R}$
+$$\int_a^{a+T} \mbox{ f est indépendant de a}$$
+\end{prop}
+\section{Inégalité de Cauchy-Schwarz}
+\begin{de}
+Soient f,g continues sur [a,b] : 
+$$|\int_{[a,b]}fg| \leq \sqrt{\int_{[a,b]}f^2\int_{[a,b]}g^2}$$
+\end{de}
+Si cette inégalité devient une égalité, alors $\exists \lambda_0 \in \mathbb{R}$ telque 
+$$g = -\lambda_0f$$
+\section{Formule de Taylor avec reste intégrale}
+\begin{de}
+Soit f fonction de classe $C^n$.\\
+$\forall x \in D_f$, au voisinage de a :
+$$f(x)=f(a)+....+\dfrac{(x-a)^{n-1}}{(n-1)!}f^{(n-1)}(a) + \int_a^x \dfrac{(x-a)^{n-1}}{(n-1)!}f^{(n)}(t)dt$$
+\end{de}
+\section{Inégalité de Taylor-Lagrange}
+\begin{de}
+Soit f de classe $C^{n+1}$ sur I, $a \in I$.\\
+Supposons que $f^{(n+1)}$ soit majorée sur I.\\
+Notons $M_{n+1} = \underset{I}\sup|f^{(n+1)}|$\\
+$\forall x \in I$ :
+$$|\int_a^x\dfrac{(x-t)^n}{n!}(t)dt| \leq \dfrac{(x-a)^{n+1}}{(n+1)!}M_{n+1}$$
+\end{de}
+
+

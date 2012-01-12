@@ -1,0 +1,172 @@
+\chapter{Fonctions de $\mathbb{R}^2$ dans $\mathbb{R}$}
+\section{Norme}
+\begin{de}
+Soit E un espace vectoriel.\\
+n est une norme de E si :
+$$n : E \rightarrow \mathbb{R}$$
+telque :
+\begin{itemize}
+ \item[$\rightarrow$] $\forall x \in E$~ n(x) $\geq$ 0
+ \item[$\rightarrow$] $\forall \lambda \in \mathbb{R},~ \forall x \in E,~ n(\lambda x) = |\lambda|n(x)$
+ \item[$\rightarrow$] $\forall x \in E,~ n(x)=0 \Leftrightarrow x=0$
+ \item[$\rightarrow$] $\forall (x,y) \in E^2~ n(x+y) \leq n(x)+n(y)$
+\end{itemize}
+\end{de}
+\begin{prop}
+La norme euclidienne, notée $||(x,y)||_2$ est défini par : 
+$$\forall (x,y) \in \mathbb{R}^2~ ||(x,y)||_2 = \sqrt{x^2+y^2}$$
+\end{prop}
+\begin{de}
+On défini la norme $||(x,y)||_n$ par : 
+$$||(x,y)||_n = (|x|^n + |y|^n)^{1/n}$$
+\end{de}
+\begin{de}
+On défini la norme infini par : 
+$$\forall (x,y)\in \mathbb{R}^2~ ||(x,y)||_{\infty} = Max(|x|,|y|)$$
+\end{de}
+\subsection{Boules}
+\begin{de}
+Soit n une norme sur E, soit $x_0 \in E$, et $r \in \mathbb{R}^+$.\\
+On appelle Boule de centre $x_0$, de rayon r : 
+$$B(x_0,r) = \{ x \in E / n(x_0-x) \leq r\}$$ 
+\end{de}
+\subsection{Norme équivalentes}
+\begin{de}
+Soient $n_1,n_2$ deux normes sur E.\\
+$n_1~ et~ n_2$ sont dites équivalentes si il existe deux réels strictement positifs telque $\forall x \in E $ : 
+$$\alpha n_2(x) \leq n_1(x) \leq \beta n_2(x)$$
+$$\dfrac{1}{\beta}n_1(x) \leq n_2(x) \leq \dfrac{1}{\alpha} n_1(x)$$
+\end{de}
+\begin{prop}
+Dans un espace de dimension finie, toutes les normes sont équivalentes.
+\end{prop}
+\subsection{Convergence d'une suite}
+Soit $(u_n)$ une suite de vecteur de E : 
+\begin{itemize}
+ \item[$\rightarrow$] On dit que $(u_n)$ converge vers 0 pour la norme n si la suite des réels ($n(u_n)$) converge vers 0
+ \item[$\rightarrow$] Si deux normes sont équivalente, toutes suites convergentes pour l'une est convergente pour l'autre
+ \item[$\rightarrow$] Dans un espace de dimension finie, la définition de la convergence ne dépend pas de la norme considéré.
+\end{itemize}
+\section{Limite d'une fonction de $\mathbb{R}^2$ dans $\mathbb{R}$}
+\begin{de}
+Soit A une partie de $\mathbb{R}^2$, et n une norme de $\mathbb{R}^2.$\\
+Soit f une fonction de A dans $\mathbb{R}$.\\
+Soit ($x_0,y_0) \in A$, et l un réel.\\
+On dit que : $\underset{(x_0,y_0)}\lim f = l$
+$$\forall \varepsilon > 0~ \exists \alpha > 0~ tq~ \forall (x,y) \in B((x_0,y_0),\alpha) : |f(x,y) - l| < \varepsilon$$
+\end{de}
+\begin{prop}
+Soit f et g deux fonction défini sur A : 
+\begin{itemize}
+ \item[$\rightarrow$] La limite de la somme et la somme des limites.
+ \item[$\rightarrow$] La limite du produit et le produit des limites
+ \item[$\rightarrow$] Composition : Soit f : $\mathbb{R}^2 \rightarrow \mathbb{R}$ et $\varphi : \mathbb{R} \rightarrow \mathbb{R}$. Si $\underset{(a,b)}\lim f = l$ et si $\underset{l}\lim \varphi = m$, alors : $$\underset{(a,b)}\lim \varphi o f = m$$
+\end{itemize}
+\end{prop}
+\subsection{Théorème d'encadrement}
+Soient f,g,h fonctions défini sur A.\\ Si $\forall(x,y) \in A$ : 
+$$h(x,y) \leq f(x,y) \leq g(x,y)$$
+et si $\underset{(a,b)}\lim g = \underset{(a,b)}\lim h = l$, alors : 
+$$\underset{(a,b)}\lim f = l$$
+\subsection{Caractérisation de la divergence}
+Si : 
+\begin{itemize}
+ \item[$\rightarrow$] $\underset{t_0}\lim x_1 = a$ 
+ \item[$\rightarrow$] $\underset{t_0}\lim y_1 = b$ 
+ \item[$\rightarrow$] $\underset{\alpha}\lim x_2 = a$ 
+ \item[$\rightarrow$] $\underset{\alpha}\lim y_2 = b$ 
+\end{itemize}
+et $\underset{t \rightarrow t_0}\lim f(x_1(t),y_1(t)) = l$ et $\underset{u \rightarrow \alpha}\lim f(x_2(y),y_2(u)) = l'$, avec  l $\neq$ l', alors : 
+$$\underset{(a,b)}\lim f \mbox{ n'existe pas}$$
+\subsection{Continuité}
+\begin{de}
+Si f est une fonction définie en (a,b) et sur un voisinage de (a,b), avec : 
+$$\lim_{(a,b)} f = f(a,b)$$
+Alors, on dit que f est continue en (a,b).
+\end{de}
+\section{Dérivation}
+\subsection{Dérivées partielles}
+Soit f fonction définie au voisinage de (a,b).
+\begin{de}
+On appelle première dérivée partielle de f en (a,b) : 
+$$\dfrac{\partial f}{\partial x} (a,b) = \lim_{x \rightarrow a} \dfrac{f(x,b) - f(a,b)}{x-a}$$
+\end{de}
+\begin{de}
+On appelle deuxième dérivée partielle de f en (a,b) : 
+$$\dfrac{\partial f}{\partial y} (a,b) = \lim_{y \rightarrow b} \dfrac{f(a,y) - f(a,b)}{y-b}$$
+\end{de}
+\subsection{Dérivée suivant un vecteur}
+\begin{de}
+Soit $\overrightarrow{u}(\alpha,\beta)$ un vecteur de $\mathbb{R}^2$.
+On défini le nombre dérivée de f en (a,b) suivant $\overrightarrow{u}$, notée d$_{\overrightarrow{u}}f(a,b)$, par : 
+$$d_{\overrightarrow{u}}f(a,b) = \lim_{t \rightarrow 0} \dfrac{f(a+\alpha.t,b+\beta.t) - f(a,b)}{t}$$
+\end{de}
+\subsection{Fonction de classe $C^1$}
+\begin{de}
+Soit A une partie de $\mathbb{R}^2$. On dit que f est de classe $C^1$ sur A si : 
+\begin{itemize}
+\item[$\rightarrow$] f possède sur A deux dérivées partielles
+ \item[$\rightarrow$] Ces deux fonctions sont continue sur A
+\end{itemize}
+\end{de}
+\subsection{Développement limité d'ordre 1}
+Si f est de classe $C^1$ sur A, voisinage de (a,b), alors :
+$$\forall(x,y) \in A~ f(x,y) = f(a,b) + \dfrac{\partial f}{\partial x}(a,b).(x-a) + \dfrac{\partial f}{\partial y}(a,b).(y-b) + o(||(x,y)-(a,b)||)$$
+\begin{prop}
+Soit $\overrightarrow{u}(\alpha,\beta)$ et f une fonction de classe $C^1$ au voisinage de (a,b).
+$$d_{\overrightarrow{u}}f = \alpha.\dfrac{\partial f}{\partial x}(a,b) + \beta\dfrac{\partial f}{\partial y}(a,b)$$
+On en déduit que si f est de classe $C^1$ au voisinage de (a,b), alors $\forall \overrightarrow{u} \in \mathbb{R}^2,~ d_{\overrightarrow{u}}f$ existe et est continue.
+\end{prop}
+\subsection{Plan tangent}
+\begin{de}
+On appelle plan tangent à la surface représentative d'une fonction de classe $C^1$ le plan définie par le repère : 
+$$(M(a,b,f(a,b),\overrightarrow{t_{\overrightarrow{i}}},\overrightarrow{t_{\overrightarrow{j}}})$$
+avec : 
+$$\overrightarrow{t_{\overrightarrow{i}}} =\begin{pmatrix}
+  1  \\
+  0  \\
+  \dfrac{\partial f}{\partial x}(a,b)\\
+\end{pmatrix} $$
+$$\overrightarrow{t_{\overrightarrow{j}}} =\begin{pmatrix}
+  0  \\
+  1  \\
+  \dfrac{\partial f}{\partial y}(a,b)\\
+\end{pmatrix} $$
+\end{de}
+\subsubsection{Vecteur normale au plan tangent}
+\begin{de}
+On défini un vecteur normale au plan tangent, notée $\overrightarrow{n}$, par :
+$$\overrightarrow{n} = \overrightarrow{grad}(f(x,y)-z)$$
+\end{de}
+\subsection{Dérivées partielles d'ordre 2}
+\begin{de}
+Soit f définie sur une partie A de $\mathbb{R}^2$.\\
+Si $\dfrac{\partial f}{\partial x}$ est défini sur A et possède des dérivées partielles, on les notes : 
+$$\dfrac{\partial^2f}{\partial x^2} = \dfrac{\partial}{\partial x}.\dfrac{\partial f}{\partial x}$$
+$$\dfrac{\partial^2f}{\partial y \partial x} = \dfrac{\partial}{\partial y}.\dfrac{\partial f}{\partial x}$$
+Respectivement pour $\dfrac{\partial f}{\partial y}$, on obtient :
+$$\dfrac{\partial^2f}{\partial y^2} = \dfrac{\partial}{\partial y}.\dfrac{\partial f}{\partial y}$$
+$$\dfrac{\partial^2f}{\partial x \partial y} = \dfrac{\partial}{\partial x}.\dfrac{\partial f}{\partial y}$$
+\end{de}
+\begin{theo}
+Si $\dfrac{\partial^2f}{\partial x \partial y}$ et $\dfrac{\partial^2f}{\partial y \partial x}$ sont continue sur A, alors : 
+$$\dfrac{\partial^2f}{\partial x \partial y} = \dfrac{\partial^2f}{\partial y \partial x}$$
+\end{theo}
+\subsection{Dérivée des composées}
+\subsubsection{Premier type de composées}
+Soit f une fonction de classe $C^1$ de A dans $\mathbb{R}$, avec $A c \mathbb{R}$.\\
+Soit $\varphi$ une fonction dérivable sur $\mathbb{R}$.\\
+Soit g = $\varphi$ o f.
+$$g : A \rightarrow \mathbb{R}$$
+$$(x,y) \mapsto \varphi(f(x,y))$$
+On obtient les dérivées partielles suivantes : 
+$$\dfrac{\partial g}{\partial x}(x,y) = \dfrac{\partial f}{\partial x}(x,y).\varphi'(f(x,y))$$
+$$\dfrac{\partial g}{\partial y}(x,y) = \dfrac{\partial f}{\partial y}(x,y).\varphi'(f(x,y))$$
+\subsubsection{Second type de composées}
+Soit x,y deux fonctions de $\mathbb{R}$ dans $\mathbb{R}$, dérivable sur $\mathbb{R}$.\\
+Soit f une fonction de $\mathbb{R}^2$ dans $\mathbb{R}$, de classe $C^1$ sur $\mathbb{R}^2$.\\
+Soit $\varphi$ la fonction définie par : 
+$$\varphi : \mathbb{R} \rightarrow \mathbb{R}$$
+$$t \mapsto f(x(t),y(t))$$
+On obtient, à l'aide d'un développement limité :
+$$\forall t : \varphi'(t) = x'(t).\dfrac{\partial f}{\partial x}(x(t),y(t)) + y'(t).\dfrac{\partial f}{\partial y}(x(t),y(t))$$

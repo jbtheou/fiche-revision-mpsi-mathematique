@@ -1,0 +1,59 @@
+\documentclass[a4paper,12pt,twocolumn]{report}
+
+\usepackage[utf8x]{inputenc}			  % Utilisation du UTF8
+\usepackage{textcomp}				  % Accents dans les titres
+\usepackage [ french ] {babel}                    % Titres en français
+\usepackage [T1] {fontenc} 			  % Correspondance clavier -> document
+\usepackage[Lenny]{fncychap}                      % Beau Chapitre
+\usepackage{dsfont}                    	  % Pour afficher N,Z,D,Q,R,C
+\usepackage{fancyhdr}                             % Entete et pied de pages
+\usepackage [outerbars] {changebar}               % Positionnement barre en marge externe
+\usepackage{amsmath}				  % Utilisation de la librairie de Maths
+%\usepackage{amsfont}				  % Utilisation des polices de Maths
+\usepackage{cite}                                 % Citations de la bibliographie
+\usepackage{openbib}                              % Gestion avancée de Bibtex
+\usepackage{enumerate}				  % Permet d'utiliser la fonction énumerate
+\usepackage{dsfont}				  % Utilisation des polices Dsfont
+\usepackage{ae}					  % Rend le PDF plus lisible
+
+\newtheorem{de}{Définition}
+\newtheorem{theo}{Théorème}
+\newtheorem{prop}{Propriété}
+
+\title{Limite}
+\author{MPSI}
+\begin{document}
+\begin{center}
+\begin{Large}\textbf{ \textit{Limites remarquable}}
+\end{Large}
+\end{center}
+
+\subsubsection{Fonctions trigonométrique}
+$$\lim_{x \to 0} \dfrac{sin(x)}{x}=1$$
+$$\lim_{x \to 0} \dfrac{1 - cos(x)}{x^2}=\dfrac{1}{2}$$
+$$\lim_{x \to 0} \dfrac{arcsin(x)}{x}=1$$
+$$\lim_{x \to 0} \dfrac{tan(x)}{x}=1$$
+\subsubsection{Fonctions hyperbolique}
+$$\lim_{x \to +\infty} \dfrac{ch(x)}{e^x}=\dfrac{1}{2}$$
+$$\lim_{x \to +\infty} \dfrac{sh(x)}{e^x}=\dfrac{1}{2}$$
+$$\lim_{x \to +\infty} \dfrac{ch(x)}{x}=1$$
+$$\lim_{x \to +\infty} \dfrac{ch(x)-1}{x^2}=\dfrac{1}{2}$$
+\subsubsection{Exponentielle}
+$$\lim_{x \to +\infty} \dfrac{e^x}{x^{\alpha}}=+\infty$$
+$$\lim_{x \to 0} \dfrac{e^x-1}{x}=1$$
+$$\lim_{x \to -\infty} |x^{\alpha}|e^x=0$$
+\subsubsection{Logarithme}
+$$\lim_{x \to +\infty} \dfrac{(ln(x))^{\alpha}}{x^{\beta}}=0$$
+$$\lim_{x \to 0} \dfrac{ln(1+x)}{x}=1$$
+$$\lim_{x \to 0} x^{\alpha}|ln(x)|^{\beta}=0$$
+\subsubsection{Polynomes}
+$$\lim_{0} \dfrac{P}{Q}=\mbox{Limite des termes de plus bas degres}$$
+$$\lim_{\infty} \dfrac{P}{Q}=\mbox{Limite des termes de plus haut degres}$$
+\subsubsection{Autres}
+$$\lim_{x \to 0} \dfrac{(1+x)^{\alpha}-1}{x}=\alpha$$
+\subsubsection{Les formes indéterminée}
+$$\dfrac{\infty}{\infty}$$
+$$\infty-\infty$$
+$$\infty \times0$$
+$$1^{\infty}$$
+\end{document}

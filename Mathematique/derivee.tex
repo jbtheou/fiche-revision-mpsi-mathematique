@@ -1,0 +1,50 @@
+\documentclass[a4paper,12pt,oneside]{report}
+
+\usepackage[utf8x]{inputenc}			  % Utilisation du UTF8
+\usepackage{textcomp}				  % Accents dans les titres
+\usepackage [ french ] {babel}                    % Titres en français
+\usepackage [T1] {fontenc} 			  % Correspondance clavier -> document
+\usepackage[Lenny]{fncychap}                      % Beau Chapitre
+\usepackage{dsfont}                    	  % Pour afficher N,Z,D,Q,R,C
+\usepackage{fancyhdr}                             % Entête et pied de pages
+\usepackage [outerbars] {changebar}               % Positionnement barre en marge externe
+\usepackage{amsmath}				  % Utilisation de la librairie de Maths
+%\usepackage{amsfont}				  % Utilisation des polices de Maths
+\usepackage{cite}                                 % Citations de la bibliographie
+\usepackage{openbib}                              % Gestion avancée de Bibtex
+\usepackage{enumerate}				  % Permet d'utiliser la fonction énumerate
+\usepackage{dsfont}				  % Utilisation des polices Dsfont
+\usepackage{ae}					  % Rend le PDF plus lisible
+\usepackage{amssymb}
+
+\newtheorem{de}{Définition}
+\newtheorem{theo}{Théorème}
+\newtheorem{prop}{Propriété}
+
+\title{Les coniques}
+\author{MPSI}
+\begin{document}
+\begin{center}
+ \begin{LARGE} \textit{Dérivées usuelles} \end{LARGE}
+\end{center}
+
+\begin{itemize}
+ \item[$\rightarrow$] \underline{Fonctions  $\rightarrow$ Dérivées} \\
+ \item[$\rightarrow$] $x^n$ $\rightarrow$ $n.x^{n-1}$\\
+\item[$\rightarrow$] $\dfrac{1}{x^n}$ $\rightarrow$ $\dfrac{-1}{x^{n+1}}$\\
+\item[$\rightarrow$] $\dfrac{(ax+b)}{(cx+d)}$ $\rightarrow$ $\dfrac{(ad-bc)}{(cx+d)^2}$\\
+\item[$\rightarrow$] $\sqrt{x}$ $\rightarrow$ $\dfrac{1}{2\sqrt{x}}$\\
+\item[$\rightarrow$] $ln(u)$ $\rightarrow$ $\dfrac{u'}{u}$\\
+\item[$\rightarrow$] $tan(x)$ $\rightarrow$ $\dfrac{1}{cos^2(x)}$\\
+\item[$\rightarrow$] $tan(x)$ $\rightarrow$ $tan^2(x)+1$\\
+\item[$\rightarrow$] $Arccos(x)$ $\rightarrow$ $\dfrac{-1}{\sqrt{1-x^2}}$\\
+\item[$\rightarrow$] $Arcsin(x)$ $\rightarrow$ $\dfrac{1}{\sqrt{1-x^2}}$\\
+\item[$\rightarrow$] $Arctan(x)$ $\rightarrow$ $\dfrac{1}{1+x^2}$\\
+\item[$\rightarrow$] $ch(x)$ $\rightarrow$ $sh(x)$\\
+\item[$\rightarrow$] $sh(x)$ $\rightarrow$ $ch(x)$\\
+\item[$\rightarrow$] $th(x)$ $\rightarrow$ $\dfrac{1}{ch^2(x)}$\\
+\item[$\rightarrow$] Argch(x) $\rightarrow$ $\dfrac{1}{\sqrt{x^2-1}}$\\
+\item[$\rightarrow$] Argsh(x) $\rightarrow$ $\dfrac{1}{\sqrt{x^2+1}}$\\
+\item[$\rightarrow$] Argth(x) $\rightarrow$ $\dfrac{1}{1-x^2}$\\
+\end{itemize}
+\end{document}

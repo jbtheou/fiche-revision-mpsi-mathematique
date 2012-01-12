@@ -1,0 +1,329 @@
+
+\chapter{Matrice et espaces vectoriel de dimension finies}
+\section{Matrice}
+\subsection{Définition}
+\begin{de}
+La matrice à n lignes et p colonnes est défini par :
+$$M = [a_{i,j}]$$
+avec i variant de 1 à n, et j variant de 1 à p
+\end{de}
+\subsection{Matrice carrée}
+\begin{de}
+Une matrice M est carrée si n=p. On défini la diagonale de A comme le n-uplet : $(a_{11},a_{22},...,a_{nn})$ 
+\end{de}
+\subsection{Vecteur ligne}
+\begin{de}
+On défini le vecteur ligne comme le p-uplet :
+$$l_i = (x_{i,1},...,x_{i,p})$$
+\end{de}
+\subsection{Vecteur colonne}
+\begin{de}
+On défini le vecteur colonne comme le n-uplet :
+$$l_j = (x_{1,j},...,x_{n,j})$$
+\end{de}
+\subsection{Matrice carrée particulière}
+Soit T = $[x_{i,j}] \in M_n(K)$
+\begin{de}
+ On dit que T est triangulaire supérieur si :
+$$T=\begin{bmatrix}
+a_{1,1} & a_{1,2} & a_{1,3}  \\
+0 & a_{2,2} & a_{2,3} \\
+0 & 0 & a_{3,3} \\
+\end{bmatrix}$$
+\end{de}
+\begin{de}
+ On dit que T est triangulaire inférieur si :
+$$T=\begin{bmatrix}
+a_{1,1} & 0 & 0  \\
+a_{2,1} & a_{2,2} & 0 \\
+a_{3,1} & a_{3,2} & a_{3,3} \\
+\end{bmatrix}$$
+\end{de}
+\begin{de}
+ On dit que T est une matrice scalaire si :
+$$T=\begin{bmatrix}
+\lambda & 0 & 0  \\
+0 & \lambda & 0 \\
+0 & 0 &\lambda \\
+\end{bmatrix}$$
+\end{de}
+Si $\lambda$=1, alors la matrice est la matrice unité, noté $I_{n}$
+\subsection{Matrice carrée symétrique et antisymétrique}
+\begin{de}
+Soit S = $[x_{i,j}] \in M_n(K)$ \\
+S est symétrique si $x_{i,j}=x_{j,i}$\\
+S est antisymétrique si $x_{i,j}=-x_{j,i}$. Ceci implique que la diagonale de S est forcément nul dans ce cas
+\end{de}
+\subsection{Transposition et trace}
+\begin{de}
+La transposée de M noté $^{t}M$ est défini par :
+$$M=\begin{bmatrix}
+a & b & c & d\\
+e & f & g & h  \\
+i & j & k & l \\
+\end{bmatrix}$$
+alors
+$$^{t}M=\begin{bmatrix}
+a & e & i \\
+d & f & j  \\
+c & g & k  \\
+d & h & l 
+\end{bmatrix}$$
+On a : 
+$$^{t}(^{t}M) = M $$
+\end{de}
+\begin{de}
+On défini la trace d'un matrice carrée comme la somme des termes de sa diagonale :
+$$Trace(A) = \sum_{i=1}^nx_{k,k}$$
+\end{de}
+\subsection{Espace vectoriel des matrices}
+On note $M_{n,p}(K)$ l'ensemble des matrices à n lignes et p colonne. \\
+L'addition des matrices est une addition termes à termes \\
+$(M_{n,p}(K),+)$ est un groupe commutatif d'élément neutre [O] \\
+$(M_{n,p}(K),+,o)$ est un K espace vectoriel \\
+Soit $$A_{1,1} = \begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+\end{bmatrix}$$
+L'ensemble {$A_{1,1},....,A_{n,p}$} est une base de $M_{n,p}(K)$ et dim($M_{n,p}(K)$)=n.p\\
+$(M_n(K),+,x,o)$ est un K-algèbre de dimension $n^2$. Si AB=BA, alors les identités remarquables sont utilisables.
+\subsection{Transposition}
+\begin{de}
+ Soit :
+$$\varphi : M_{n,p}(K) \rightarrow M_{p,n}(K)$$
+$$M \mapsto ^tM$$
+$\varphi$ est un isomorphisme, donc c'est une application linéaire.
+De plus, si la matrice est une matrice carrée :
+$$\varphi \mbox{ est symétrie de }M_n(K)$$
+\[\left.\begin{array}{l}
+   ^tM=M \Leftrightarrow \mbox{M est symétrique}\\
+    ^tM=-M \Leftrightarrow \mbox{M est antisymétrique} \\
+  \end{array}\right\}
+\mbox{Ce sont deux espaces supplémentaire}\]
+\end{de}
+\subsection{Produit de matrice}
+\begin{de}
+On défini le produit de matrice par : \\
+Soit $l_1$ la première ligne de la matrice A\\
+Soit $c_1$ la première colonne de la matrice B\\
+Soit $a_1$ le première terme de la matrice produit\\
+$$AB = \begin{bmatrix}
+a & b & c & d
+\end{bmatrix}\times\begin{bmatrix}
+e \\
+f \\
+g \\
+h \end{bmatrix} = [ae+bf+cg+dh]$$$$$$
+avec [ae+bf+cg+dh] = $a_1$\
+Le produit $l_2.c_1$ donne le terme $a_{2,1}$\
+Le produit est non commutatif
+\end{de}
+\subsubsection{Cas particuliers}
+Si $M \in M_{n,p}(K) et [0] \in M_{p,q}(K) $ alors :
+$$M \times [0] = 0$$
+Soit T une matrice scalaire $\in M_{p,q}(K)$, alors :
+$$M \times T = \lambda M$$
+Soit $I_n$ matrice unité d'ordre n, et $M \in M_{n}(K)$ alors :
+$$MI_n=I_nM=M$$ 
+\subsection{Transposition et trace du produit}
+Soit A et B deux matrice $\in M_{n,p}(K)$. Alors :
+$$^t(AB) = ^tB\times^tA$$
+et 
+$$\mbox{Trace(AB) = Trace (BA), mais généralement AB }\neq BA$$
+\subsection{Matrice Carrée inversible}
+\begin{de}
+ Soit M $\in M_n(K)$. On dit que M est inversible si 
+$$\exists N \in M_n(K) \mbox{ telque } MN = NM = I_n $$
+On pose $N = M^{-1}$. On note $GL_n(K)$ l'ensemble des matrice carrée inversible d'ordre n. Cette ensemble est un groupe linéaire. Et :
+$$(AB)^{-1} = B^{-1}A^{-1}$$
+\end{de}
+\begin{prop}
+Soit (A,B)$\in (M_n(k))^2$ telque : $$AB = I_n$$
+On obtient que:
+\[\left\{\begin{array}{l}
+   \mbox{ A est inversible et B = }A^{-1}\\
+   \mbox{ B est inversible et A = }B^{-1} \\
+  \end{array}\right.\]
+\end{prop}
+
+\subsubsection{Matrice carrée et inverse}
+Voir Méthodologie.
+\subsection{Rang d'une matrice}
+\begin{de}
+Le rang d'une matrice est le rang de ses vecteurs colonnes.
+Si A $\in M_{n,p}(K)$ et qu'on note $c_i$ son $i^{eme}$ vecteurs colonnes, alors :
+$$rang(A)=rang(\left\{c_1,...,c_p\right\})=dim(Vect \left\{c_1,...,c_p\right\})$$
+et de plus : 
+$$0 \leq rang(A) \leq Min\left\{n,p\right\} $$
+\end{de}
+\subsubsection{Rang de matrice particulière}
+Le rang d'une matrice diagonale est r, si : 
+$$\forall i \in \left\{1,....,r\right\} \lambda_{ii} \neq 0$$
+Si dans une matrice carrée d'ordre n, les termes diagonaux sont non tous nul, alors $rang(A)=n$
+\subsection{Opération élémentaire}
+\begin{de}
+ Il existe trois opérations élémentaire :
+\begin{enumerate}[I) ]
+ \item L'échange de deux colonnes : $c_i \leftrightarrow c_j$
+ \item Le produit d'une colonne par un scalaire non nuls
+ \item L'addition à une colonne d'une combinaison linéaire des autres
+\end{enumerate}
+Ces opérations élémentaire ne modifie par le rang de A
+\end{de}
+\section{Matrice et espaces vectoriel de dimension finies}
+\subsection{Matrice de coordonnée d'un vecteur dans une base}
+\begin{de}
+Soit $B=\left\{e_1,...,e_n\right\}$ base d'un espace vectoriel de E\\
+Soit $u \in E$, $\exists !(x_1,...,x_n) \in K^n$ telque : 
+$$ u = x_1e_1+...+x_ne_n$$
+On note $mat_{B}(u)=\begin{bmatrix}
+x_1\\
+.\\
+.\\
+x_n\\
+\end{bmatrix} \in M_{1,n}(K)$ la matrice de de u dans B 
+\end{de}
+\subsection{Matrice d'une famille de vecteurs}
+\begin{de}
+ Si $ \forall j \in \left\{1,..p\right\}$, $u_j \in E$ et $mat_B(u)= \begin{bmatrix}
+x_{1,j}\\
+.\\
+.\\
+x_{n,j}\\
+\end{bmatrix}$, alors :
+$$mat_B(u_1,...,u_p) = \begin{bmatrix}
+x_{1,1} & . & . & x_{1,p}\\
+. & . & . & .\\
+. & . & . & . \\
+x_{n,1} & . & . & x_{n,p}\\
+\end{bmatrix}$$
+De plus, le rang de la matrice est le rang de la famille de vecteurs.
+\end{de}
+\subsection{Matrice de passage entre deux bases}
+\begin{de}
+ On note $mat_B(B')$ la matrice de passage de B à B'. On la note P
+\end{de}
+\subsection{Coordonnée d'un vecteur dans deux bases}
+\begin{de}
+On note B et B' deux bases de E.\\
+On note $P=mat_B(B') \in M_n(K)$ la matrice de passage de B à B'\\
+Soit $u \in E$\\
+On pose $X=mat_B(u)$ et $X'=mat_{B'}(u)$ \\
+On obtient la relation :
+$$X = PX'$$
+De plus, P est inversible, et son inverse est : 
+$$P^{-1}=mat_{B'}(B)$$
+\end{de}
+\subsection{Matrice d'une application linéaire}
+\begin{de}
+Soit $f \in L(E,F)$. \\
+Soit $B_E = \left\{e_1,...,e_p\right\}$ base de E et  $B_F = \left\{f_1,...,f_n\right\}$ base de F.\\
+Soit M la matrice de f dans $B_E,B_F$ :
+$$M = mat_{B_E,B_F}(f) = mat_{B_F}(\left\{f(e_1),...,f(e_p)\right\})$$
+Le nombre de colonne de la matrice est défini par la dimension de l'espace de départ, celui des ligne par la dimension de l'espace d'arrivé
+\end{de}
+\subsubsection{Cas Particuliers}
+\begin{enumerate}[I) ]
+ \item La matrice de l'application nul $\in L(E,F)$ est la matrice nul de $M_{dim(F),dim(E)}(K)$\\
+ \item La matrice d'un endomorphisme de E est une matrice carrée d'ordre dim(E)
+ \item La matrice de l'identité est $I_n$
+ \item La matrice de l'homothétie est de rapport k par rapport à $I_n$
+\end{enumerate}
+\subsection{Coordonnée de l'image d'un vecteur}
+\begin{de}
+Soit $B_E$ base de E, $B_F$ base de F. \\
+Soit u $\in$ E \\
+Posons $M = mat_{B_E,B_F}(f)$, $X = mat_{B_E}(u)$, $Y = mat_{B_F}(u)$. Alors :
+$$Y = M.X$$
+\end{de}
+De plus : 
+\begin{theo}
+ Si f est une application de E dans F telque $\exists M \in M_{n,p}$ telque $\forall u \in E$, l'égalité ci-dessus est vérifié, alors f est une application linéaire
+\end{theo}
+\subsection{Unicité de la matrice, pour les bases fixes}
+\begin{de}
+Soient $B_E,B_F$ bases de E et de F, avec dim(E) = p, dim(F)=n
+Soit : 
+$$\varphi : L(E,F) \rightarrow M_{n,p}(K)$$
+$$f \rightarrow mat_{B_E,B_F}(f)$$
+$\varphi$ est une application linéaire. On en déduit donc que :
+$$(f=g)\Leftrightarrow(mat_{B_E,B_F}(f)=mat_{B_E,B_F}(g))$$
+\end{de}
+\begin{prop}
+Soit $f \in L(E,F)$, $B_E,B_F$ bases de E et F\\
+Soit $A \in M_{n,p}(K)$ \\
+Soit $x \in E$. Supposons que $X = mat_{B_E}(x)$ et $Y=mat_{B_F}(f(x))$, et qu'on obtient :
+$$Y = AX $$
+Alors $A = mat_{B_E,B_F}(f)$
+\end{prop}
+\subsection{Matrice et opérations}
+\begin{de}
+ Soient $B_E,B_F$ bases fixées de E et de F. \\
+$\varphi$ est une application linéaire, c'est donc un isomorphisme. Nous avons en effet montré que $\varphi$ est bijective. On en déduit que $M_{n,p}(K)$ est de dimension finies, donc L(E,F) l'est aussi.
+$$dim(L(E,F)=dim(E)\times dim(F)=dim(M_{n,p})$$
+\end{de}
+\subsection{Composée d'application linéaire}
+\begin{de}
+Soient E,F,G espaces vectoriel de dimension finie, et de bases respective $B_E,B_F,B_G$.\\
+Soit $f \in L(E,F)$, $g \in L(F,G)$. Alors : 
+$$mat_{B_E,B_G}(gof)=mat_{B_F,B_G}(g)\times mat_{B_E,B_F}(f)$$
+\end{de}
+\subsection{Matrice inversible et isomorphisme - Endomorphisme}
+\begin{de}
+Si f est un isomorphisme de E dans F, alors $mat_{B_E,B_F}(f)$ est inversible est : 
+$$(mat_{B_E,B_F}(f))^{-1}=mat_{B_F,B_E}(f^{-1})$$
+Si f est un endomorphisme, on a : 
+$$(mat_{B_E}(f))^n = mat_{B_E}(f^n)$$
+\end{de}
+\subsection{Changement de bases}
+\begin{de}
+Soit $f \in L(E,F)$. Soient $B_E,B_{E'}$ bases de E. Soient $B_F,B_{F'}$ bases de F. \\
+On pose : \[\left\{
+  \begin{array}{ll}
+    M = mat_{B_E,B_F}(f)\\
+    M' = mat_{B_{E'},B_{F'}}(f) \\
+    P = mat_{B_E}(B_{E'}) \\
+    Q = mat_{B_{F'}}(B_{F})
+  \end{array}\right.\]
+Alors : 
+$$M' = Q^{-1}MP$$
+ou, si f est un endomorphisme :
+$$M' = P^{-1}MP$$
+\end{de}
+\subsection{Trace d'un endomorphisme}
+Soit f un endomorphisme, A,B deux matrices d'ordre n. On sait déjà que Trace(AB)=Trace(BA) et si :
+\[\left\{
+  \begin{array}{ll}
+    M = mat_{B_E}(f)\\
+    M' = mat_{B_{E'}}(f) \\
+  \end{array}\right.\]
+alors \[\left\{
+  \begin{array}{ll}
+   rang(M)=rang(M')=rang(f)\\
+   Trace(M)=Trace(M')=rang(f) \\
+   det(M)=det(M')=det(f)
+  \end{array}\right.\]
+\subsection{Matrice semblable}
+\begin{de}
+ Soient A,B deux matrice carrée d'ordre n. On dit que A et B sont semblable si $\exists$E espace vectoriel, $\exists B_E,B_{E'}$ bases de E, $\exists$f endomorphisme de E telque : 
+$$B = P^{-1}MP$$
+Ce qui revient à : 
+$$(\mbox{A et B sont semblables}) \Leftrightarrow (\exists P  \in GL_n(K) \mbox{ telque } B = P^{-1}MP) $$
+\end{de}
+\subsection{Rang d'une application linéaire}
+On peut toujours ramener la matrice dans des bases $B_{E'},B_{F'}$ de f à $J_r$ : 
+$$J_r = \begin{bmatrix}
+1 & . & . & . & 0\\
+0 & 1 & . & . & .\\
+. & . & 1 & . & . \\
+. & . & . & . & . \\
+0 & . & . & . & 0
+\end{bmatrix}$$
+Donc si : \\
+f $\in$ L(E,F) tel qu'il $\exists B_{E'},B_{F'}$ bases de E et F telque $mat_{B_{E'},B_{F'}}(f)=J_r$, alors rang(f)=r\\
+De plus, on a :
+$$(^tP)^{-1}=^t(P^{-1})$$
+On montre que $^tA$ et $^tJ_r$ sont semblable, donc le rang d'une matrice est le rang de ses vecteurs colonnes comme celui de ses vecteurs lignes.\\
+Et on obtient : 
+$$rang(^tA) = rang(A)$$

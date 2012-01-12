@@ -1,0 +1,54 @@
+
+\chapter{Équation différentielle}
+\section{Fonction exponentielle complexe}
+Soit :
+$$f : t \mapsto x(t) + iy(t)= e^{rt}$$
+Avec r = a+ib. \\On obtient, $\forall t \in \mathbb{R}$:
+$$f'(t) = re^{rt}$$
+\section{Équation différentielle}
+\subsection{Première ordre}
+$(\forall x \in \mathbb{R}~ ay'(t) + by(t) = 0) \Leftrightarrow (\exists K \in \mathbb{R},~ tq~ \forall x \in \mathbb{R}~ y=Ke^{-\dfrac{b}{a}x})$
+\subsection{Second ordre}
+On établie l'équation caractéristique, de la forme :
+$$ax^2+bx+c = 0$$
+On détermine $\Delta$ et on obtient :
+\begin{itemize}
+ \item[$\rightarrow$] $\Delta > 0$ : $$\exists(A,B)\in \mathbb{R}^2~ tq~ \forall x \in \mathbb{R}~ y(x) = Ae^{r_1x}+Be^{r_2x}$$
+ \item[$\rightarrow$] $\Delta = 0$ : $$\exists(A,B)\in \mathbb{R}^2~ tq~ \forall x \in \mathbb{R}~ y(x) = (Ax+B)e^{r_0x}$$
+ \item[$\rightarrow$] $\Delta > 0$ : Solution dans C, avec $r_0 = \pm i\omega$ $$\exists(A,B)\in \mathbb{R}^2~ tq~ \forall x \in \mathbb{R}~ y(x) = (Acos(\omega x)+Bsin(\omega x))e^{r_0x}$$ 
+\section{Recherche d'une solution particulière}
+\subsection{Second membre constant}
+Soit (E) l'équation différentielle suivante :
+$$ay''+by'+cy=d$$
+Si $C \neq 0$ :\
+$$y_0 : x \mapsto \dfrac{d}{c}$$
+est une solution particulière.\
+Si $C = 0$ :\
+$$y_0 : x \mapsto \dfrac{d}{b}x$$
+est une solution particulière
+\subsection{Second membre polynomiale}
+En géneral, on recherche un polynome de meme degrès.\
+Soit :
+$$y''+3y = 2x+1$$
+On pose : 
+$$y_0 : x \mapsto ax+b$$
+On dérive deux fois $y_0$ et on remplace dans l'équation pour déterminer a et b
+\subsection{Second membre exponentielle}
+Si le second membre est de la forme :
+$$x \mapsto e^{\alpha x}$$
+Alors on peut espérer une solution de la forme $\lambda e^{\alpha x}$
+\section{Méthode de variation de la constante}
+Soit (E) l'équation différentielle suivante : 
+$$(E)~ :~ ay'(t)+by(t) = f(x)$$
+On résoud l'équation sans second membre, plus on pose $\forall x \in \mathbb{R}$:
+$$z(x) = \dfrac{y(x)}{e^{-\frac{b}{a}x}} \Leftrightarrow y(x) = z(x)e^{-\frac{b}{a}x}$$
+Puis on injecte cette expression y(x) dans (E) pour déterminer z(x)
+\end{itemize}
+\section{Principe de superposition}
+Soit (E) l'équation différentielle suivante :
+$$(E)~ :~ ay''+by'+cy = f_1(x) + f_2(x)$$
+On considere :
+$$(E_1)~ :~ ay''+by'+cy = 0$$
+$$(E_2)~ :~ ay''+by'+cy = f_1(x)$$
+$$(E_3)~ :~ ay''+by'+cy = f_2(x)$$
+Soit $y_1,y_2$ solutions respective de $(E_2)$ et $(E_3)$. La solution particuliere de (E) est $y_1+y_2$

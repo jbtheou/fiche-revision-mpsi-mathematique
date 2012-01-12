@@ -1,0 +1,123 @@
+\chapter{Les polynomes}
+\section{Définitions}
+Soit K un corps ( Soit $\mathbb{R}$, soit $\mathbb{C}$)
+\begin{de}
+Un polynome à coefficiants dans K est une suite d'élement de K tous nul à partir d'un certain rang.
+$$P=(a_0,.....,a_n,0,...)$$
+On peut l'écrire aussi sous la forme :
+$$P=a_0+a_1X+...+a_nX^n$$
+avec X l'indéterminé.\\
+Il existe aussi la forme suivante :
+$$P = \sum_{k=0}^n a_kX^k$$
+L'ensemble des polynomes à coefficiants dans K est notée K[X].
+\end{de}
+Soit P et Q deux polynomes. On as : 
+$$P = Q \Leftrightarrow \forall k \in N~ a_k=b_k$$
+\subsection{Opérations}
+On peut effectuer quatres opérations :
+\begin{itemize}
+ \item[$\rightarrow$] Une addition : $$P+Q = \sum_{k=0}^{\infty}(a_k+b_k)X^k$$
+ \item[$\rightarrow$] Un produit : $$P.Q = \sum_{k,k'\geq0}^{\infty}(a_k.b_k')X^{k+k'}$$
+ \item[$\rightarrow$] Un produit par $\lambda$, $\lambda \in K$ : $$\lambda P = \sum_{k=0}^{\infty}(\lambda a_k)X^k$$
+\item[$\rightarrow$] Une composée : $$P(Q) = \sum_{k=0}^{\infty}a_k Q^k$$
+\end{itemize}
+\subsection{Structure}
+\subsection{Polynome constante}
+On observe qu'un polynome constant s'identifie à un élement du corps. On obtient donc que :
+$$K~ c~ K[X]$$
+\subsubsection{Structure de (K[X],+,x)}
+\begin{itemize}
+ \item[$\rightarrow$] (K[X],+) est un groupe commutatif
+ \item[$\rightarrow$] (K[X],+,x) est un anneau commutatif : On peut donc utiliser les identités remarquables sur les polymones. Cette anneau est intègre, ce qui signifie que : $$(P.Q = 0) \Leftrightarrow (P=0~ ou~ Q=0)$$
+
+\end{itemize}
+\subsection{Fonction polynome associée}
+Soit $P \in K[X]$, défini par :
+$$P = a_0+a_1X+...+a_nX^n$$
+On obtient la fonction polynome associée : 
+$$\forall x \in K,~ \widetilde{P}(x) = a_0+a_1x+...+a_nx^n$$
+L'application qui lie le polynome à sa fonction associée est une bijection.\\
+Toutes les notions de partié se transmette de la fonction polynome associée au polynome.
+\subsection{Degrés}
+\begin{de}
+On défini le degrés d'un polynome par :
+$$deg(P) = Max\left\lbrace k\in N / a_k \neq 0\right\rbrace $$
+Par convention : 
+$$deg(0) = -\infty$$
+$$deg(P_{Constant}) = 0$$
+\end{de}
+\subsubsection{Degrés d'une combinaison}
+On peut déterminer le degrés de deux combinaison :
+$$deg(P.Q) = deg(P) + deg(Q)$$
+$$deg(P+Q) \leq Max(deg(P),deg(Q))$$
+\subsection{Valuation}
+\begin{de}
+On défini la valuation d'un polynome par :
+$$val(P) = Min\left\lbrace k\in N / a_k \neq 0\right\rbrace $$
+Par convention : 
+$$deg(0) = +\infty$$
+\end{de}
+\subsubsection{Valuation d'une combinaison}
+On peut déterminer le degres de deux combinaison :
+$$val(P.Q) = val(P) + val(Q)$$
+$$val(P+Q) \geq Min(val(P),val(Q))$$
+\subsection{Division euclidienne dans K[X]}
+\subsubsection{Diviseur, Multiple}
+\begin{de}
+Soient A,B deux polynomes.\\
+On dit que B divise A, ou que A multiplie B, si :
+$$\exists Q\in K[X]~ A=B.Q$$
+Il en découle que les polynomes constant non nuls divisent tous les autres.
+\end{de}
+\subsubsection{Division euclidienne}
+\begin{de}
+Soit A,B deux polynomes, B non nul.\\
+$$\exists!(R,Q) \in K[X]~ tq~ A = B.Q + R$$
+avec deg(R) $\leq$ deg(Q)-1.\\
+On appelle respectivement R et Q le reste et le quotient de la division euclidienne.
+\end{de}
+\subsection{Formule de Taylor}
+Soit a un réel. Soit P un polynome de degrés n.\\
+On obtient :
+$$P = \sum_{k=0}^n \dfrac{\widetilde{D^k(P)}(a)}{k!}(X-a)^k$$
+avec $\widetilde{D^k(P)}(a)$ la dérivé $k^{eme}$ de P prise en a.
+\section{Racine d'un polynome}
+Soit $P \in K[X]$. Soit r $\in K$
+\subsection{Racine simple}
+\begin{de}
+r est une racine de P si $\widetilde{P}(r) = 0$
+\end{de}
+\begin{prop}
+(r est une racine de P) $\Leftrightarrow$ ((X-r) divise P)
+\end{prop}
+\subsection{Racine multiple et ordre de multiplicité}
+\begin{de}
+r est une racine d'ordre $\alpha$ si $(X-r)^{\alpha}$ divise P et $(X-r)^{\alpha+1}$ ne divise pas P.
+\end{de}
+\begin{prop}
+(r est une racine d'ordre $\alpha$ de P) $\Leftrightarrow$ ($\forall i\in \left\lbrace 0,..,\alpha-1\right\rbrace \widetilde{D^i(P)}(r) = 0$ et $\widetilde{D^{\alpha}(P)}(r) \neq 0$)
+\end{prop}
+\subsection{Polynome scindé}
+Soit $P\in K[X]$ de degrés n et de termes dominant $a_nX^n$
+\begin{de}
+P est scindé si le nombre de racine, en comptant les ordres de multiplicité, est n : $$\exists(r_1,...,r_n)\in K^n, \exists(\alpha_1,...,\alpha_n) \in N^n~ tq~ P = a_n(X-r_1)^{\alpha_1}...(X-r_n)^{\alpha_n}$$
+\end{de}
+\subsubsection{Lien entre coefficiants et racine d'un polynome scindé}
+On obtient les relations suivantes :
+$$\sum_{i=1}^n r_i = \dfrac{-a_{n-1}}{a_n}$$
+$$r_1...r_n = (-1)^n\dfrac{a_0}{a_n}$$
+\subsection{Polynome irréductible}
+\subsubsection{Dans $\mathbb{R}[X]$}
+\begin{de}
+Un polynome est irréductible si il n'est divisible que par les polynomes constant et par les produits de lui-meme par un constante.
+\end{de}
+\subsubsection{Dans $\mathbb{C}[X]$}
+\begin{theo}
+ Tout polynome non constant dans $\mathbb{C}[X]$ possède au moins une racine complexe.
+\end{theo}
+On en déduit donc que :
+\begin{itemize}
+ \item[$\rightarrow$] Tout polynomes dans $\mathbb{C}[X]$ est scindé
+ \item[$\rightarrow$] Les seuls polynomes irréductible de $\mathbb{C}[X]$ sont ceux de degrés 1
+\end{itemize}
+

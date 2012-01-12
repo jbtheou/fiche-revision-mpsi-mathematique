@@ -1,0 +1,102 @@
+\chapter{$\mathbb{R}$}
+\section{D\'efinitions}
+\section{Structure}
+\begin{de}
+($\mathbb{R}$,+,$\times$) est un corps totalement ordonnée. On dit qu'il est archimédien.\\
+\end{de}
+\begin{de}
+La relation "$\leq$" est une relation d'ordre. Elle est :
+\begin{itemize}
+ \item[$\rightarrow$] Reflexive : $$\forall x \in \mathbb{R}~ x \leq x$$
+ \item[$\rightarrow$] Anti-symétrique : $$\forall(x,y)\in \mathbb{R}^2 \mbox{ si } : (x \leq y,y\leq x),  \mbox{ alors } x=y$$
+ \item[$\rightarrow$] Transitive : $$\forall(x,y,z)\in \mathbb{R}^3 \mbox{ si } : (x \leq y,y\leq z), \mbox{ alors } x\leq z$$
+\end{itemize}
+\end{de}
+\subsection{Majorant - Minorant}
+Soit A un ensemble
+\subsubsection{Majorant}
+\begin{de}
+Si M est un majorant de A, avec $M \in A$, alors :
+$$M = Max(A)$$
+\end{de}
+\begin{de}
+Si M est le plus petit des majorants de A, alors M est la borne supérieure de A : 
+$$M = Sup(A)$$
+\end{de}
+\begin{prop}
+Si $A~ c~ \mathbb{R}$, si Max(A) existe, alors Sup(A) existe et :
+$$Sup(A) = Max(A)$$
+\end{prop}
+\subsubsection{Minorant}
+\begin{de}
+Si M est un minorant de A, avec $M \in A$, alors :
+$$M = Min(A)$$
+\end{de}
+\begin{de}
+Si M est le plus grand des minorant de A, alors M est la borne inférieure de A : 
+$$M = Inf(A)$$
+\end{de}
+\begin{prop}
+Si $A~ c~ \mathbb{R}$, si Min(A) existe, alors Inf(A) existe et :
+$$Min(A) = Inf(A)$$
+\end{prop}
+\subsection{Borne supérieure - Borne inférieure}
+\begin{prop}
+Toute partie de $\mathbb{R}$ non vide et minorée possède une borne inférieure.
+\end{prop}
+\begin{prop}
+Toute partie de $\mathbb{R}$ non vide et majorée possède une borne supérieure.
+\end{prop}
+\begin{prop}
+Toute partie de Z non vide et majorée possède un plus grand éléments. (Max)
+\end{prop}
+\subsection{Partie bornée de $\mathbb{R}$}
+Soit $A$ une partie de E. On note ceci : $A \in P(E)$.\\
+A est bornée si et seulement si :$$\exists M \in \mathbb{R}~ tq~ \forall a\in A,~ |a|\leq M$$
+\begin{prop}
+Propriété d'Archimède : Soient (x,y)$\in \mathbb{R}$ et x>0, alors :
+$$\exists p \in Z~ tq~ y < px$$
+\end{prop}
+\subsection{Partie entière}
+\begin{de}
+Soit $x \in \mathbb{R}$.\\
+Il existe un unique entier p telque p$\leq x$<p+1\\
+Cette entier p en la partie entière de $x$. On le note $E(x)$.
+\end{de}
+\begin{de}
+En complément, on défini la partie décimale de $x$, notée $D(x)$ :
+$$D(x) = x-E(x)$$
+\end{de}
+\subsection{Densité}
+\begin{de}
+Soit A une partie de $\mathbb{R}$\\
+A est dense dans $\mathbb{R}$ si, avec $x \neq y$ :
+$$\forall(x,y) \in \mathbb{R}^2~ \exists a \in A~ tq~ a\in]x;y[$$
+\end{de}
+\begin{prop}
+Puisque l'espace des fractions rationnels, notée Q, est dense dans $\mathbb{R}$, si $x \in \mathbb{R}$, alors il existe une suite de rationnelle qui converge vers x. 
+\end{prop}
+\section{Partie de $\mathbb{R}$}
+\begin{de}
+ Soient (a,b)$\in \mathbb{R}^2$. On appelle segment d'extrémité a,b :
+$$[a,b] = \left\lbrace x\in \mathbb{R} / a\leq x \leq b\right\rbrace $$
+\end{de}
+\begin{de}
+ Soit I une partie de $\mathbb{R}$. I est un intervalle si :
+$$\forall x\in I, \forall y \in I,~ [x;y]~c~I$$
+\end{de}
+\subsection{Sous-groupes de ($\mathbb{R}$;+)}
+\subsubsection{Critère de reconnaissance des sous-groupes}
+\begin{de}
+Soit H une partie de $\mathbb{R}$.\\
+On dit de H est un sous-groupe de ($\mathbb{R}$;+) si (H;+) est un groupe. 
+\end{de}
+\begin{prop}
+H est un sous-groupe si et seulement si :
+\begin{enumerate}[1-]
+ \item $H~ c~ \mathbb{R}$ et H non vide
+ \item $\forall(x;y)\in H^2, x-y\in H$
+\end{enumerate}
+
+\end{prop}
+

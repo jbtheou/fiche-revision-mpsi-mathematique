@@ -1,0 +1,41 @@
+\chapter{Fraction Rationnelle}
+\section{Partie entière}
+Pour déterminer la partie entière, on fait la division euclidienne du numérateur par le dénominateur, sans l'ordre de multiplicité si il existe.
+\section{Décomposition en élements simple}
+On décompose en élements simple et on détermine ces coefficent en travaillant sur l'égalité :
+$$\dfrac{Num.}{(X-a)^{\alpha}(X-b)^{\beta}} = \dfrac{\lambda_1}{(X-a)} \dfrac{\lambda_2}{(X-a)^2}...\dfrac{\lambda_{\alpha}}{(X-a)^{\alpha}} \dfrac{\mu_1}{(X-b)} \dfrac{\mu_2}{(X-b)^2}...\dfrac{\mu_{\beta}}{(X-b)^{\beta}}$$
+Si deg(Dénomin.) > 1 (ex : $(X^2+1)^{\alpha}$), dans la décomposition, alors :\
+$\forall i \in \left\lbrace 1,2,...,\alpha \right\rbrace $
+$$\lambda_i = \lambda_{i_1}X+\lambda_{i_2}$$
+\subsection{Dans C}
+\subsubsection{Pôle simple}
+Si $F = \dfrac{P}{Q} = \dfrac{P}{(X-a)Q_1}$, avec a qui n'est pas racine de $Q_1$, on obtient donc : 
+$$F = F_0 + \dfrac{\lambda}{X-a}$$
+Avec a qui n'est pas un pôle de $F_0$. Il existe deux techniques pour déterminer $\lambda$: 
+\begin{enumerate}[I) ]
+ \item On multiple F par le dénominateur, X-a, et on détermine la valeur en a. $$(X-a)F= \dfrac{P}{Q_1}=F_0(X-a) + \lambda$$
+$$\lambda = \dfrac{\tilde{P}(a)}{\tilde{Q_1}(a)}$$
+ \item On utilise la dérivé. On applique la formule de Taylor en a pour Q. 
+$$Q = 0 + \tilde{Q'}(a)(X-a) + (X-a)^2R$$
+avec $R \in C[X]$.\
+D'où :
+$$(X-a)F = (X-a)\dfrac{P}{\tilde{Q'}(a)(X-a) + (X-a)^2R} = \dfrac{P}{\tilde{Q'}(a) + (X-a)R}$$
+Et on prend la valeur en a de cette expression. On obtient : 
+$$\lambda = \dfrac{\tilde{P}(a)}{\tilde{Q'}(a)}$$
+\end{enumerate}
+\subsubsection{Pôle double}
+\begin{itemize}
+ \item[$\rightarrow$]Sans ordre de multiplicité :\ Si une fraction F possède un pôle double, a et b, alors on détermine les coefficiants c et d en prenant la valeur en a de (X-a)F et la valeur en b de (X-b)F.
+ \item[$\rightarrow$] Avec ordre de multiplicité :\ Si une fraction F possède un pôle double, a et b, avec les ordres de multiplicité respectif $\alpha$ et $\beta$, alors on détermine deux des coefficiants en prenant la valeur en a de $(X-a)^{\alpha}$ et la valeur en b de $(X-b)^{\beta}$.\
+Pour déterminer les autres coefficiants, on détermine des valeurs particulière. En géneral, pour $\alpha$=2, on prend la valeur en 0 et la limite en $+\infty$
+\end{itemize}
+\subsubsection{Parité}
+Si on a : $F(-X) = -F(X)$ ou $F(-X)=F(X)$ on développe les expressions et on obtient entre les différentes coefficiants des relations, ce qui limite les calculs.
+\subsection{Dans R}
+\subsubsection{Décomposition indirecte}
+Si on a la décomposition dans C, avec des pôles imaginaire, on met sous le même dénominateur les fractions avec les pôles conjugés. On obtient la décomposition dans R.
+\subsubsection{Décomposition direct}
+\begin{itemize}
+ \item[$\rightarrow$] Soit on passe par un ensemble de valeur particulier, pour déterminer les différents coefficiants
+ \item[$\rightarrow$] Soit, si possible, on utilise un pole complexe, et on détermine les coefficiant.\ Ex: On utilise la valeur en i de ($X^2$+1)F.
+\end{itemize}

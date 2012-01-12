@@ -1,0 +1,17 @@
+\chapter{Arithmétique}
+\section{Théorème de Bezout}
+Pour résoudre une équation de la forme : 
+$$a.u+b.v = c$$ 
+d'inconnus (u,v), avec c le P.G.C.D de u et v, on détermine tout d'abord le P.G.C.D de u et v par le théorème d'Euclide. On procède de la façon suivante : 
+\begin{enumerate}[1-]
+ \item u = $q_1$.v + $r_1$
+ \item v = $q_2$.$r_1$ + $r_2$
+ \item $r_1$ = $q_3$.$r_2$ + $r_3$ ......
+ \item Puis on arrive à : 
+ \item $r_{n-1}$ = $q_{n-1}$.$r_n$ + $r_{n+1}$
+ \item $r_n$ = $q_n.r_{n+1} + 0$
+\end{enumerate}
+Alors le P.G.C.D de u et v est le dernier reste non nul, $r_{n+1}$\\
+Puis, par application du théorème de Bezout qui dit que : Il existe deux entier a et b tel que, si le P.C.G.D de u et v est d, alors : 
+$$a.u+b.v = d$$
+On exprime le premier reste en fonction de u et v, puis on retrouve les autres expressions qu'on injecte dans le première. On obtient au final a et b.

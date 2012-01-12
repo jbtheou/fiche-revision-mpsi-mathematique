@@ -1,0 +1,57 @@
+\documentclass[a4paper,12 pt,oneside]{report}     % Type de document
+\usepackage[utf8x]{inputenc}			  % Utilisation du UTF8
+\usepackage{textcomp}				  % Accents dans les titres
+\usepackage [ french ] {babel}                    % Titres en français
+\usepackage [T1] {fontenc} 			  % Correspondance clavier -> document
+\usepackage[Lenny]{fncychap}                      % Beau Chapitre
+\usepackage{dsfont}                    	  	  % Pour afficher N,Z,D,Q,R,C
+\usepackage{fancyhdr}                             % Entete et pied de pages
+\usepackage [outerbars] {changebar}               % Positionnement barre en marge externe
+\usepackage{amsmath}				  % Utilisation de la librairie de 
+\usepackage{amssymb}				  % Utilisation de la librairie de Maths
+%\usepackage{amsfont}				  % Utilisation des polices de Maths
+\usepackage{cite}                                 % Citations de la bibliographie
+\usepackage{openbib}                              % Gestion avancée de Bibtex
+\usepackage{enumerate}				  % Permet d'utiliser la fonction énumerate
+\usepackage{dsfont}				  % Utilisation des polices Dsfont
+\usepackage{ae}					  % Rend le PDF plus lisible
+
+\newtheorem{de}{Définition}
+\newtheorem{theo}{Théorème}
+\newtheorem{prop}{Propriété}
+
+%$\begin{bmatrix}
+%  \cos(x)-X & -\sin x \\
+%  \sin x & \cos(x)-X \\
+%\end{bmatrix}$
+
+%opening
+\title{Généralités - Algèbre}
+\author{MPSI}
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Théorie des ensembles}
+\begin{de}
+ Un ensemble est un composé d'élements
+\end{de}
+Soit E un ensemble, soit a un élement de E \\
+On note l'appartenance de a à l'ensemble par : $$a \in E$$
+Soit F un ensemble inclue dans E.\\ On note cette inclusion par : $$F~ c~ E$$
+On dit aussi de F est une partie de E. On le note :
+$$F = P(E)$$
+\section{Opération sur les parties d'un ensemble}
+Il existe trois opération principales sur les ensembles :
+\begin{itemize}
+ \item[$\rightarrow$] $A \cup B = \left\lbrace x \in E / x\in A \mbox{ ou } x \in B \right\rbrace$ 
+ \item[$\rightarrow$] $A \cap B = \left\lbrace x \in E / x\in A \mbox{ et } x \in B \right\rbrace$ 
+ \item[$\rightarrow$] $A \diagup B = \left\lbrace x \in E / x\in A \mbox{ et } x \notin B \right\rbrace$ 
+\end{itemize}
+\section{Quantificateurs}
+Soit P une propriété
+\begin{itemize}
+ \item[$\rightarrow$] P(x) est vrai pour tout élement x : $$\forall x \in E~ P(x)$$ 
+ \item[$\rightarrow$] Il existe un x pour lequel P(x) est vraie : $$\exists x \in E ~ P(x)$$
+ \item[$\rightarrow$] Il existe un unique x pour lequel P(x) est vraie : $$\exists ! x \in E ~ P(x)$$
+\end{itemize}
+\end{document}

@@ -1,0 +1,99 @@
+\documentclass[a4paper,10pt,twocolumn]{report}
+
+\usepackage[utf8x]{inputenc}			  % Utilisation du UTF8
+\usepackage{textcomp}				  % Accents dans les titres
+\usepackage [ french ] {babel}                    % Titres en français
+\usepackage [T1] {fontenc} 			  % Correspondance clavier -> document
+\usepackage[Lenny]{fncychap}                      % Beau Chapitre
+\usepackage{dsfont}                    	  % Pour afficher N,Z,D,Q,R,C
+\usepackage{fancyhdr}                             % Entete et pied de pages
+\usepackage [outerbars] {changebar}               % Positionnement barre en marge externe
+\usepackage{amsmath}				  % Utilisation de la librairie de Maths
+%\usepackage{amsfont}				  % Utilisation des polices de Maths
+\usepackage{cite}                                 % Citations de la bibliographie
+\usepackage{openbib}                              % Gestion avancée de Bibtex
+\usepackage{enumerate}				  % Permet d'utiliser la fonction énumerate
+\usepackage{dsfont}				  % Utilisation des polices Dsfont
+\usepackage{ae}					  % Rend le PDF plus lisible
+
+\newtheorem{de}{Définition}
+\newtheorem{theo}{Théorème}
+\newtheorem{prop}{Propriété}
+
+\title{Fiche Maple}
+\author{MPSI}
+\begin{document}
+\begin{center}
+\begin{LARGE}\textit{\textbf{ \begin{Large}Maple      \end{Large}
+}}\end{LARGE}
+\end{center}
+
+\section{Introduction}
+\begin{itemize}
+\item[$\rightarrow$] Evalf : Evalutation numérique d'une expression
+\item[$\rightarrow$] Digits : Nombre de décimales
+\item[$\rightarrow$] Evalc : Evalution d'un complexe
+\item[$\rightarrow$] Re ; Im ; Conjugate : Partie réelle, imaginaire et conjugée
+\end{itemize}
+\section{Fonction}
+\begin{itemize}
+ \item[$\rightarrow$] ?inifens : Liste des fonctions disponibles
+\item[$\rightarrow$] simplify : Simplifie la fonction
+\item[$\rightarrow$] expand : Développe la fonction
+\item[$\rightarrow$] sort : Range les termes
+\item[$\rightarrow$] subs : Substituer une variable par une valeur
+\item[$\rightarrow$] diff : Dérive par rapport à une varible
+\item[$\rightarrow$] plot : Trace une courbe, un ensemble de courbe et tout type d'arc
+\item[$\rightarrow$] unapply : Transforme une équation en fonction
+\item[$\rightarrow$] D : Opérateur de dérivation
+\item[$\rightarrow$] pointplot : Trace un ensemble de point
+\end{itemize}
+\section{Equation}
+\begin{itemize}
+ \item[$\rightarrow$] solve : Résoud une équation ou d'un système d'équation
+\item[$\rightarrow$] allvalues : Liste les racines d'un polynome
+\item[$\rightarrow$] floor : Partie entier
+\end{itemize}
+\section{Equation differentielles}
+\begin{itemize}
+ \item[$\rightarrow$] rhs;lhs : Membre de droite d'une equation, membre de gauche
+\item[$\rightarrow$] dsolve : Resoud une équation differentielle
+\end{itemize}
+\section{Arc paramétré}
+\begin{itemize}
+ \item[$\rightarrow$] seq : Création d'une séquance
+\item[$\rightarrow$] with : Charge un paquet de commande
+\end{itemize}
+\section{Boucle et instruction conditionnelle}
+\begin{itemize}
+ \item[$\rightarrow$] while .... do ... od; 
+\item[$\rightarrow$] for ... from .... to ... do ... od;
+\end{itemize}
+\subsection{Variante pour l'instruction for}
+\begin{itemize}
+\item[$\rightarrow$] for ... to ... do ... od; Ommet la valeur initial et la défini égale à 1
+\item[$\rightarrow$] for ... from ... to ... by pas ... do ... od; Modifie le pas utilisé
+\item[$\rightarrow$] for ... in ens do .. od; Fait varier les valeurs selon la liste ens
+\end{itemize}
+\section{Procédure}
+On défini une procédure de la façon suivante :
+\begin{itemize}
+ \item[$\rightarrow$] Title := proc(parametre);local vars; ...... Resultat end;
+\end{itemize}
+On l'appele grâce à la commande :
+$$Title(parametre);$$
+\section{Calcul Matriciel}
+On utilise le paquet linalg.
+\begin{itemize}
+ \item[$\rightarrow$] matrix : Crée une matrice 
+\item[$\rightarrow$] transpose : Crée la transposé
+\item[$\rightarrow$] diag : Crée un matrice diagonale
+\item[$\rightarrow$] evalm : Évalue une matrice
+\item[$\rightarrow$] $\mbox{A\&*B : Éffectue le produit AxB}$
+\end{itemize}
+\section{Développement limité}
+\begin{itemize}
+ \item[$\rightarrow$] series(f(h),h=0) : Développement limité de f en 0
+ \item[$\rightarrow$] op(X) : Crée une liste contenant les coefficiants relatifs à chaque degres
+\end{itemize}
+\end{document}

@@ -1,0 +1,195 @@
+\chapter{Limite d'une fonction}
+\section{Définitions}
+\begin{de}
+Soit f une fonction, I un intervalle. \\
+f est majorée sur I si :$$\exists m~ tq~ \forall x \in I~ f(x) < m$$
+\end{de}
+\begin{de}
+On dit que f est croissante sur I si :
+$$\forall (x,x') \in I^2~ si~ x<x',~ f(x) \leq f(x')$$
+\end{de}
+\subsection{Fonction k-lipschitzienne}
+\begin{de}
+Soit f : I $\rightarrow \mathbb{R}$.\\
+f est k-lipschitzienne si : 
+$$\forall (x,y) \in I^2~ |f(x)-f(y)|\leq k|x-y|$$
+\end{de}
+\begin{prop}
+Soient f et g deux fonctions k-lipschitziennes sur I, alors f+g est aussi k-lipschitzienne sur I
+\end{prop}
+\subsection{Limite et continuité}
+\subsubsection{Au voisinage d'un réel a}
+Soit $a \in R$.
+\begin{de}
+La propriété P est vraie au voisinage de a si elle est vraie sur l'intersection de I et d'un intervalle ouvert de centre a :
+$$(\exists \alpha > 0~ tq~ (P)~ soit~ vraie~ \forall x \in ]a-\alpha;a+\alpha[\cap I)$$
+\end{de}
+\subsubsection{Au voisinage de $+\infty$}
+\begin{de}
+(P) est vraie au voisinage de $+\infty$ si elle est vrai sur I$\cap]A;+\infty[$, avec A fixé.
+\end{de}
+\subsection{Limite}
+\begin{de}
+Soit (a,b) $\in \mathbb{R}^2$ :
+$$(\lim_a f = b) \Leftrightarrow (\forall \varepsilon > 0~ \exists \alpha > 0~ \forall x \in D_f~ |x-a|\leq \alpha~ \Rightarrow~ |f(x)-b|<\varepsilon)$$ 
+\end{de}
+\begin{prop}
+Soit a un réel, a = $+\infty$ ou a = $-\infty$.\\
+On suppose que f et g coincident au voisinage de a, alors : 
+$$\lim_a f = \lim_a g$$
+\end{prop}
+\subsection{Continuité}
+\begin{de}
+Si f est définie en a, la limite éventuelle en a est nécessairement b=f(a)
+\end{de}
+\begin{prop}
+Soit $a \in \mathbb{R}$ :\\
+\begin{itemize}
+ \item Si a $\in D_f$
+\begin{itemize}
+ \item Si $\underset{a}\lim f = f(a)$, alors f est continue en a.
+ \item Si $\underset{a}\lim f \neq f(a)$, alors c'est impossible.
+ \item Si la limite n'existe pas, alors f n'est pas continue en a
+\end{itemize}
+\item Si a $\notin D_f$
+\begin{itemize}
+ \item Si $\underset{a}\lim f$ existe (dans $\mathbb{R}$), alors f est prolongable par continuité
+ \item Si la limite n'existe pas, rien à dire, sauf que f n'est pas prolongable.
+\end{itemize}
+\end{itemize}
+\end{prop}
+\subsubsection{Caractérisation à l'aide de suite}
+\begin{prop}
+$$(\lim_a f = b) \Leftrightarrow (\forall(x_n) \mbox{ suite convergente de limite a, } f(x_n) \mbox{ converge vers b})$$
+\end{prop}
+On en déduit que : 
+\begin{prop}
+Si il existe $(u_n),(v_n)$ deux suite telque : 
+\end{prop}
+$$\left\{\begin{array}{l}
+   \underset{n \mapsto +\infty}\lim (u_n) = a\\
+   \underset{n \mapsto +\infty}\lim (v_n) = a\\
+  \end{array}\right.$$
+et avec b $\neq$ b': 
+$$\left\{\begin{array}{l}
+   \underset{n \mapsto +\infty}\lim (f(u_n)) = b\\
+   \underset{n \mapsto +\infty}\lim (f(v_n)) = b'\\
+   \end{array}\right.$$
+alors $\underset{a}\lim f$ n'existe pas
+\section{Limité ou continuité à gauche et à droite}
+\subsection{Segment}
+\begin{de}
+Soit I C $\mathbb{R}$. I est un intervalle si $\forall (a,b) \in I^2~ \left[a,b \right] C I $\\
+\end{de}
+\begin{de}
+Soit a $\in \mathbb{R}$, et I un intervalle.\\
+a est interieur à I si : 
+$$\exists \alpha > 0~ tq~ \left]a-\alpha,a+\alpha \right[ C I$$
+L'interieur de I, notée $\overset{o}I$, est l'ensemble des points interieurs à I.
+\end{de}
+\subsection{Limite à droite, limite à gauche}
+\subsubsection{Limite à droite}
+\begin{de}
+Soit f, fonction définie sur un intervalle I, sauf peut etre en a, avec a interieur à I.\\
+La limite à droite de f en a est, si elle existe, la limite en a de la restriction de f à I$\cap \left]a,+\infty \right[$
+On la note : 
+$$\lim_{a^+} f$$
+\end{de}
+\subsubsection{Limite à gauche}
+\begin{de}
+Soit f, fonction définie sur un intervalle I, sauf peut etre en a, avec a interieur à I.\\
+La limite à gauche, de f en a est, si elle existe, la limite en a de la restriction de f à I$\cap \left]-\infty,a \right[$
+On la note : 
+$$\lim_{a^-} f$$
+\end{de}
+\begin{prop}
+Si f est défini au voisinage de a : \\
+Si $a \in D_f$, la limite en a de f est b si et seulement si :
+$$\left\{\begin{array}{l}
+   \underset{a^+}\lim f = b\\
+   \underset{a^-}\lim f = b\\
+   f(a)=b\\
+\end{array}\right.$$
+Si $a \notin D_f$, la limite en a de f est b si et seulement si :
+$$\left\{\begin{array}{l}
+   \underset{a^+}\lim f = b\\
+   \underset{a^-}\lim f = b\\
+\end{array}\right.$$
+\end{prop}
+\begin{prop}
+Si :
+$$\lim_a f = b$$
+et 
+$$\lim_b g = c$$
+Alors :
+$$\lim_a gof = c$$
+\end{prop}
+\subsection{Continuité d'un intervalle}
+\begin{prop}
+Soit a $\in I$ :
+$$(\lim_a f \mbox{ existe }) \Leftrightarrow (\mbox{ f est continue en a})$$
+\end{prop}
+\begin{prop}
+Soit I un intervalle : 
+$$(\mbox{ f est continue sur I }) \Leftrightarrow ( \forall a \in I, \mbox{ f est continue en a })$$
+\end{prop}
+\section{Image continue}
+\subsection{D'un intervalle}
+\subsubsection{Théorème des valeurs intermédiaires}
+\begin{prop}
+Soit I un intervalle, (a,b)$\in I^2$. Si f est continue sur I, et $y_0 \in \left[f(a),f(b)\right]$, alors :
+$$\exists c \in \left[a,b\right]~ tq~ y_0 = f(c) $$
+\end{prop}
+\begin{prop}
+Si f est continue sur I, un intervalle, si $a \in I$, et $b \in I$, et f(a) et f(b) sont de signes contraire, alors : 
+$$\exists c \in \left[a,b\right]~ tq~ f(c) = 0$$
+\end{prop}
+\begin{prop}
+Si I est un intervalle, et f continue sur I, alors f(I) est un intervalle.
+\end{prop}
+\subsection{D'un segment}
+\begin{prop}
+Soit f fonction continue sur [a,b], avec a et b réel.\\
+Alors f est bornée sur [a,b]
+\end{prop}
+\begin{prop}
+Soit f fonction continue sur [a,b], avec a et b réel.\\
+Alors le Sup et l'Inf de la fonction sur [a,b] existent.
+\end{prop}
+\begin{prop}
+Soit f continue sur [a,b]. Alors : 
+$$\exists (m,M) \in \mathbb{R}^2, ~tq~ f(\left[a,b\right]) = \left[m,M\right] $$
+\end{prop}
+\section{Continuité uniforme sur un intervalle}
+\begin{de}
+Soit f fonction définie sur un intervalle I.\\
+On dit que f est uniformement continue sur I si: 
+$$\forall \varepsilon > 0,~ \exists \alpha >0~ tq~ \forall (x,y) \in I^2~ |x-y| < \alpha~ \Rightarrow |f(x)-f(y)|<\varepsilon$$
+\end{de}
+\begin{prop}
+Si f est uniformement continue sur I, alors f est continue sur I.
+\end{prop}
+\begin{prop}
+Une fonction k-lipschitzienne sur I est uniformement continue sur I.
+\end{prop}
+\begin{theo}
+Théorème de Heine :\\
+Toutes fonctions continue sur un segments [a,b] est uniformement continue sur le segment.
+\end{theo}
+\section{Fonction monotone}
+\subsection{Théorème de la "limite monotone"}
+\begin{prop}
+Si f est croissante sur I, et a $\in \overset{o}I$, alors :
+$$\lim_{a^-} f~ et~ \lim_{a^+} f \mbox{ existent, mais peuvent etre différentes}$$
+\end{prop}
+\subsection{Monotonie et continuité}
+\begin{prop}
+Soit f fonction définie et croissante sur I\\
+$$( \mbox{ f est continue sur I })\Leftrightarrow(\mbox{ f(I) est un intervalle })$$
+\end{prop}
+\subsection{Théorème de la bijection}
+\begin{prop}
+Soit I un intervalle.\\
+Si f est continue, strictement monotone sur I, alors f est une bijection de I sur l'intervalle f(I), et $f^{-1}$ est continue sur f(I).
+\end{prop}
+

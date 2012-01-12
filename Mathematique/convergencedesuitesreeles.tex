@@ -1,0 +1,145 @@
+\chapter{Convergence des suite numériques réelles}
+\section{Suites convergentes}
+\begin{de}
+Soit $(u_n)_{n \geq 0}$ une suite de nombre réels.\\
+On dit que $(u_n)_{n \geq 0}$ converge vers 0 si :
+$$\forall \varepsilon > 0, \exists n_0 \in \mathbb{N}~ tq~ \forall n \geq n_0~ |u_n|<\varepsilon$$
+\end{de}
+\begin{de}
+Soit $l \in \mathbb{R}$. La suite $u_n$ converge vers l si :
+$$\forall \varepsilon > 0, \exists n_0 \in \mathbb{N}~ tq~ \forall n \geq n_0~ |u_n -l|<\varepsilon$$
+\end{de}
+Les suites convergentes possède les propriétés suivantes :\\
+\begin{itemize}
+ \item[$\rightarrow$] Une suite constante est convergente\\
+ \item[$\rightarrow$] Une suite géométrique de raison a avec |a|<1 converge vers 0\\
+ \item[$\rightarrow$] La suite $(\dfrac{1}{n})_{n\geq 1}$ converge vers 0\\
+ \item[$\rightarrow$] Si ($u_n)$ converge vers une limite l, elle est unique.\\
+ \item[$\rightarrow$] Un suite ($u_n$) converge vers 0 si et seulement si $(|u_n|)$ converge vers 0\\
+ \item[$\rightarrow$] Une suite convergente est bornée\\
+ \item[$\rightarrow$] Si ($a_n$) converge vers 0 et $\exists n_0 \in \mathbb{N}~ tq~ \forall n \geq n_0~ |u_n|\leq |a_n|$, alors $(u_n)$ converge vers 0\\
+\end{itemize}
+\subsection{Caractérisation de la borne supérieur}
+On peut caractériser la borne supérieur d'un ensemble non vide et majorée à l'aide d'une suite.\\
+Soit A une partie de $\mathbb{R}$
+$$(\mbox{ M est la borne supérieur de A }) \Leftrightarrow \left\{\begin{array}{l}
+    \mbox{M est un majorant de A}\\
+    \exists(a_n)~ tq~ \forall n \in \mathbb{N} a_n\in A~ et~ a_n\mbox{ converge vers M}
+  \end{array}\right.$$
+\subsection{Caractérisation d'une partie dense}
+Soit A une partie de $\mathbb{R}$
+$$(\mbox{ A est dense dans } \mathbb{R}) \Leftrightarrow (\forall x \in \mathbb{R}, \exists(u_n) \in \mathbb{R}^n, \forall n ~u_n \in A~ et~ a_n\mbox{ converge vers x})$$
+\subsection{Opération sur les suites convergentes}
+Nous avons les propriétés suivantes :\\
+\begin{itemize}
+ \item[$\rightarrow$] La somme de deux suites convergente est convergente, et la limite de la somme est la somme des limites.\\
+ \item[$\rightarrow$] Le produit par une constante d'une suite convergente est convergente\\
+ \item[$\rightarrow$] Le produit d'une suite bornée par une suite convergente de limite nul est une suite convergente de limite nul.\\
+ \item[$\rightarrow$] Le produit d'une suite convergente par une suite convergente de limite nul est une suite convergente de limite nul.\\
+ \item[$\rightarrow$] Le produit de deux suite convergentes est une suite convergente\\
+ \item[$\rightarrow$] Si $(u_n)$ est une suite convergente de terme tous non nuls, si $l \neq 0$, alors $\dfrac{1}{u_n}$ converge vers $\dfrac{1}{l}$\\
+ \item[$\rightarrow$] Si $(u_n)$ est une suite convergente de limite l, alors $(|u_n|)$ converge vers |l|\\
+\end{itemize}
+\subsection{Lien entre le signe de la limite et le signe des termes de la suite}
+\begin{itemize}
+ \item[$\rightarrow$] Si l>0, alors $\exists n_0 \in \mathbb{N}$, tq $\forall n \geq n_0$, $u_n > 0$\\
+ \item[$\rightarrow$] Si l<0, alors $\exists n_0 \in \mathbb{N}$, tq $\forall n \geq n_0$, $u_n < 0$\\
+ \item[$\rightarrow$] Si $\exists n_0 \in \mathbb{N} $ tq $\forall n \geq n_0$, $u_n < 0$, alors $l \leq 0$\\
+ \item[$\rightarrow$]Si $\exists n_0 \in \mathbb{N} $ tq $\forall n \geq n_0$, $u_n > 0$, alors $l \geq 0$\\
+\end{itemize}
+De ces correspondances, on détermine les comparaisons entre deux suites convergentes.
+\subsection{Théorème d'encadrement}
+Si : 
+$$\left\{\begin{array}{l}
+    (u_n) \mbox{ converge vers l}\\
+    (v_n) \mbox{ converge vers l}\\
+    \exists n_0 \in \mathbb{N},~ \forall n\geq n_0,~ u_n\leq x_n \leq v_n\\
+  \end{array}\right.$$
+Alors $x_n$ converge vers l.
+\subsection{Suite extraites}
+\begin{prop}
+ Si $(u_n)$ converge, alors toutes ses suites extraites converge vers la même limite.
+\end{prop}
+\begin{prop}
+Si :
+$$\left\{\begin{array}{l}
+    (u_{\varphi_{(n)}})~ et~ (u_{\psi_{(n)}})\mbox{ converge vers la même limite}\\
+    \{\varphi_{(n)}~ /~ n\in \mathbb{N}\} \cup   \{\psi_{(n)}~ /~ n\in \mathbb{N}\} = \mathbb{N}\\
+  \end{array}\right.$$
+Alors la suite $(u_n)$ converge
+\end{prop}
+
+\section{Suites divergentes}
+\subsection{Caractéristation des suites divergentes}
+Si :
+$$\left\{\begin{array}{l}
+    (u_{\varphi_{(n)}})~ et~ (u_{\psi_{(n)}})\mbox{ converge vers des limites différentes}\\
+    \{\varphi_{(n)}~ /~ n\in \mathbb{N}\} \cup   \{\psi_{(n)}~ /~ n\in \mathbb{N}\} = \mathbb{N}\\
+  \end{array}\right.$$
+Alors la suite $(u_n)$ diverge
+
+\subsection{Suites qui diverge vers $\pm\infty$}
+\begin{de}
+Soit $(u_n)_{n \geq 0}$ une suite de nombre réels.\\
+On dit que $(u_n)_{n \geq 0}$ diverge vers $+\infty$ si :
+$$\forall A \in \mathbb{R}^+, \exists n_0 \in \mathbb{N}~ tq~ \forall n \geq n_0~ u_n>A$$
+\end{de}
+\begin{de}
+Soit $(u_n)_{n \geq 0}$ une suite de nombre réels.\\
+On dit que $(u_n)_{n \geq 0}$ diverge vers $-\infty$ si :
+$$\forall B \in \mathbb{R}^-, \exists n_0 \in \mathbb{N}~ tq~ \forall n \geq n_0~ u_n<B$$
+\end{de}
+\subsubsection{Propriétés}
+\begin{itemize}
+ \item[$\rightarrow$] $((u_n)$ diverge vers $-\infty$) $\Leftrightarrow$ (($-u_n)$ diverge vers $+\infty$)
+ \item[$\rightarrow$] La somme d'une suite bornée et d'une suite qui diverge vers $+\infty$ diverge vers $+\infty$
+ \item[$\rightarrow$] L'inverse d'une suite qui tend vers $+\infty$ converge vers 0
+\end{itemize}
+\subsection{Théorème de minoration}
+\begin{theo}
+ Si ($u_n$) et $(v_n)$ sont deux suites telque :
+$$\left\{\begin{array}{l}
+    (u_n) \mbox{ diverge vers } +\infty \\
+    \exists n_0~ tq~ \forall n \geq n_0~ u_n \geq x_n\\
+  \end{array}\right.$$
+Alors $(x_n)$ diverge vers $+\infty$
+\end{theo}
+\section{Suite monotone et convergente}
+\begin{theo}
+Soit $(u_n)$ une suite croissante.\\
+Si elle est majorée, alors elle converge. Sinon, elle diverge vers $+\infty$
+\end{theo}
+\begin{theo}
+Soit $(u_n)$ une suite décroissante.\\
+Si elle est minorée, alors elle converge. Sinon, elle diverge vers $-\infty$
+\end{theo}
+\subsection{Suites adjacentes}
+\begin{de}
+Soient $(u_n)$ et $(v_n)$ deux suites. Elle sont dites adjacentes si : 
+\begin{enumerate}
+ \item $(u_n)$ croissante
+ \item $(v_n)$ décroissante
+ \item $(u_n - v_n)$ converge vers 0
+\end{enumerate}
+\end{de}
+\begin{prop}
+Si $(u_n)$ et $(v_n)$ sont adjacentes, alors elles convergent vers la même limite, notée l et : 
+$$\forall n \in \mathbb{N},~ u_n \leq l \leq v_n $$
+\end{prop}
+\subsection{Segments emboités}
+\begin{de}
+On considère une suite de segments. On dit que la suite est emboitée si :
+$$\forall n \in \mathbb{N}~ \left[a_{n+1},b_{n+1}\right] C \left[a_n,b_n\right]  $$
+\end{de}
+\begin{prop}
+Nous avons les propriétés suivantes : 
+\begin{itemize}
+ \item[$\rightarrow$] L'intersection de tous les intervalles d'une suites d'intervalle emboitée est non vide
+ \item[$\rightarrow$] Si la longeur de l'intervalle tend vers 0, alors l'intersection est un singleton
+\end{itemize}
+\end{prop}
+\subsection{Théorème de Bolzano-Weierstrass}
+\begin{theo}
+De toutes suites réelle bornée, on peut extraire une suite convergente.
+\end{theo}
+

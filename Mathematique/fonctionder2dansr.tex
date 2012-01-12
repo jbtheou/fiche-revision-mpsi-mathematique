@@ -1,0 +1,23 @@
+\chapter{Fonctions de $\mathbb{R}^2$ dans $\mathbb{R}$}
+\section{Caractérisation de l'existence d'une limite}
+Pour montrer qu'il existe une limite, on peut procéder de trois façon differentes : 
+\begin{itemize}
+ \item[$\rightarrow$] Par utilisation de la définition : $$\forall \varepsilon > 0~ \exists \alpha > 0~ tq~ \forall (x,y)\in B((x_0,y_0),\alpha)~ :~ |f(x,y) -l| < \varepsilon$$
+ \item[$\rightarrow$] Par utilisation des propriétés sur les sommes, produits et compositions
+ \item[$\rightarrow$] À l'aide du théorème d'encadrement
+\end{itemize}
+\section{Caractérisation de la non-existence de limite}
+Pour caractériser le fait qu'une limite n'existe pas, on utilise l'idée des "chemins".\\
+On recherche tout d'abord deux couples différents, ($x_1,y_1$) et ($x_2,y_2$), qui converge vers (a,b) par exemple :  
+\begin{itemize}
+ \item[$\rightarrow$] $\underset{t_0}\lim x_1 = a$ 
+ \item[$\rightarrow$] $\underset{t_0}\lim y_1 = b$ 
+ \item[$\rightarrow$] $\underset{\alpha}\lim x_2 = a$ 
+ \item[$\rightarrow$] $\underset{\alpha}\lim y_2 = b$ 
+\end{itemize}
+Puis si on obtient, avec l différents de l' :
+\begin{itemize}
+ \item[$\rightarrow$] $\underset{t \rightarrow t_0}\lim f(x_1(t),y_1(t)) = l$
+ \item[$\rightarrow$] $\underset{u \rightarrow \alpha}\lim f(x_2(y),y_2(u)) = l'$
+\end{itemize}
+Alors on en déduit que la limite en (a,b) de f n'existe pas
